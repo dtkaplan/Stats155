@@ -1,0 +1,23 @@
+## Statistical Modeling: A Fresh Approach 
+<link rel="stylesheet" type="text/css" href="../stats155.css">
+
+### New Copies discounted for Macalester Students
+
+<img src="http://www.mosaic-web.org/StatisticalModeling/Aug24-mini.jpg" width='200'>
+
+Thanks to a special arrangement with the publisher, new copies of the textbook (second edition, the green one) are available at a discount to Macalester students with deliver to the Student Post Office.  
+
+### Price: $42 (New, not used.)
+
+Order through PayPal.  Shipping will be through **SPO only** to the name entered as your SPO name.
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="86BAG99GXRP7Q">
+<table>
+<tr><td><input type="hidden" name="on0" value="Enter Macalester SPO Name">Enter Macalester SPO Name</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+</table>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
