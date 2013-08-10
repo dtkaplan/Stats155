@@ -1,3 +1,7 @@
+## Day-by-Day Syllabus
+
+### Math 155 
+
 ```{r include=FALSE}
 require(mosaic)
 # Setting up the calendar material
@@ -90,7 +94,7 @@ Notes: `r I(todaysNotes("2012-09-07.html","2013-01-30.html", "notes"))`
 
 **Assignment**:
 * `r I(PN(c(111,112,"2RQ",202,204,301,323,353),assignment="Two"))`
-* Elevator experiment: Instructions FIX THIS LINK `r I(PN(c(336)))`. -- Upload your file or a link to your file [here](https://moodle.macalester.edu/mod/assign/view.php?id=17379).
+* Elevator experiment: Instructions `r I(PN(c(336),assignment="Elevator Data Collection",))`. -- Upload your file or a link to your file [here](https://moodle.macalester.edu/mod/assign/view.php?id=17379).FIX THIS LINK
 * [Start-of-course knowledge survey FIX THIS LINK](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12)
 
 
@@ -168,7 +172,7 @@ Precision and sampling.  (Precision is easy.  Accuracy will take the rest of the
 * Optional, for the theoretically oriented.  `r I(PN(c(540),assignment="Seven-Opt"))`
 
 **In Class**:
-Wednesday Quiz
+Weekly Quiz
 
 **On Your Own**: 
 * Bias in sampling: Steven Strogatz on [why your friends have more friends than you do](http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?ref=opinion)
@@ -184,7 +188,7 @@ Wednesday Quiz
 
 **Assignment**: 
 * Required `r I(PN(c("6RQ",605,610, 612, 701, 702 ),assignment="Eight"))`
-* Extensions `r I(PN(c(620,621)),,assignment="Eight-Opt")`, [XKCD cartoon](http://xkcd.com/418/).  What regression model for this?
+* Extensions `r I(PN(c(620,621),assignment="Eight-Opt"))`, [XKCD cartoon](http://xkcd.com/418/).  What regression model for this?
 
 **In Class**: 
 * Partitioning variability.  Using the R-Markdown system.  [Hand-in a link to your document here.](https://moodle.macalester.edu/mod/assign/view.php?id=17573)
@@ -368,7 +372,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: SM Ch. 12
 
-**Assignment**: `r I(PN(c("12RQ",1210,1212)))`
+**Assignment**: `r I(PN(c("12RQ",1210,1212),assignment="Twenty"))`
 
 **In Class**:
 * Kaplan's section: Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
@@ -382,7 +386,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: SM Ch. 13
 
-**Assignment**: `r I(PN(c(1301),assignment="Twenty"))`
+**Assignment**: `r I(PN(c(1301),assignment="Twenty-one"))`
 
 **Notes**: `r I(todaysNotes("2012-10-29.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-29-class) -->
@@ -397,7 +401,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **Reading**: Review SM Ch. 13
 
 **Assignment**: 
-* `r I(PN(c("13RQ",1302),assignment="Twenty-one"))`
+* `r I(PN(c("13RQ",1302),assignment="Twenty-two"))`
 * Discuss your draft [Survey Project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) with your instructor. 
 
 **In Class**: `r I(PN(c(1315)))`
@@ -414,7 +418,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: SM §14.1, 14.2, 14.3, 14.5
 
-**Assignment**: `r I(PN(c(1401,1402),assignment="Twenty-two"))`
+**Assignment**: `r I(PN(c(1401,1402),assignment="Twenty-three"))`
 
 **In Class**: 
 * `r I(PN(c(1422)))`
@@ -429,7 +433,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 * SM §14.4
 * [XKCD cartoon](http://xkcd.com/882/) and [another](http://xkcd.com/628/) and [yet another](http://xkcd.com/892/)
 
-**Assignment**: `r I(PN(c("14RQ",1404,1405,1411,1412,1424),assignment="Twenty-three"))`
+**Assignment**: `r I(PN(c("14RQ",1404,1405,1411,1412,1424),assignment="Twenty-four"))`
 
 **In Class**: `r I(PN(c(1421)))`
 
@@ -445,7 +449,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: SM Ch. 15
 
-**Assignment**: `r I(PN(c("15RQ",1501),assignment="Twenty-four"))`
+**Assignment**: `r I(PN(c("15RQ",1501),assignment="Twenty-five"))`
 
 **In Class**: [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/)
 
@@ -459,7 +463,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: SM Ch. 15 (review)
 
-**Assignment**: `r I(PN(c(1502,1504,1505,1511),assignment="Twenty-five"))`
+**Assignment**: `r I(PN(c(1502,1504,1505,1511),assignment="Twenty-six"))`
 
 **Notes**: `r I(todaysNotes("2012-11-09.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-09-class) -->
@@ -472,7 +476,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **Reading**: [XKCD cartoon](http://xkcd.com/675/)
 
-**Assignment**:  `r I(PN(c(1512,1521),assignment="Twenty-six"))`
+**Assignment**:  `r I(PN(c(1512,1521),assignment="Twenty-seven"))`
 
 **Notes**: `r I(todaysNotes("2012-11-12.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-12-class) -->
@@ -485,7 +489,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **Reading**: [XKCD cartoon on frequentist vs Bayesian](http://xkcd.com/1132/)
 
 **Assignment**: 
-*`r I(PN(c(1522),,assignment="Twenty-seven"))`
+*`r I(PN(c(1522),,assignment="Twenty-eight"))`
 * Get final approval for your [survey project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) from your instructor.
 
 **Notes**: `r I(todaysNotes("2012-11-14.html", "i"))` 
@@ -509,7 +513,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 **Reading**: SM Ch. 16
 
-**Assignment**: `r I(PN(c(),assignment="TwentyEight"))` BLANK FOR NOW
+**Assignment**: `r I(PN(c(),assignment="Twenty-nine"))` BLANK FOR NOW
 
 **In Class**: Modeling Barry Bonds
 
@@ -552,7 +556,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 * [Processing Survey Data](http://rpubs.com/dtkaplan/m155-processing-survey-data) and the template itself: [cut and paste from here](https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyProcessing.Rmd)
 
 **Assignment**: 
-* `r I(PN(c("16RQ",1601,1602,1604),assignment="Twenty-nine"))`
+* `r I(PN(c("16RQ",1601,1602,1604),assignment="Thirty"))`
 
 
 **On Your Own**:
@@ -571,7 +575,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 * SM Ch. 17
 * [XKCD cartoon](http://xkcd.com/925/)
 
-**Assignment**: `r I(PN(c(1605,1610,1612),assignment="Thirty"))`
+**Assignment**: `r I(PN(c(1605,1610,1612),assignment="Thirty-one"))`
 
 **In-Class**:
 * [Hypothetical Causal Networks](../../Activities/ConstructingHypotheticalNetworks.html)
@@ -593,7 +597,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 **In Class**:
 * Writing up your survey report in R. [Notes](http://rpubs.com/dtkaplan/5866).  You will want to copy the [raw template from here](https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyReport.Rmd) to cut and paste into RStudio.
 
-**Assignment**: `r I(PN(c("17RQ",1701,1702,1705),assignment="Thirty-one"))`
+**Assignment**: `r I(PN(c("17RQ",1701,1702,1705),assignment="Thirty-two"))`
 
 
 
@@ -602,7 +606,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 **Reading**: SM Ch. 17 and [XKCD cartoon](http://xkcd.com/687/)
 
-**Assignment**: `r I(PN(c(1706,1707,1708,1710),"Thirty-two))`
+**Assignment**: `r I(PN(c(1706,1707,1708,1710),assignment="Thirty-three"))`
 
 
 `r I(classDayContents( daynum=39 ))`
