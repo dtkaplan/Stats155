@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title><a name="day-1">Wed 4 Sept</a></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<p><link rel="stylesheet" type="text/css" href="../stats155.css"></p>
+
+<!--     WEEK 1  -->
+
+<hr>
+
+<h3><a name="day-1">Wed 4 Sept</a></h3>
+
+<p><strong>Topic</strong>: Introduction to the course. Randomness, modeling, and inference.</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li><em>Statistical Modeling</em> textbook §1.1, 1.2, 1.3.  The book is available in both new and used forms in the Macalester bookstore.  Students on the wait list for the course may, understandably, not want to buy the book until they know they will be joining the course.  To make sure that everyone has access to the book, the publisher provides the first few chapters in online format: <a href="http://www.mosaic-web.org/go/StatisticalModeling/Chapters/Chapter-01.pdf">Chap. 1</a> and <a href="http://www.mosaic-web.org/go/StatisticalModeling/Chapters/Chapter-02.pdf">Chap. 2</a></li>
+<li>A <a href="http://www.nytimes.com/2012/08/21/health/how-well-you-sleep-may-hinge-on-race.html?_r=1">recent newspaper report</a> that frames some of the technical issues covered by the course.</li>
+<li>An <a href="http://rpubs.com/dtkaplan/1477">orientation for parents</a>.  This is the link for notes for a class the college ran for parents of entering students in 2012.  Feel free to send it to your parents or others who ask what you&#39;re going to be doing in statistics.</li>
+<li>Login to R. <a href="http://rpubs.com/dtkaplan/1398">Instructions</a>.  The <a href="http://www.macalester.edu/rstudio">RStudio server</a></li>
+</ul>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Do the reading! </li>
+</ul>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li>Activities on randomness.</li>
+<li>Basics with R.</li>
+<li>Using the assignment server.</li>
+</ul>
+
+<p><strong>On Your Own</strong>:</p>
+
+<ul>
+<li>Watch this one-hour documentary: <a href="http://www.gapminder.org/videos/the-joy-of-stats/">The Joy of Stats</a> with Hans Rossling</li>
+</ul>
+
+<p>Notes: <a href='../Notes/2013-01-28.html'>instr</a><a href='../Notes/2012-09-05.html'>*</a></p>
+
+<hr>
+
+<h3><a name="day-2">Fri 6 Sept</a></h3>
+
+<p><strong>Topic</strong>: Data: cases, variables, tables, and codebooks</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>Statistical Modeling §1.4, §2.1, 2.2, 2.3, 2.4</li>
+<li>Recent news report: <a href="http://www.npr.org/blogs/health/2012/08/27/159983037/sleepless-nights-may-put-the-aging-brain-at-risk-of-dementia?sc=ipad&amp;f=1001">Sleep and Senility</a></li>
+</ul>
+
+<p><strong>Assignment</strong>:  </p>
+
+<ul>
+<li>Exercises: Assignment Name: 1.RQ, 1.01, 1.02, 1.04, 1.05, 1.10</li>
+<li>Reading Reflection on Sleep and Senility. <a href="https://moodle.macalester.edu/mod/assign/view.php?id=13720">Hand in on Moodle</a>. UPDATE LINK</li>
+<li>Quick survey to do <strong>before</strong> class: <a href="https://spreadsheets.google.com/embeddedform?formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ&amp;theme=0AX42CRMsmRFbUy04ZWQwMDYwMS02YjZhLTQ2ZjMtYjcyNy0zYWNlMzlmYTAxNmY&amp;embedded=true&amp;ifq">link</a></li>
+</ul>
+
+<p><strong>In-class</strong>: </p>
+
+<ul>
+<li><a href="https://moodle.macalester.edu/mod/assign/view.php?id=13577">Link to Moodle site</a> for your introductory spreadsheet UPDATE LINK</li>
+<li>Starting with R. </li>
+</ul>
+
+<p>Notes: <a href='../Notes/2013-01-30.html'>notes</a><a href='../Notes/2012-09-07.html'>*</a> </p>
+
+<hr>
+
+<h3><a name="day-3">Mon 9 Sept</a></h3>
+
+<p><strong>Topic</strong>: Organization of data (cont.), descriptive statistics</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM §2.5, SM §3.1, 3.2, 3.3</li>
+<li><a href="http://xkcd.com/539/">XKCD cartoon</a></li>
+</ul>
+
+<p><strong>Assignment</strong>:</p>
+
+<ul>
+<li>Exercises Assignment Name: 1.11, 1.12, 2.RQ, 2.02, 2.04, 3.01, 3.23, 3.53</li>
+<li>Elevator experiment: Instructions Assignment Name: 3.36. &ndash; Upload your file or a link to your file <a href="https://moodle.macalester.edu/mod/assign/view.php?id=17379">here</a>.</li>
+<li><a href="https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12">Start-of-course knowledge survey</a></li>
+</ul>
+
+<p><strong>In-Class</strong>:</p>
+
+<ul>
+<li>Table on <a href="https://dl.dropbox.com/u/5098197/Math155/ActiveDuty_MaritalStatus.xls">Marital status of active-duty forces</a> from <a href="https://explore.data.gov/Population/Active-Duty-Marital-Status/r84k-m39h">data.gov</a> and the <a href="https://dl.dropbox.com/u/5098197/ISM/How-Many-Variables.pdf">PDF handout</a>.  Hand in your sample data file <a href="https://moodle.macalester.edu/mod/assign/view.php?id=17378">here on Moodle</a>.<br/></li>
+</ul>
+
+<p>Notes: <a href='../Notes/2013-02-01.html'>notes</a><a href='../Notes/2012-09-10.html'>*</a> </p>
+
+<!--     WEEK 2 -->
+
+<hr>
+
+<h3><a name="day-4">Wed 11 Sept</a></h3>
+
+<p><strong>Topic</strong>: Descriptive statistics: variance</p>
+
+<p><strong>Reading</strong>: SM §3.4, 3.5, <a href="http://xkcd.com/833/">XKCD cartoon</a></p>
+
+<p><strong>Assignment</strong>: Exercises Assignment Name: 2.09, 2.14, 2.22, 3.02, 3.03, 3.04, 3.05, 3.06, 3.08, 3.11, 3.12, 3.15, 3.17, 3.18, 3.19</p>
+
+<p><strong>In Class</strong>: <a href="https://dl.dropbox.com/u/5098197/ISM/Numerical-Summaries.pdf">Measures of a distribution</a></p>
+
+<p><strong>On Your Own</strong>: A <em>RadioLab</em> <a href="http://www.radiolab.org/2009/jun/15/">episode about stochasticity</a></p>
+
+<p>Notes: <a href='../Notes/2013-02-06.html'>notes</a><a href='../Notes/2012-09-12.html'>*</a> </p>
+
+<hr>
+
+<h3><a name="day-5">Fri 13 Sept</a></h3>
+
+<p><strong>Topic</strong>: Groupwise Models</p>
+
+<p><strong>Reading</strong>: SM Ch. 4</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 3.14, 3.16, 3.RQ, 4.03, 4.04, 4.05, 4.06, 4.10</p>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li>Weekly Quiz.  This week, it&#39;s about R. A <a href="https://dl.dropbox.com/u/5098197/ISM/R-basics-guide.pdf">study-guide is available here</a>.</li>
+</ul>
+
+<p>Notes: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-14.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-09-14-class) -->
+
+<hr>
+
+<h3><a name="day-6">Mon 16 Sept</a></h3>
+
+<p><strong>Topic</strong>: Model values, residuals, and variance.  Sampling and resampling.</p>
+
+<p><strong>Reading</strong>: SM Ch. 4 (review).  SM §5.1, 5.2</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 3.54, 4.RQ, 4.07, 4.08, 5.01, 5.02</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-17.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-08-class) -->
+
+<p><strong>In-Class</strong>: <a href="https://dl.dropbox.com/u/5098197/ISM/Unfit-Models.pdf">Unfit models</a> activity</p>
+
+<!--      WEEK 3      -->
+
+<hr>
+
+<h3><a name="day-7">Wed 18 Sept</a></h3>
+
+<p><strong>Topic</strong>: Confidence intervals</p>
+
+<p><strong>Reading</strong>: SM §5.3, 5.4, 5.5, 5.7</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 5.RQ, 5.03, 5.12, 5.17, 5.20</p>
+
+<p><strong>In Class</strong>: 
+Precision and sampling.  (Precision is easy.  Accuracy will take the rest of the course!)</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-19.html'>*</a>  </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-11-class) -->
+
+<hr>
+
+<h3><a name="day-8">Fri 20 Sept</a></h3>
+
+<p><strong>Topic</strong>: Language of Models</p>
+
+<p><strong>Reading</strong>: SM §6.1, 6.2, 6.3, 6.4</p>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Required: Assignment Name: 5.13, 5.23, 5.30, 5.31, 6.01, 6.02, 6.04, 6.11, 6.13</li>
+<li>Optional, for the theoretically oriented.  Assignment Name: 5.40</li>
+</ul>
+
+<p><strong>In Class</strong>:
+Wednesday Quiz</p>
+
+<p><strong>On Your Own</strong>: </p>
+
+<ul>
+<li>Bias in sampling: Steven Strogatz on <a href="http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?ref=opinion">why your friends have more friends than you do</a></li>
+<li>One of our data sets is based on the General Social Survey from 1985.  Here&#39;s an article based on the ongoing <a href="http://www.nytimes.com/2012/09/21/health/intangible-dividend-in-an-anti-poverty-experiment-happiness.html?_r=1&amp;hp">General Social Survey in 2012</a>.</li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-21.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-13-class) -->
+
+<hr>
+
+<h3><a name="day-9">Mon 23 Sept</a></h3>
+
+<p><strong>Topic</strong>: From Model Terms to Formulas and Coefficients</p>
+
+<p><strong>Reading</strong>: SM §6.5, 6.6, 6.7, SM §7.1, 7.2</p>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Required Assignment Name: 6.RQ, 6.05, 6.10, 6.12, 7.01, 7.02</li>
+<li>Extensions Assignment Name: 6.20, 6.21, <a href="http://xkcd.com/418/">XKCD cartoon</a>.  What regression model for this?</li>
+</ul>
+
+<p><strong>In Class</strong>: </p>
+
+<ul>
+<li>Partitioning variability.  Using the R-Markdown system.  <a href="https://moodle.macalester.edu/mod/assign/view.php?id=17573">Hand-in a link to your document here.</a></li>
+<li><a href="https://dl.dropbox.com/u/5098197/ISM/Select-Terms-Activity.pdf">Selecting Model Terms</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-24.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-15-class) -->
+
+<!--     WEEK 4     -->
+
+<hr>
+
+<h3><a name="day-10">Wed 25 Sept</a></h3>
+
+<p><strong>Topic</strong>: Formulas and Coefficients</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM §7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9</li>
+<li><a href="http://xkcd.com/605/">XKCD cartoon</a></li>
+</ul>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Exercises Assignment Name: 7.RQ, 7.04, 7.05, 7.10, 7.11, 7.12, 7.13, 7.15</li>
+<li>Car project (group project): Assignment Name: 7.23 Hand in <a href="https://moodle.macalester.edu/mod/assign/view.php?id=20907">here on Moodle</a></li>
+<li><a href="http://rpubs.com/dtkaplan/GoogleSpreadsheets">Instructions for reading Google spreadsheets into R</a></li>
+</ul>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li><a href="https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf">Untangling House Prices</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-26.html'>*</a>  </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-18-class) -->
+
+<hr>
+
+<h3><a name="day-11">Fri 27 Sept</a></h3>
+
+<p><strong>Topic</strong>: Fitting and Least Squares</p>
+
+<p><strong>Reading</strong>: SM §7.10, SM §8.1, 8.2 </p>
+
+<p><strong>Assignment</strong>: Assignment Name: 7.14, 7.16, 7.21, 7.22, 7.31, 8.01</p>
+
+<p><strong>In Class</strong>: Weekly Quiz</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-09-28.html'>*</a>  </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-20-class)  -->
+
+<hr>
+
+<h3><a name="day-12">Mon 30 Sept</a></h3>
+
+<p><strong>Topic</strong>: Geometry of Least Squares Fitting</p>
+
+<p><strong>Reading</strong>: SM §8.3</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 8.02, 8.04, 8.05, 8.11</p>
+
+<p><strong>In Class</strong>: </p>
+
+<ul>
+<li><a href="https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf">Case versus Variable Spaces</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-01.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-02-22-class) -->
+
+<!--     WEEK 5   -->
+
+<hr>
+
+<h3><a name="day-13">Wed 2 Oct</a></h3>
+
+<p><strong>Topic</strong>: Redundancy and Colinearity</p>
+
+<p><strong>Reading</strong>: SM §8.4, 8.5</p>
+
+<p><strong>Assignment</strong>:  Assignment Name: 8.RQ, 8.05, 8.12</p>
+
+<p><strong>In Class</strong>: <a href="https://dl.dropbox.com/u/5098197/ISM/redundancy.pdf">Redundancy activity</a> </p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-03.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-03-class) -->
+
+<hr>
+
+<h3><a name="day-14">Fri 4 Oct</a></h3>
+
+<p><strong>Topic</strong>: Correlation and Partitioning, \( R^2 \)</p>
+
+<p><strong>Reading</strong>: SM Ch. 9</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 9.01, 9.02, 9.04, 9.05</p>
+
+<p><strong>In Class</strong>: Weekly Quiz</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-05.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-05-class) -->
+
+<hr>
+
+<h3><a name="day-15">Mon 7 Oct</a></h3>
+
+<p><strong>Topic</strong>: Correlation and Partitioning (continued)</p>
+
+<p><strong>Reading</strong>: SM Ch. 9 (review)</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 9.RQ, 9.10, 9.11, 9.12, 9.13, 9.21</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-08.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-08-class) -->
+
+<!--      WEEK 6 -->
+
+<hr>
+
+<h3><a name="day-16">Wed 9 Oct</a></h3>
+
+<p><strong>Topic</strong>: Total and Partial Relationships</p>
+
+<p><strong>Reading</strong>: SM Ch. 10</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 9.22, 9.23, 10.01, 10.04, 10.10</p>
+
+<p><strong>In Class</strong>: </p>
+
+<ul>
+<li><a href="https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf">Total versus Partial</a></li>
+<li>Form groups for the <a href="http://rpubs.com/dtkaplan/math155-spring2013-term-project"><strong>term project</strong></a>.  Enter information about your project and group <a href="https://docs.google.com/a/macalester.edu/document/d/12dyhb_FUFWqbagUVGFLWsvLnNLy9jW2umiPiKUjZ4Kc/edit?usp=sharing">on this Google Doc</a> so that the whole class can see.  <strong>Also</strong>, to get a grade, <strong>every person</strong> should enter the names etc. <a href="https://moodle.macalester.edu/mod/assign/view.php?id=19817">here on Moodle</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-10.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-10-class) -->
+
+<p><strong>On Your Own</strong>: <a href="http://well.blogs.nytimes.com/2012/05/16/coffee-drinkers-may-live-longer/?ref=health">Is coffee good for you?</a></p>
+
+<hr>
+
+<h3><a name="day-17">Fri 11 Oct</a></h3>
+
+<p><strong>Topic</strong>: Total and Partial Relationships (continued)</p>
+
+<p><strong>Reading</strong>: SM Ch. 10 (review)</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 10.RQ, 10.05, 10.11, 10.12, 10.20</p>
+
+<p><strong>In Class</strong>: Weekly Quiz</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-12.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-12-class) -->
+
+<hr>
+
+<h3><a name="day-18">Mon 14 Oct</a></h3>
+
+<p><strong>Topic</strong>: Confidence Intervals on Coefficients</p>
+
+<p><strong>Reading</strong>: SM Ch. 12</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 10.21, 12.01, 12.02, 12.04, 12.05</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-15.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-15-class) -->
+
+<!--     WEEK 7   -->
+
+<hr>
+
+<h3><a name="day-19">Wed 16 Oct</a></h3>
+
+<p><strong>Topic</strong>: Review for Exam</p>
+
+<p><strong>Reading</strong>:</p>
+
+<p><strong>Assignment</strong>: <a href="https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf">Review Problems</a> </p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-17.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-17-class) -->
+
+<hr>
+
+<h3><a name="day-20">Fri 18 Oct</a></h3>
+
+<p><strong>Mid-term Exam</strong></p>
+
+<p>Review Problems: <a href="https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf">without answers</a> and then again, <a href="https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review-answers.pdf">with answers</a></p>
+
+<p><strong>[Exam Answers and Grading Rubric] to be posted.</strong> </p>
+
+<!--(http://rpubs.com/dtkaplan/2243) --> 
+
+<hr>
+
+<h3><a name="day-21">Mon 21 Oct</a></h3>
+
+<p><strong>Topic</strong>: Probability Models</p>
+
+<p><strong>Reading</strong>: SM Ch. 11</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 11.RQ, 11.01, 11.02, 11.04, 11.05, 11.10, 11.21, 11.22</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-24.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-24-class) -->
+
+<!--    WEEK 8 -->
+
+<hr>
+
+<h3><a name="day-22">Wed 23 Oct</a></h3>
+
+<p><strong>Topic</strong> Continuous Random Variables.  Confidence Intervals on Coefficients.</p>
+
+<p><strong>Reading</strong>: Review SM Ch. 11.  Start on SM Ch. 12</p>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Assignment Name: 11.11, 11.30, 11.35, 11.37</li>
+</ul>
+
+<hr>
+
+<h3><a name="day-23">Mon 28 Oct</a></h3>
+
+<p><strong>Topic</strong>: Confidence Intervals on Coefficients (continued)</p>
+
+<p><strong>Reading</strong>: SM Ch. 12</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 12.RQ, 12.10, 12.12</p>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li>Kaplan&#39;s section: Sign up for meeting to review your term project ideas.  <a href="https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&amp;usp=sharing">Sign-up sheet</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-22.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-22-class) -->
+
+<hr>
+
+<h3><a name="day-24">Wed 30 Oct</a></h3>
+
+<p><strong>Topic</strong>: Hypothesis Testing</p>
+
+<p><strong>Reading</strong>: SM Ch. 13</p>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Assignment Name: 13.01</li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-29.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-29-class) -->
+
+<!--     WEEK 9    -->
+
+<hr>
+
+<h3><a name="day-25">Fri 1 Nov</a></h3>
+
+<p><strong>Topic</strong>: Hypothesis Testing (continued)</p>
+
+<p><strong>Reading</strong>: Review SM Ch. 13</p>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Assignment Name: 13.RQ, 13.02</li>
+<li>Discuss your draft <a href="https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf">Survey Project</a> with your instructor. </li>
+</ul>
+
+<p><strong>In Class</strong>: Assignment Name: 13.15</p>
+
+<p><strong>On Your Own</strong>: An <a href="http://lesswrong.com/lw/2b0/bayes_theorem_illustrated_my_way/">introduction to Bayes Theorem</a></p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-10-31.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-31-class) -->
+
+<p><strong>On Your Own</strong>: The paper that won the <a href="http://www.improbable.com/ig/winners/">2012 Ignobel prize</a> in neuroscience: <a href="http://www.jsur.org/ar/jsur_ben102010.pdf">On brain activity in a dead salmon</a></p>
+
+<hr>
+
+<h3><a name="day-26">Mon 4 Nov</a></h3>
+
+<p><strong>Topic</strong>: Testing Whole Models with \( R^2 \) and F</p>
+
+<p><strong>Reading</strong>: SM §14.1, 14.2, 14.3, 14.5</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 14.01, 14.02</p>
+
+<p><strong>In Class</strong>: </p>
+
+<ul>
+<li>Assignment Name: 14.22</li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-02.html'>*</a>  </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-02-class) -->
+
+<hr>
+
+<h3><a name="day-27">Wed 6 Nov</a></h3>
+
+<p><strong>Topic</strong>: Interpreting the p-value</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM §14.4</li>
+<li><a href="http://xkcd.com/882/">XKCD cartoon</a> and <a href="http://xkcd.com/628/">another</a> and <a href="http://xkcd.com/892/">yet another</a></li>
+</ul>
+
+<p><strong>Assignment</strong>: Assignment Name: 14.RQ, 14.04, 14.05, 14.11, 14.12, 14.24</p>
+
+<p><strong>In Class</strong>: Assignment Name: 14.21</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-05.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-05-class) -->
+
+<p><strong>On Your Own</strong>: <a href="http://www.economist.com/node/21563275">Journalistic deficit disorder</a></p>
+
+<!--    WEEK   10 -->
+
+<hr>
+
+<h3><a name="day-28">Fri 8 Nov</a></h3>
+
+<p><strong>Topic</strong>: Hypothesis Testing on Parts of Models</p>
+
+<p><strong>Reading</strong>: SM Ch. 15</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 15.RQ, 15.01</p>
+
+<p><strong>In Class</strong>: <a href="http://glimmer.rstudio.com/mosaic/Election2012/">Evaluating your election result model</a></p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-07.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-07-class) -->
+
+<p><strong>On Your Own</strong>: <a href="https://www.youtube.com/watch?v=ez4DgdurRPg">Dance of the p-values</a></p>
+
+<hr>
+
+<h3><a name="day-29">Mon 11 Nov</a></h3>
+
+<p><strong>Topic</strong>: Hypothesis Testing on Parts of Models (continued)</p>
+
+<p><strong>Reading</strong>: SM Ch. 15 (review)</p>
+
+<p><strong>Assignment</strong>: Assignment Name: 15.02, 15.04, 15.05, 15.11</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-09.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-09-class) -->
+
+<p><strong>On Your Own</strong>: <a href="https://www.youtube.com/watch?v=ax0tDcFkPic&amp;feature=related">What is a p-value?</a></p>
+
+<hr>
+
+<h3><a name="day-30">Wed 13 Nov</a></h3>
+
+<p><strong>Topic</strong>: Choosing model terms</p>
+
+<p><strong>Reading</strong>: <a href="http://xkcd.com/675/">XKCD cartoon</a></p>
+
+<p><strong>Assignment</strong>:  Assignment Name: 15.12, 15.21</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-12.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-12-class) -->
+
+<!--     WEEK 11    -->
+
+<hr>
+
+<h3><a name="day-31">Fri 15 Nov</a></h3>
+
+<p><strong>Topic</strong>: Non parametrics</p>
+
+<p><strong>Reading</strong>: <a href="http://xkcd.com/1132/">XKCD cartoon on frequentist vs Bayesian</a></p>
+
+<p><strong>Assignment</strong>: 
+*Assignment Name: 15.22</p>
+
+<ul>
+<li>Get final approval for your <a href="https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf">survey project</a> from your instructor.</li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-14.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-14-class) -->
+
+<hr/>
+
+<h3>Toward the End of the Semester</h3>
+
+<p>You&#39;ve now seen the core concepts and methods of statistical modeling.  The rest of the semester is intended to help you review and solidify your understanding.  We&#39;ll do this by using statistical models in three contexts:</p>
+
+<ol>
+<li>Yes/No models &mdash; logistic regression.  The aims here are to provide you with an important technique that employs the logic of statistical modeling but with a slightly different nomenclature.</li>
+<li>Causation and the choice of covariates.  You&#39;ve seen how to choose model terms based on ideas from statistical inference and &ldquo;evidence.&rdquo;  Now you&#39;ll see a new criterion for selecting model terms that respects what you believe is true about causation.</li>
+<li>Experiment.  The basic idea is to impose an intervention on a system and then analyzing the results.  Experiments provide the most compelling form of evidence, yet they cannot always (or even often) be performed.<br/></li>
+</ol>
+
+<p>This is a good time to start to review.  As we explore these new contexts, do the exercises from Chapter 15 to solidify your understanding of that basic material.  These exercises will be due at the last class day.</p>
+
+<hr>
+
+<h3><a name="day-32">Mon 18 Nov</a></h3>
+
+<p><strong>Topic</strong>: Logistic regression</p>
+
+<p><strong>Reading</strong>: SM Ch. 16</p>
+
+<p><strong>Assignment</strong>: Assignment Name: </p>
+
+<p><strong>In Class</strong>: Modeling Barry Bonds</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-16.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-16-class) -->
+
+<hr>
+
+<h3><a name="day-33">Wed 20 Nov</a></h3>
+
+<p><strong>Topic</strong>: Odds Ratios and Logistic regression</p>
+
+<p><strong>Reading</strong>: SM Ch. 16</p>
+
+<p><strong>In Class</strong>: <a href="http://rpubs.com/dtkaplan/deer-crossing">Power and deer crossings</a></p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-19.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-19-class) -->
+
+<!--    WEEK 12  -->
+
+<hr>
+
+<h3><a name="day-34">Fri 22 Nov</a></h3>
+
+<p><strong>Topic</strong>: Power and the Alternative Hypothesis</p>
+
+<p><strong>In Class</strong>: </p>
+
+<ul>
+<li><p><a href="http://rpubs.com/dtkaplan/deer-crossing">Deer crossing</a> &hellip; continued</p></li>
+<li><p>The <strong>last weekly quiz</strong></p></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-21.html'>*</a> </p>
+
+<!--  [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-21-class) -->
+
+<hr>
+
+<h3><a name="day-35">Mon 25 Nov</a></h3>
+
+<p><strong>Topic</strong>: Power. Logistic Regression.</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM Ch. 16</li>
+</ul>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li><a href="http://rpubs.com/dtkaplan/m155-processing-survey-data">Processing Survey Data</a> and the template itself: <a href="https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyProcessing.Rmd">cut and paste from here</a></li>
+</ul>
+
+<p><strong>Assignment</strong>: </p>
+
+<ul>
+<li>Assignment Name: 16.RQ, 16.01, 16.02, 16.04 Due on May 10</li>
+</ul>
+
+<p><strong>On Your Own</strong>:</p>
+
+<ul>
+<li><a href="http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124">Why most published research findings are false</a></li>
+<li><a href="http://xkcd.com/1052/">Advice on choosing a major</a> to the tune of &ldquo;A Modern Major General.&rdquo; <a href="http://www.youtube.com/watch?v=pRexBMPeRTo">Listen here</a>. See also the original from <a href="http://www.youtube.com/watch?v=zSGWoXDFM64">The Pirates of Penzance</a>, an <a href="http://www.youtube.com/watch?v=AcS3NOQnsQM">elemental version</a>, and, without endorsement, <a href="http://www.youtube.com/playlist?list=PL81E47F8C9314A1D7">a collection</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-26.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-26-class) -->
+
+<hr>
+
+<h3><a name="day-36">Wed 27 Nov</a></h3>
+
+<p><strong>Topic</strong>: Causation</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM Ch. 17</li>
+<li><a href="http://xkcd.com/925/">XKCD cartoon</a></li>
+</ul>
+
+<p><strong>Assignment</strong>: Assignment Name: 16.05, 16.10, 16.12 Due on May 10</p>
+
+<p><strong>In-Class</strong>:</p>
+
+<ul>
+<li><a href="../../Activities/ConstructingHypotheticalNetworks.html">Hypothetical Causal Networks</a></li>
+<li><a href="https://dl.dropbox.com/u/5098197/ISM/power-vitamin-D.pdf">The Power of Vitamin D</a></li>
+</ul>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-11-29.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-28-class) -->
+
+<p>&lt;! &ndash; WEEK 13   &ndash;&gt;</p>
+
+<hr>
+
+<h3><a name="day-37">Mon 2 Dec</a></h3>
+
+<p><strong>Topic</strong>: Causation</p>
+
+<p><strong>Reading</strong>: </p>
+
+<ul>
+<li>SM Ch. 17</li>
+<li><a href="http://xkcd.com/552/">XKCD cartoon</a></li>
+</ul>
+
+<p><strong>In Class</strong>:</p>
+
+<ul>
+<li>Writing up your survey report in R. <a href="http://rpubs.com/dtkaplan/5866">Notes</a>.  You will want to copy the <a href="https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyReport.Rmd">raw template from here</a> to cut and paste into RStudio.</li>
+</ul>
+
+<p><strong>Assignment</strong>: Assignment Name: 17.RQ, 17.01, 17.02, 17.05 Due on May 10</p>
+
+<hr>
+
+<h3><a name="day-38">Wed 4 Dec</a></h3>
+
+<p><strong>Topic</strong>: Causation</p>
+
+<p><strong>Reading</strong>: SM Ch. 17 and <a href="http://xkcd.com/687/">XKCD cartoon</a></p>
+
+<p><strong>Assignment</strong>: Assignment Name: 17.06, 17.07, 17.08, 17.10</p>
+
+<hr>
+
+<h3><a name="day-39">Fri 6 Dec</a></h3>
+
+<p><strong>Topic</strong>: Experiment and Design</p>
+
+<p><strong>Reading</strong>: SM Ch. 18</p>
+
+<p><strong>Notes</strong>: <a href='../Notes/i'>notes</a><a href='../Notes/2012-12-05.html'>*</a> </p>
+
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-12-05-class) -->
+
+<h3>Final Exam</h3>
+
+<ul>
+<li><a href="http://rpubs.com/dtkaplan/5792">Review Materials</a></li>
+</ul>
+
+</body>
+
+</html>
+
