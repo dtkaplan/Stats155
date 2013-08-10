@@ -11,8 +11,8 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
 * **[Assignment Server](http://glimmer.rstudio.com/mosaic/Stats155/)**
 * **Textbook**: *Statistical Modeling: A Fresh Approach* 2nd/edition.  
     Make sure to get the second edition (green cover). Available from ...
-    * [Macalester Highlander Store new,used,rental](http://www.bkstr.com/webapp/wcs/stores/servlet/CourseMaterialsResultsView?catalogId=10001&categoryId=9604&storeId=286405&langId=-1&programId=3325&termId=100028623&divisionDisplayName=%20&departmentDisplayName=MATH&courseDisplayName=155&sectionDisplayName=1&demoKey=null&purpose=browse), 
-    * [Amazon new,used](http://www.amazon.com/Statistical-Modeling-Approach-Second-Edition/dp/0983965870/ref=sr_1_2?ie=UTF8&qid=1376075392&sr=8-2&keywords=statistical+modeling+a+fresh+approach), 
+    * [Macalester Highlander Store new,used & rental](http://www.bkstr.com/webapp/wcs/stores/servlet/CourseMaterialsResultsView?catalogId=10001&categoryId=9604&storeId=286405&langId=-1&programId=3325&termId=100028623&divisionDisplayName=%20&departmentDisplayName=MATH&courseDisplayName=155&sectionDisplayName=1&demoKey=null&purpose=browse) 
+    * [Amazon new & used](http://www.amazon.com/Statistical-Modeling-Approach-Second-Edition/dp/0983965870/ref=sr_1_2?ie=UTF8&qid=1376075392&sr=8-2&keywords=statistical+modeling+a+fresh+approach), 
     * [Paypal w/local author discount](Resources/book-paypal.html).
 * Your RStudio Account NEEDS TO BE REVISED [Instructions here](http://rpubs.com/dtkaplan/1398)
 
@@ -27,9 +27,11 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
 **Dec** | `r DL(2,37)` | `r DL(4,38)` | `r DL(6,39)` | `r DL(9,40)` | |  <a href="#" class="tooltip"><em class="dateWarning">16</em><span ><strong>Final exam</strong></span></a> | 
 
 
+Click on a date to see the syllabus/readings/assignments for that day.
+
+....................
 
 
-
-### Working Notes
+### Notes in Development
 
 * residual exercise based on AARP prices (NewExercises/)
