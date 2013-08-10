@@ -582,10 +582,11 @@ This is a good time to start to review.  As we explore these new contexts, do th
 * [The Power of Vitamin D](https://dl.dropbox.com/u/5098197/ISM/power-vitamin-D.pdf)
 
 **Notes**: `r I(todaysNotes("2012-11-29.html", "i"))` 
+
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-28-class) -->
 
 
-<! -- WEEK 13   -->
+<!-- WEEK 13   -->
 
 `r I(classDayContents( daynum=37 ))`
 **Topic**: Causation
