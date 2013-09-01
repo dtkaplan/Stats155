@@ -14,7 +14,7 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
     * [Macalester Highlander Store new,used & rental](http://www.bkstr.com/webapp/wcs/stores/servlet/CourseMaterialsResultsView?catalogId=10001&categoryId=9604&storeId=286405&langId=-1&programId=3325&termId=100028623&divisionDisplayName=%20&departmentDisplayName=MATH&courseDisplayName=155&sectionDisplayName=1&demoKey=null&purpose=browse) 
     * [Amazon new & used](http://www.amazon.com/Statistical-Modeling-Approach-Second-Edition/dp/0983965870/ref=sr_1_2?ie=UTF8&qid=1376075392&sr=8-2&keywords=statistical+modeling+a+fresh+approach), 
     * [Paypal w/local author discount](Resources/book-paypal.html).
-* The **RStudio Server** is [here](www.macalester.edu/rstudio).  Your ID is your Mac email prefix.  Your password is initialized to the last 4 digits of your student ID, e.g. ```jsmith```. [Instructions here](http://rpubs.com/dtkaplan/7981)
+* The **RStudio Server** is [here](www.macalester.edu/rstudio).  Your ID is your Mac email prefix.  Your password is initialized to the last 4 digits of your student ID, e.g. ```jsmith```. [Instructions here](Resources/Starting-RStudio-Macalester.html)
 
 ### Day-by-Day Links
 
