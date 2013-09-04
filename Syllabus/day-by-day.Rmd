@@ -59,11 +59,11 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 * Activities on randomness.
 * Basics with R.
 * Using the [ScoreR assignment server](http://glimmer.rstudio.com/mosaic/Stats155/). To login, use your Mac email ID (e.g., ```bobama``` and the last 4 digits of your student ID number). Example: In-class/birthdays
+* Student introductions at [this link](http://www.mosaic-web.org/go/firepad/examples/teamedit.html?project=Math155&doc=Intros).
 
-**On Your Own**:
-* Watch this one-hour documentary: [The Joy of Stats](http://www.gapminder.org/videos/the-joy-of-stats/) with Hans Rossling
-
-Notes: `r I(todaysNotes("2012-09-05.html","2013-01-28.html", "instr"))`
+**Resources**:
+* A one-hour BBC documentary: [The Joy of Stats](http://www.gapminder.org/videos/the-joy-of-stats/) with Hans Rossling
+* [Instructor's notes](../Notes/Day-01-notes.html).  These are merely my plans for the class session.  Plans don't always match the actual event.  Use these for review, or to orient yourself to a missed class.  Reading these is not a substitute for class attendance.
 
 `r I(classDayContents(daynum=2 )) # ==============================`
 **Topic**: Data: cases, variables, tables, and codebooks
@@ -75,7 +75,7 @@ Notes: `r I(todaysNotes("2012-09-05.html","2013-01-28.html", "instr"))`
 **Assignment**:  
 * `r I(PN(c("1RQ",101,102,104,105,110 ),assignment="One"))`
 * Reading Reflection on Sleep and Senility. [Hand in on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=13720). UPDATE LINK
-* Quick survey to do **before** class: [link](https://spreadsheets.google.com/embeddedform?formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ&theme=0AX42CRMsmRFbUy04ZWQwMDYwMS02YjZhLTQ2ZjMtYjcyNy0zYWNlMzlmYTAxNmY&embedded=true&ifq)
+* Not ready yet.  Wait until this note is removed ... Quick survey to do **before** class: [link](https://spreadsheets.google.com/embeddedform?formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ&theme=0AX42CRMsmRFbUy04ZWQwMDYwMS02YjZhLTQ2ZjMtYjcyNy0zYWNlMzlmYTAxNmY&embedded=true&ifq)
 
 **In-class**: 
 * [Link to Moodle site](https://moodle.macalester.edu/mod/assign/view.php?id=13577) for your introductory spreadsheet UPDATE LINK
@@ -95,7 +95,7 @@ Notes: `r I(todaysNotes("2012-09-07.html","2013-01-30.html", "notes"))`
 **Assignment**:
 * `r I(PN(c(111,112,"2RQ",202,204,301,323,353),assignment="Two"))`
 * Elevator experiment: Instructions `r I(PN(c(336),assignment="Elevator Data Collection",))`. -- Upload your file or a link to your file [here](https://moodle.macalester.edu/mod/assign/view.php?id=17379).FIX THIS LINK
-* [Start-of-course knowledge survey FIX THIS LINK](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12)
+* Not ready yet.  Wait until this note is removed ... [Start-of-course knowledge survey FIX THIS LINK](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12)
 
 
 **In-Class**:
