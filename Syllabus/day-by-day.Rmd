@@ -75,10 +75,10 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 **Assignment**:  
 * `r I(PN(c("1RQ",101,102,104,105,110 ),assignment="One"))`
 * Reading Reflection on Sleep and Senility. [Hand in on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=13720). UPDATE LINK
-* Not ready yet.  Wait until this note is removed ... Quick survey to do **before** class: [link](https://spreadsheets.google.com/embeddedform?formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ&theme=0AX42CRMsmRFbUy04ZWQwMDYwMS02YjZhLTQ2ZjMtYjcyNy0zYWNlMzlmYTAxNmY&embedded=true&ifq)
+* Quick survey to do **before** class: [link](https://docs.google.com/spreadsheet/viewform?hl=en&formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ#gid=0).  We'll use these data in class.
 
 **In-class**: 
-* [Link to Moodle site](https://moodle.macalester.edu/mod/assign/view.php?id=13577) for your introductory spreadsheet UPDATE LINK
+
 * Starting with R. 
 
 Notes: `r I(todaysNotes("2012-09-07.html","2013-01-30.html", "notes"))` 
