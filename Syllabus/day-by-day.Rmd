@@ -63,7 +63,7 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Resources**:
 * A one-hour BBC documentary: [The Joy of Stats](http://www.gapminder.org/videos/the-joy-of-stats/) with Hans Rossling
-* [Instructor's notes](../Notes/Day-01-notes.html).  These are merely my plans for the class session.  Plans don't always match the actual event.  Use these for review, or to orient yourself to a missed class.  Reading these is not a substitute for class attendance.
+* [Instructor's notes](../Notes/Day-01/Day-01-notes.html).  These are merely my plans for the class session.  Plans don't always match the actual event.  Use these for review, or to orient yourself to a missed class.  Reading these is not a substitute for class attendance.
 
 `r I(classDayContents(daynum=2 )) # ==============================`
 **Topic**: Data: cases, variables, tables, and codebooks
@@ -80,7 +80,9 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 * Starting with R. 
 
-Notes: `r I(todaysNotes("2012-09-07.html","2013-01-30.html", "notes"))` 
+**Resources**:
+* [Instructor's notes](../Notes/Day-02/Day-02-notes.html)
+ 
 
 
 
@@ -103,9 +105,10 @@ Still under construction ...
 
 
 **In-Class**:
-* Table on [Marital status of active-duty forces](https://dl.dropbox.com/u/5098197/Math155/ActiveDuty_MaritalStatus.xls) from [data.gov](https://explore.data.gov/Population/Active-Duty-Marital-Status/r84k-m39h) and the [PDF handout](https://dl.dropbox.com/u/5098197/ISM/How-Many-Variables.pdf).  Hand in your sample data file [here on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=17378).   
+* Table on [Marital status of active-duty forces](https://dl.dropbox.com/u/5098197/Math155/ActiveDuty_MaritalStatus.xls) from [data.gov](https://explore.data.gov/Population/Active-Duty-Marital-Status/r84k-m39h) and the [PDF handout](https://dl.dropbox.com/u/5098197/ISM/How-Many-Variables.pdf).  Hand in your sample data file [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).   
 
-Notes: `r I(todaysNotes("2012-09-10.html","2013-02-01.html","notes"))` 
+**Resources**:
+* [Instructor's notes](../Notes/Day-03/Day-03-notes.html) 
 
 
 <!--     WEEK 2 -->
