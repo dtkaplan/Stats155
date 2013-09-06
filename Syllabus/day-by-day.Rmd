@@ -74,7 +74,6 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Assignment**:  
 * `r I(PN(c("1RQ",101,102,104,105,110 ),assignment="One"))`
-* Reading Reflection on Sleep and Senility. [Hand in on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=13720). UPDATE LINK
 * Quick survey to do **before** class: [link](https://docs.google.com/spreadsheet/viewform?hl=en&formkey=dEV1cW1rTWhpLUhITVFNVGpnQjNqT3c6MQ#gid=0).  We'll use these data in class.
 
 **In-class**: 
