@@ -6,6 +6,12 @@ require(mosaic, quietly=TRUE, warn.conflicts=FALSE)
 require(xtable, quietly=TRUE, warn.conflicts=FALSE)
 ```
 
+## Statistical Literacy
+
+Discussion of the [sleep and dementia] article to highlight some points that might be regarded as common sense.
+
+A [student essay](readingReflection) about the article.
+
 ## Organization of data into tables: Variables and Cases
 * Show the [spreadsheet of their data from the assignment](https://spreadsheets0.google.com/ccc?hl=en&key=tEuqmkMhi-HHMQMTjgB3jOw&hl=en#gid=0) from the [Math 155 Activity on Organization of Data](../In-Class-Activities/IntroOrganizingData.html)
 * Coding of data
