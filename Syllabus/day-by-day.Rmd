@@ -59,7 +59,7 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 * Activities on randomness.
 * Basics with R.
 * Using the [ScoreR assignment server](http://glimmer.rstudio.com/mosaic/Stats155/). To login, use your Mac email ID (e.g., ```bobama``` and the last 4 digits of your student ID number). Example: In-class/birthdays
-* Student introductions at [this link](http://www.mosaic-web.org/go/firepad/examples/teamedit.html?project=Math155&doc=Intros).
+
 
 **Resources**:
 * A one-hour BBC documentary: [The Joy of Stats](http://www.gapminder.org/videos/the-joy-of-stats/) with Hans Rossling
@@ -78,7 +78,9 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **In-class**: 
 
+* Student introductions at [this link](http://www.mosaic-web.org/go/firepad/examples/teamedit.html?project=Math155&doc=Intros).
 * Starting with R. 
+* Hand in a link to your [group spreadsheet](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).  You'll use the same process to hand in your elevator experiment spreadsheet on Monday.
 
 **Resources**:
 * [Instructor's notes](../Notes/Day-02/Day-02-notes.html)
@@ -95,7 +97,7 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Assignment**:
 * `r I(PN(c(111,112,"2RQ",202,204,301,323,353),assignment="Two"))`
-* Elevator experiment: Instructions `r I(PN(c(336),assignment="Elevator Data Collection",))`. -- Enter a link to your Google Spreadsheets file [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
+* Elevator experiment: [Instructions](../In-Class-Activities/elevator.html). -- Enter a link to your Google Spreadsheet file (and other files as needed) [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
 
 
 
