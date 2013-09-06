@@ -93,8 +93,13 @@ Notes: `r I(todaysNotes("2012-09-07.html","2013-01-30.html", "notes"))`
 
 **Assignment**:
 * `r I(PN(c(111,112,"2RQ",202,204,301,323,353),assignment="Two"))`
-* Elevator experiment: Instructions `r I(PN(c(336),assignment="Elevator Data Collection",))`. -- Upload your file or a link to your file [here](https://moodle.macalester.edu/mod/assign/view.php?id=17379).FIX THIS LINK
-* Not ready yet.  Wait until this note is removed ... [Start-of-course knowledge survey FIX THIS LINK](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12)
+* Elevator experiment: Instructions `r I(PN(c(336),assignment="Elevator Data Collection",))`. -- Enter a link to your Google Spreadsheets file [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
+
+
+
+
+Still under construction ...    
+* Not ready yet.  Wait until this note is removed ... [Start-of-course knowledge survey FIX THIS LINK](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Statistics-Knowledge-Survey/SM2-Statistics-Knowledge-Survey-A.html?access=ISMf12) 
 
 
 **In-Class**:

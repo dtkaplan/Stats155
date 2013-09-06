@@ -8,7 +8,7 @@ require(xtable, quietly=TRUE, warn.conflicts=FALSE)
 
 ## Statistical Literacy
 
-Discussion of the [sleep and dementia] article to highlight some points that might be regarded as common sense.
+Discussion of the [sleep and dementia](http://www.npr.org/blogs/health/2012/08/27/159983037/sleepless-nights-may-put-the-aging-brain-at-risk-of-dementia?sc=ipad&f=1001) article to highlight some points that might be regarded as common sense.
 
 A [student essay](readingReflection) about the article.
 
@@ -28,20 +28,17 @@ A [student essay](readingReflection) about the article.
     Is pain well represented by a number.  Are there different aspects to pain? Intermittant, sharp/dull, throbbing, on movement 
     
     Sometimes our impressions correspond to two or more variables.  Example from Leland Wilkinson, "The Grammar of Graphics", 1999
-    <img src="faces.png" width="30%">
+    <img src="faces.png" width="50%">
 
-## Creating their own spreadsheet
-
-Collaborate creation of data.  
-
-Divide up into groups of 3 or 4.  Make a Google spreadsheet and share it with the other people in your group.  Enter some data about yourselves, including your email addresses, but also including a couple of categorical variables and a couple of quantitative variables.
 
 ## Do the introductions!
 
 Say something about yourself in the collaborative editor: [here](http://www.mosaic-web.org/go/firepad/examples/teamedit.html?project=Math155&doc=Intros)  
 
-## Bureaucracy
+## DIY data
 * Description of [elevator button experiment](https://dl.dropbox.com/u/5098197/Exercises/HTML/SM2-Chapter-3-Problems/SM2-Chapter-3-Problems-A.html?access=ISMf12#336).
+
+Form groups for the elevator experiment ... Divide up into groups of 2 to 4.  Make a Google spreadsheet and share it with the other people in your group.  Enter some data about yourselves, including your email addresses, but also including a couple of categorical variables and a couple of quantitative variables. Before Monday's class, you get together with your group members to collect the data and put it into a spreadsheet.  Then we'll know whether the close-door button does anything.  Hand in your report [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
 
 ## Starting R
 * Basic syntax, installing `mosaic` package
