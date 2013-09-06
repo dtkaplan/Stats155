@@ -42,9 +42,8 @@ And show one or two that are well organized.  Try to do a quick statistical anal
 
 #### In-Class Activity
 
-[How Many Variables?](../In-Class-Activities/HowManyVariables.html) 
+Table on [Marital status of active-duty forces](https://dl.dropbox.com/u/5098197/Math155/ActiveDuty_MaritalStatus.xls) from [data.gov](https://explore.data.gov/Population/Active-Duty-Marital-Status/r84k-m39h) and the [PDF handout](https://dl.dropbox.com/u/5098197/ISM/How-Many-Variables.pdf). Hand in your sample data file [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
 
-Give this [PDF handout](https://dl.dropbox.com/u/5098197/ISM/How-Many-Variables.pdf) out the students or direct them to the link on the syllabus.
 
 ### Simple Descriptive Statistics
 
