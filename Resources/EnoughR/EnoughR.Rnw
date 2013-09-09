@@ -1,0 +1,731 @@
+
+
+\documentclass{report}
+\usepackage{mparhack}
+\usepackage{xstring}
+
+\usepackage{etoolbox}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+
+\usepackage[landscape,margin=.25in,bottom=.35in,includehead,includefoot]{geometry}
+\usepackage{probstat}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.geometric}
+
+\newcommand{\mymarginpar}[1]{%
+\vadjust{\smash{\llap{\parbox[t]{\marginparwidth}{#1}\kern\marginparsep}}}}
+
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[Bjornstrup]{fncychap}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%% Now begin customising things. See the fancyhdr docs for more info.
+
+\renewcommand{\chaptermark}[1]{\thispagestyle{fancy}\markboth{{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{{#1}}{}}
+%\renewcommand{\headrulewidth}{0pt}
+
+\chead{}
+\lhead[\sf \thepage]{\sf \leftmark}
+\rhead[\sf \leftmark]{\sf \thepage}
+%\lfoot[\sf USCOTS 2011]{\sf Teaching Statistics With R}
+%\rfoot[\sf Teaching Statistics With R]{\sf USCOTS 2011}
+%\cfoot{\sf \copyright 2011, R Pruim, N J Horton and D Kaplan}
+
+\newcounter{myenumi}
+\newcommand{\saveenumi}{\setcounter{myenumi}{\value{enumi}}}
+\newcommand{\reuseenumi}{\setcounter{enumi}{\value{myenumi}}}
+
+\pagestyle{fancy}
+
+
+%\usepackage{titlesec}
+%\titleformat{\chapter}[block]{\huge \sf \bfseries }{\thechapter}{5mm}{}[] 
+
+
+
+\def\R{{\sf R}}
+\def\Rstudio{{\sf RStudio}}
+\def\RStudio{{\sf RStudio}}
+\def\term#1{\textbf{#1}}
+\def\tab#1{{\sf #1}}
+
+\usepackage{sfsect}
+\usepackage{relsize}
+%\usepackage{listings}
+
+\def\myRuleColor{\color{black!50!white}}
+
+
+\definecolor{GrayBoxGray}{rgb}{0.94,0.95,0.95}
+\definecolor{GrayBoxGray}{rgb}{0.97,0.98,0.95}
+\colorlet{GrayBoxGray}{blue!10!black!10}
+\colorlet{GrayBoxGray}{blue!7}
+
+\newlength{\tempfmlength}
+\newsavebox{\fmbox}
+\newenvironment{fmpage}[1]
+     {
+	 \medskip
+	 \setlength{\tempfmlength}{#1}
+	 \begin{lrbox}{\fmbox}
+	   \begin{minipage}{#1}
+		 \vspace*{.02\tempfmlength}
+		 \hfill
+	   \begin{minipage}{.95 \tempfmlength}}
+		 {\end{minipage}\hfill
+		 \vspace*{.015\tempfmlength}
+		 \end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+	 \medskip
+	 }
+
+
+\newenvironment{boxedText}[1][.98\textwidth]%
+{%
+\begin{center}
+\begin{fmpage}{#1}
+}%
+{%
+\end{fmpage}
+\end{center}
+}
+
+\newenvironment{boxedTable}[2][tbp]%
+{%
+\begin{table}[#1]
+  \refstepcounter{table}
+  \begin{center}
+\begin{fmpage}{.98\textwidth}
+  \begin{center}
+	\sf \large Box~\expandafter\thetable. #2
+\end{center}
+\medskip
+}%
+{%
+\end{fmpage}
+\end{center}
+\end{table}		% need to do something about exercises that follow boxedTable
+}
+
+
+
+% indexing
+\newcommand{\printindex}[1]{\relax}
+\newcommand{\indexchap}[1]{\relax}
+\usepackage{amsmidx}
+\newcommand{\exampleidx}[1]{{\it #1}}
+\newcommand{\defidx}[1]{{\bf #1}}
+\newcommand{\mainidx}[1]{{\bf #1}}
+\newcommand{\probidx}[1]{{{\underline{#1}}}}
+
+\makeindex{Rindex}
+\makeindex{mainIndex}
+\newcommand{\Rindex}[1]{\index{Rindex}{#1@\texttt{#1}}}
+\newcommand{\myindex}[1]{\index{mainIndex}{#1}}
+\newcommand{\mathindex}[1]{\index{mainIndex}{$#1$}}
+
+\newcommand{\cran}{\href{http://www.R-project.org/}{CRAN}}
+
+\newcommand{\rterm}[1]{\textbf{#1}}
+
+
+% Looking for a consistent typography for variable names.
+% for consistency, we need to match all the verbatim uses elsewhere 
+% unless someone wants to recode all that.
+\newcommand{\VN}[1]{{\color{green!50!black}\texttt{#1}}}
+\newcommand{\vn}[1]{{\color{green!50!black}\texttt{#1}}}
+\newcommand{\variable}[1]{{\color{green!50!black}\texttt{#1}}}
+\newcommand{\DFN}[1]{{\color{blue!80!black}\texttt{#1}}}
+\newcommand{\dfn}[1]{{\color{blue!80!black}\texttt{#1}}}
+\newcommand{\dataframe}[1]{{\color{blue!80!black}\texttt{#1}}}
+\newcommand{\function}[1]{{\color{purple!75!blue}\texttt{\StrSubstitute{#1}{()}{}()}}}
+\newcommand{\option}[1]{{\color{brown!80!black}\texttt{#1}}}
+\newcommand{\pkg}[1]{{\color{red!80!black}\texttt{#1}}}
+\renewcommand{\code}[1]{{\color{blue!80!black}\texttt{#1}}}
+% and for models
+\newcommand{\model}[2]{{$\,$\hbox{#1}\ \ensuremath{\sim}\ \hbox{#2}}}
+
+\newenvironment{comment}{%
+\begin{quote}
+\em
+}{%
+\end{quote}
+}
+
+
+\title{Minimal R for Intro Stats}
+
+\author{
+Randall Pruim
+}
+
+\date{June, 2012}
+
+
+\begin{document}
+\parindent=0pt
+
+\chead{\sf \bfseries \Large Enough R for Intro to Statistical Modeling}
+\rhead{September 2013}
+\lhead{R. Pruim \& D. Kaplan}
+
+
+
+
+
+<<include=FALSE>>=
+opts_chunk$set(
+  dev="pdf",
+	fig.path="figures"
+)
+@
+
+<<setup,include=FALSE>>=
+#source('setup.R')
+require(mosaic)
+fetchData("m155development.R")
+trellis.par.set(theme=col.mosaic())
+set.seed(123)
+knit_hooks$set(inline = function(x) {
+if (is.numeric(x)) return(knitr:::format_sci(x, 'latex'))
+x = as.character(x)
+h = knitr:::hilight_source(x, 'latex', list(prompt=FALSE, size='normalsize'))
+h = gsub("([_#$%&])", "\\\\\\1", h)
+h = gsub('(["\'])', '\\1{}', h)
+gsub('^\\\\begin\\{alltt\\}\\s*|\\\\end\\{alltt\\}\\s*$', '', h)
+})
+@ 
+
+
+<<include=FALSE>>=
+opts_chunk$set(eval=FALSE, tidy=FALSE)
+@
+
+
+
+\let\oldchapter=\chapter
+\def\chapter{\setcounter{page}{1}\oldchapter}
+
+
+%\begin{center}
+%\section*{Enough R for Intro Stats}
+%\end{center}
+
+\def\opt#1{#1}
+\def\squeeze{\vspace*{-4ex}}
+A couple dozen functions suffice to carry out your work in Introduction to Statistical Modeling.  This sheet provides the names of functions, a review of formula syntax, and some examples of use.
+
+\begin{multicols}{4}
+\raggedright
+
+\subsection*{Help}
+<<eval=FALSE>>=
+help()
+apropos()  
+?
+??
+example()
+@
+
+\subsection*{Arithmetic}
+Basic arithmetic is very similar to a calculator.
+<<eval=FALSE>>=
+# basic ops: + - * / ^ ( )
+log()
+exp()
+sqrt()
+log10()
+abs()
+@
+
+\subsection*{Randomization/Iteration}
+%
+<<>>=
+do()        # mosaic
+sample()    # mosaic augmented
+resample()  # with replacement
+shuffle()   # mosaic
+@
+
+\subsection*{Graphics}
+
+%
+<<>>=
+bwplot()
+xyplot()
+densityplot()
+histogram()
+plotFun() # mosaic
+@
+
+\vfill
+\columnbreak
+
+\subsection*{Numerical Summaries}
+These functions have 
+a formula interface to match plotting.
+%
+<<>>=
+mean()   # mosaic augmented
+median() # mosaic augmented
+sd()     # mosaic augmented
+var()    # mosaic augmented
+tally()  # mosaic
+qdata()  # mosaic
+pdata()  # mosaic
+IQR()
+@
+
+\subsection*{Model Building and Inference}
+%
+<<>>=
+mm()      # mosaic
+lm()      # linear models
+glm()     # for logistic models
+resid()
+fitted()
+confint()
+anova()
+summary()
+makeFun() # mosaic 
+listFun() # devel
+@
+
+\subsection*{Interactive}
+For classroom use.
+<<eval=FALSE,tidy=FALSE>>=
+mLM()  mLineFit()  mLinAlgebra()
+mCI()  mHypTest() mPower()
+@
+
+
+\vfill
+
+\columnbreak
+
+\subsection*{Formulas for Models}
+<<eval=FALSE>>=
+response ~ a+b # main effects
+response ~ a*b # interaction, too
+@
+Do not use \verb+|+ or \verb+groups=+.
+
+\medskip
+
+{\bf Common forms:}
+
+All cases the same:
+
+\verb=response ~ 1=
+
+\medskip
+
+Main effects & intercept 
+\verb=response ~ X + Y=
+
+\medskip
+
+Exclude intercept  (Rarely used.  Be careful!)
+
+\verb=response ~ -1 + X + Y=
+
+\medskip
+
+Main effects and interaction:
+\verb=response ~ X * Y=
+
+\medskip
+
+Pure interaction (Rarely used.)
+\verb=response ~ X:Y=
+
+\medskip
+
+Polynomial terms:
+\verb=response ~ poly(X,2)=
+
+\medskip
+
+Random model vectors (pedagogical)
+\verb=response ~ rand(2)= 
+
+\subsection*{Data and Variables}
+<<tidy=FALSE>>=
+fetchData() # mosaic
+names()
+head()
+levels()
+subset()
+with()      # operate on data
+transform() # new var in data 
+factor()    # categorical vars
+merge()
+rank()
+@
+
+
+
+\vfill
+
+\columnbreak
+
+
+\subsection*{Formulas for Graphs \& Numerics}
+Plotting (e.g. \texttt{xyplot}, \texttt{densityplot}, \texttt{bwplot}) and simple numerics (e.g. \texttt{tally}, \texttt{mm}) use formulas in the following ways:
+
+<<eval=FALSE>>=
+fname( y ~ x | z, data=..., 
+                  groups=... )
+@
+\noindent \texttt{y}: is y-axis variable.  Leave blank for densityplots 
+
+\noindent \texttt{x}: is x-axis variable
+  
+\noindent \texttt{z}: conditioning variable (separate panes in graphs)
+	
+\noindent  \texttt{groups}: conditioning variable (overlaid in graphs)
+
+For other things \verb+y ~ x | z+ can usually be interpreted to mean ``\verb+y+ depends on \verb+x+ separately for each \verb+z+.''
+
+\subsection*{Common Example Datasets}
+Can be used directly with \texttt{data=}:
+<<tidy=FALSE>>=
+Galton       # heights
+CPS85        # wages
+KidsFeet
+Marriage
+SAT
+@
+
+Read in with \texttt{fetchData()}:
+<<>>=
+utils = fetchData("utilities.csv")
+alder = fetchData("alder.csv")
+grades = fetchData("grades.csv")
+courses = fetchData("courses.csv")
+# Load software in development:
+fetchData("m155development.R")
+@
+
+
+\vfill
+
+\end{multicols}
+
+\newpage
+
+\chead{\sf \bfseries \Large R Sampler for Intro to Statistical Modeling}
+
+\def\opt#1{#1}
+\def\squeeze{\vspace*{-4ex}}
+
+\begin{multicols}{4}
+\footnotesize
+<<include=FALSE>>=
+opts_chunk$set(
+	eval=TRUE, 
+	fig.path='figures',
+	fig.width=4,
+	fig.height=2,
+	fig.align="center",
+	out.width=".25\\textwidth",
+	tidy=TRUE,
+	comment=NA
+)
+@
+
+<<echo=FALSE>>=
+options(width=40)
+options(show.signif.stars=FALSE)
+@
+\subsection*{Quick Look at a Data Frame}
+
+\vspace*{-.1in}
+<<results="hide",message=FALSE,eval=FALSE,tidy=FALSE>>=
+cps = fetchData("CPS85")
+names(cps)   nrow(cps)    summary(cps)  
+head(cps)    sample(cps,size=5)
+@
+
+\vspace*{-.2in}
+
+\subsection*{Tallying}
+A simple count of the number in each level
+
+\vspace*{-.1in}
+
+<<tally1,results="hide">>=
+tally( ~ sex, data=CPS85)
+@
+A two-way table of counts
+
+\vspace*{-.1in}
+
+<<tally2,results="hide">>=
+tally( ~ sex + married, data=CPS85)
+@
+
+\vspace*{-.1in}
+Conditional proportions: A $|$ B means ``A conditioned on B".
+
+\vspace*{-.1in}
+<<tally3,results="hide">>=
+tally( ~ sex | married, data=CPS85)
+@
+
+\vspace*{-.1in}
+
+Different from \verb+~married|sex+.
+
+\subsection*{New Dataframe Variable}
+
+\vspace*{-.2in}
+
+<<tidy=FALSE,message=FALSE>>=
+g = fetchData("Galton")
+@
+Add a variable named \texttt{mid}
+
+\vspace*{-.1in}
+
+<<tidy=FALSE>>=
+g = transform(g,
+     mid=(father+1.08*mother)/2)
+names(g)  #confirm that it's there
+@
+
+\vspace*{-.2in}
+
+\subsection*{Subsets}
+Sometimes you want only part of a data set.
+
+\vspace*{-.1in}
+
+<<tidy=FALSE>>=
+boys = subset(KidsFeet, sex=="B")
+elig = subset(CPS85, 
+        wage>10 & married=="Single")
+pros = subset(CPS85, 
+  sector %in% c("prof","manag"))
+@
+{\bf ... Random subset}
+
+\vspace*{-.1in}
+<<results="hide">>=
+subset(CPS85,size=4)
+@
+
+\vspace*{-.2in}
+
+\subsection*{Data from Google Spreadsheets}
+In Google, choose {\sc File/Publish to the Web}.
+Get link to the published data as CSV, sheet 1.  
+Copy the link
+
+\vspace*{-.1in}
+<<eval=FALSE,tidy=FALSE>>=
+mydat=fetchGoogle("https://docs.google...")
+@
+
+\vfill
+\columnbreak
+
+\subsection*{Distributions}
+Simple distribution
+<<densityplot1,fig.height=2.4,fig.keep="none">>=
+densityplot( ~ age, data=CPS85 )
+@
+Overlaying two (or more) groups
+<<densityplot2,fig.height=2.4,tidy=FALSE>>=
+densityplot( ~ age, groups=sex, 
+             data=CPS85, auto.key=TRUE)
+@
+\vspace*{-.2in}
+Side-by-side plots:
+<<densityplot3,fig.height=2.4,fig.keep="none">>=
+densityplot( ~ age | sex, data=CPS85 )
+@
+\vspace*{-.2in}
+<<bwplot,fig.keep="none">>=
+bwplot( age ~ sector, data=CPS85 )
+@
+
+\vspace*{-.2in}
+
+\subsection*{Scatter Plots}
+
+\vspace*{-.1in}
+<<fig.keep="none">>=
+xyplot( wage ~ age, data=CPS85 )
+@
+\texttt{groups=} and \texttt{|} work as with \texttt{densityplot()}.
+
+\subsection*{Plotting Model Values}
+
+\vspace*{-.1in}
+
+<<fig.keep="none",tidy=FALSE>>=
+mod = lm(wage ~ educ+sex,data=CPS85 )
+xyplot(fitted(mod) ~ educ,data=CPS85 )
+xyplot(wage+fitted(mod) ~ educ,data=CPS85)
+@
+
+\vspace*{-.2in}
+
+\subsection*{Extract Model Information}
+
+\vspace*{-.1in}
+
+<<results="hide">>=
+mod = lm(wage~educ+sex,data=CPS85)
+coef(mod)
+fitted(mod)
+resid(mod)
+f = makeFun(mod) # model function
+@
+\vfill
+\columnbreak
+
+\subsection*{P's and Q's}
+Want to find the value that separates the lower 30\% from the higher 70\%:
+
+\vspace*{-.1in}
+
+<<results="hide">>=
+qdata(0.3, wage, data=CPS85 )
+@
+Have a value and want to find what fraction of the cases are at or below the value:
+
+\vspace*{-.1in}
+
+<<results="hide">>=
+pdata(10, wage, data=CPS85 )
+@
+
+\vspace*{-.2in}
+
+\subsection*{Randomization}
+Sample
+
+\vspace*{-.1in}
+<<results="hide">>=
+mysamp=sample(CPS85,size=100)
+@
+
+\vspace*{-.1in}
+
+Resample:
+
+\vspace*{-.1in}
+
+<<results="hide",tidy=FALSE>>=
+lm(wage~educ,data=resample(CPS85))
+@
+
+\vspace*{-.1in}
+
+Shuffle (for hypothesis testing)
+
+\vspace*{-.1in}
+
+<<results="hide",tidy=FALSE>>=
+lm(wage~shuffle(educ),data=CPS85)
+@
+
+Probability distributions:
+
+\vspace*{-.1in}
+
+<<eval=FALSE,tidy=FALSE>>=
+rnorm(10,mean=25,sd=2)
+rbinom(10,prob=.5,size=40)
+rpois(10,lambda=50) # events per period
+rexp(10,rate=0.01) # 1/ave time btw events
+@
+\vspace*{-.1in}
+
+\subsection*{Confidence Intervals}
+ {\bf ... via ``normal theory"}
+
+\vspace*{-.1in}
+
+<<tidy=FALSE>>=
+mod = lm( wage ~ educ, data=CPS85 )
+confint(mod)
+@
+See also \texttt{summary(mod)}.
+
+\bigskip
+
+ {\bf ... via bootstrapping}
+
+\vspace*{-.1in}
+
+<<cache=TRUE,tidy=FALSE>>=
+s = do(500)*
+  lm(wage~educ, data=resample(CPS85))
+sd(s) # standard error
+@
+See also \texttt{confint(s)}
+\vill
+\columnbreak
+
+\subsection*{Quantitative $\rightarrow$ Categorical}
+<<tidy=FALSE>>=
+bwplot( height ~ factor(nkids), 
+        data=Galton )
+@
+
+\subsection*{Sums of Squares, Dot Products}
+<<tidy=FALSE,results="hide">>=
+sum( fitted(mod)^2 )
+sum( resid(mod)^2 )
+with( data=CPS85, sum(wage^2))
+sum(fitted(mod)*resid(mod)) # dot prod
+@
+
+
+\subsection*{Something is Wrong}
+<<echo=FALSE,results="hide">>=
+options(na.rm=FALSE)
+@
+<<cache=TRUE,message=FALSE>>=
+run = fetchData("repeat-runners.csv")
+mean( net, data=run )
+@
+Some of the data was missing, thus the NA.
+
+{\bf The FIX}:
+<<>>=
+options(na.rm=TRUE)
+mean( net, data=run )
+@
+
+\subsection*{Can't Find Something Here?}
+
+Send a note to \verb+kaplan@macalester.edu+
+
+
+
+
+\vfill
+\end{multicols}
+
+\end{document}
+
+
