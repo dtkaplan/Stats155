@@ -6,6 +6,17 @@
 DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a href='Syllabus/day-by-day.html#day-%s'><span class='%s'>%s</span></a>",i,match.arg(style),txt)
 ```
 
+### Day-by-Day Links
+
+  |  |  |  |   |   |    |  |  |   |  |  |   |  |
+:-----:|:-----:|:-----|:-----:|---|---|---|---|---|---|---|---|---|---|
+**Sept** |  `r DL(4,1)` | `r DL(6,2)` | `r DL(9,3)` | `r DL(11,4,style="dateToday")` | `r DL(13,5)` | `r DL(16,6)` | `r DL(18,7)` | `r DL(20,8)` |  `r DL(23,9)` | `r DL(25,10)` | `r DL(27,11)` | `r DL(30,12)` 
+**Oct** | `r DL(2,13)` | `r DL(4,14)` | `r DL(7,15)` | `r DL(9,16)` | `r DL(11,17)` | `r DL(14,18)` | `r DL(16,19)` | `r DL(18,20)` | `r DL(21,21,style="dateBox")` | `r DL(23,22)` | <a href="#" class="tooltip"><em>25</em><span><strong>Fall Break!</strong></span></a> | `r DL(28,23)` | `r DL(30,24)` |
+**Nov** | `r DL(1,25)` | `r DL(4,26)` | `r DL(6,27)` | `r DL(8,28)` | `r DL(11,29)` | `r DL(13,30)` | `r DL(15,31)` | `r DL(18,32)` | `r DL(20,33)` | `r DL(22,34)` | `r DL(25,35)` | `r DL(27,36)` | <a href="#" class="tooltip"><em>29</em><span><strong>Thanksgiving!</strong></span></a> | 
+**Dec** | `r DL(2,37)` | `r DL(4,38)` | `r DL(6,39)` | `r DL(9,40)` | |  <a href="#" class="tooltip"><em class="dateWarning">16</em><span ><strong>Final exam</strong></span></a> | 
+
+
+Click on a date to see the syllabus/readings/assignments for that day.
 ### Resources
 
 * **[Assignment Server](http://glimmer.rstudio.com/mosaic/Stats155/)** Your account name is the same as your Mac email prefix (e.g. ```jsmith```.  Your initial password is the last 4 digits of your student ID.  Contact the instructor to change your password.
@@ -18,16 +29,6 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
 * The [**EnoughR** "cheat sheet"](Resources/EnoughR/EnoughR.pdf) --- a one-sheet overview of the commands needed in the course.
 * **Hand in documents**. Occasionally, your work will be in the form of a document which you will hand in by providing a link, e.g. on Google Docs or RPubs.  You hand in your link(s) [here](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
 
-### Day-by-Day Links
 
-  |  |  |  |   |   |    |  |  |   |  |  |   |  |
-:-----:|:-----:|:-----|:-----:|---|---|---|---|---|---|---|---|---|---|
-**Sept** |  `r DL(4,1)` | `r DL(6,2)` | `r DL(9,3,style="dateToday")` | `r DL(11,4)` | `r DL(13,5)` | `r DL(16,6)` | `r DL(18,7)` | `r DL(20,8)` |  `r DL(23,9)` | `r DL(25,10)` | `r DL(27,11)` | `r DL(30,12)` 
-**Oct** | `r DL(2,13)` | `r DL(4,14)` | `r DL(7,15)` | `r DL(9,16)` | `r DL(11,17)` | `r DL(14,18)` | `r DL(16,19)` | `r DL(18,20)` | `r DL(21,21,style="dateBox")` | `r DL(23,22)` | <a href="#" class="tooltip"><em>25</em><span><strong>Fall Break!</strong></span></a> | `r DL(28,23)` | `r DL(30,24)` |
-**Nov** | `r DL(1,25)` | `r DL(4,26)` | `r DL(6,27)` | `r DL(8,28)` | `r DL(11,29)` | `r DL(13,30)` | `r DL(15,31)` | `r DL(18,32)` | `r DL(20,33)` | `r DL(22,34)` | `r DL(25,35)` | `r DL(27,36)` | <a href="#" class="tooltip"><em>29</em><span><strong>Thanksgiving!</strong></span></a> | 
-**Dec** | `r DL(2,37)` | `r DL(4,38)` | `r DL(6,39)` | `r DL(9,40)` | |  <a href="#" class="tooltip"><em class="dateWarning">16</em><span ><strong>Final exam</strong></span></a> | 
-
-
-Click on a date to see the syllabus/readings/assignments for that day.
 
 

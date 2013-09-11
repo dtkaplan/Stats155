@@ -1,0 +1,114 @@
+# Making and Interpreting Statistical Graphics
+
+## Your Name Goes Here!!!
+
+```{r include=FALSE}
+# You can ignore this chunk.  It does necessary
+# stuff it set up the format.
+library(mosaic)
+opts_chunk$set(dev="svg",out.width="60%")
+```
+
+This is a templace for the activity being introduced in class on *Starting R with Graphics*.  
+* Your R code goes in the "chunks" offset by the 
+<code>```{r}</code> fences.  So long as you follow the format in the examples, you'll be fine. (But you have to get the R statements right!)
+* You can use the simple Markdown system to put in headings, bullet points, whatever.
+* The R graphics will be included automatically.
+
+You can even include photos or other non-R graphics to illuminate your report.  You don't really need them for this report, but just for fun ...
+
+<img src='http://www.drivepetty.com/blog/wp-content/uploads/2013/07/Happy-Birthday-King2.jpg' width="30%">
+
+If you can't immediately figure out the above, don't spend even a second more trying.  It's just HTML.
+
+## Loading in the Data
+
+The `Births78` dataset is already included in the `mosaic` package, but more often we will be using data outside `mosaic`.  You will use a program called `fetchData()` to access data.  Here are some examples:
+```{r}
+births = fetchData("Births78")
+grades = fetchData("grades.csv")
+```
+
+You're going to work with `births` in this report.
+
+## Basic Modes of Graphics
+
+We've discussed four basic modes of graphics:
+* Scatterplot
+* Histogram (which you've seen before)
+* Density Plot (which we'll generally use instead of the histogram)
+* Box-and-whisker plot
+
+To get you started, here is a scatter plot such as we saw on the first day of class:
+```{r}
+xyplot( births~dayofyear, data=births )
+```
+
+Then you'll make a histogram, describe the pattern seen in it, and say how that pattern relates to the pattern in the scatter plot.
+
+```{r}
+histogram( ~ births, data=births )
+```
+
+## Constructing the Day of Week variable
+
+You'll use the `transform()` function reasonably often, but you'll likely never use the "modular arithmetic" operator "%%".  In this case, we're just dividing the day of the year by 7, taking the remainder, which gives us a number 0 through 6 specifying the say of the week.
+
+```{r}
+births = transform( births, dayofweek=dayofyear%%7 )
+```
+
+## Using the day of the week variable
+
+Make the various plots involving the `dayofweek` variable.
+
+### How is it distributed?
+
+### Using it as a `group=` argument to `xyplot()`.
+
+### Using it as a `group=` argument to `densityplot()`
+.
+
+### Using it with the "Conditioned On" syntax
+
+That is, your formulas might look like
+```~ births | dayofweek```
+
+You can copy over the following chunk template for each of your plots
+
+```{r}
+# Your commands go here
+# Remember to include ```{r} before the chunk
+# and ``` after it.
+```
+
+Good luck!
+
+Your commentary goes here!!!!!
+
+It's up to you to construct the code for the other kinds of graphics, but here is a space to do it.
+
+```{r}
+# Replace this line with your density plot
+```
+
+Comments here
+
+```{r}
+# Replace this line with your box-and-whiskers plot.
+```
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+
+When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+

@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[margin=.25in]{geometry}
+\usepackage{multicol}
+\usepackage{url}
+\begin{document}
+
+<<include=FALSE>>=
+require("mosaic")
+@
+
+\title{Starting R with Data and Graphics}
+\date{Introduction to Statistical Modeling, Math 155}
+\maketitle
+
+\abstract{\em This activity will help you get started with R using commands to make statistical graphics and exploring the different modes of graphics.  Your deliverable this activity is to construct a brief report in Google Docs answering the questions posed below.}
+
+\begin{multicols}{2}
+
+Many of the operations we will use in this course are extensions to R distributed by the \texttt{mosaic} package through the official R network.  If you are using the server, this has already been installed.  If you are using your own computer, ask the instructor to show you how to install the package.  Then, load the package with this command:
+<<include=FALSE>>=
+require(mosaic)
+opts_chunk$set(fig.width=5,fig.height=5,out.width="3.5in")
+@
+
+To start, we'll work with the \texttt{Births78} dataframe.  This is already built in to \texttt{mosaic}, so you already have it and can refer to it simply as \texttt{Births78}.
+
+Here are some commands you can use to generate graphics.  It's important that you realize that there are different modes --- scatterplots, histograms, box-and-whisker plots.
+
+Built-in datasets such as \texttt{Births78} have their codebook available via the \texttt{help()} command:
+<<eval=FALSE>>=
+help(Births78)
+@
+
+In general, you will be given the names of any dataset you are to work with.  These can be loaded with the \texttt{fetchData()} function, which works either for built-in data or for data available in CSV files.  When you use \texttt{fetchData()}, you should do assignment to a named object so that you can refer to the fetched data in further commands.  Some examples:
+<<message=FALSE,warning=FALSE>>=
+births = fetchData("Births78") 
+grades = fetchData("grades.csv") 
+feet = fetchData("KidsFeet")
+@
+
+Important commands with dataframes are:
+<<>>=
+names(Births78) # names of the variables
+nrow(Births78) # how many cases
+head(Births78) # show a snippet
+@
+
+Scatterplots are made with \texttt{xyplot()}.  The first argument follows a very specific syntax called a ``formula'' that uses the \verb+~+ (``tilde'') character.  With \texttt{xyplot()}, the formula gives the $y$ versus $x$ variables.  Try it:
+<<>>=
+xyplot(births ~ dayofyear, data=Births78)
+@
+
+Here are other graphics commands for some other common modes:
+<<fig.keep="none">>=
+histogram(~births, data=Births78)
+densityplot(~births, data=Births78)
+bwplot(~births, data=Births78)
+@
+
+You might be wondering why there is nothing to the left of the \verb+~+.  That's because these graphics modes involve only one variable. When there is only one variable involved, it should go to the right of the tilde.
+
+
+In your report:
+\begin{itemize}
+\item Make the four different modes of graphics as shown above --- scatter plot, histogram, density plot, box-and-whisker plot --- and paste the graphics into your report.  Under each, explain what the graph is showing and why it looks the way it does.
+\item Make a histogram or density plot of the \texttt{dayofyear} variable.  Explain why it looks the way it does.
+\end{itemize}
+
+As you may know, the number of births depends on the day of the week --- Sunday, Monday, Tuesday, etc. --- as well as the time of year.  But the \texttt{dayofyear} variable does not directly give the day of year.  A simple way to calculate the day of the week from \texttt{dayofyear} is to use a mathematical operation called the ``modulo'' or ``remainder of division''. (You don't have to master this.  We're just using it here because it does the job at hand.)  Here's the command that calculates the remainder of division by 7 and calls it \texttt{dayofweek}
+<<tidy=FALSE>>=
+Births78=transform(Births78,dayofweek=dayofyear%%7)
+@
+The division remainder is calculated by the \verb+%%+ operator.  As it happens, for 1979 the first day of the year was a Sunday, so a value of 1 in \texttt{dayofweek} means Sunday, 2 means Monday, and so on.
+
+When you want to break down a densityplot of one variable by a second variable like \texttt{dayofweek}, you can use a command like this:
+<<tidy=FALSE,fig.keep="none">>=
+densityplot( ~ births, groups=dayofweek, data=Births78 )
+@
+
+\begin{itemize}
+\item Make this density plot, include it in your report, along with an explanation of why it looks the way it does. (Histograms do not let you do this, since you can't draw one histogram over another.) 
+\item Use the \texttt{groups=dayofweek} argument in a scatter plot of births against \texttt{dayofyear}.  Include the graph in your report and explain why it looks the way it does and how it relates to the density plot.
+\end{itemize}
+
+The formula syntax for graphics extends to allow you to specify a ``conditioning'' variable, making the graphics separately for each level of the conditioning variable.  It works like this:
+<<fig.keep="none">>=
+xyplot( births ~ dayofyear | dayofweek, data=Births78 )
+bwplot( ~ births | dayofweek, data=Births78 )
+densityplot( ~ births | dayofweek, data=Births78 )
+@
+
+\begin{itemize}
+\item Make each of the above plots, include them in your report, and explain how they are different from the corresponding graphs that don't condition on \texttt{dayofweek}.
+\end{itemize}
+
+You can calculate numerical measures such as the mean, standard deviation (\texttt{sd()}), median, maximum (\texttt{max()}), minimum (\texttt{min()}), or IQR using a similar formula syntax, for instance:
+<<>>=
+mean( ~births, data=Births78 )
+mean( births ~ dayofweek, data=Births78 )
+@
+
+\begin{itemize}
+\item In your report, say which day of the week has the smallest median.  (Remember, Sunday is 1, Monday is 2, etc.)
+\item In your report, explain why 
+<<results="hide">>=
+mean(births~dayofyear,data=Births78 )
+@
+doesn't do anything useful for these data.
+\end{itemize}
+
+You can use \texttt{tally()} to count the number of cases that have a particular level of a variable.
+
+\begin{itemize}
+\item In your report, explain why \verb+tally(~dayofweek,data=Births78)+ gives the result it does.
+\end{itemize}
+
+\end{multicols}
+
+\vfill
+
+\noindent{\em Remember to hand in your report.}
+
+\vfill
+
+\end{document}
+
+
