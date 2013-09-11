@@ -122,7 +122,9 @@ Still under construction ...
 
 **Assignment**: `r I(PN(c(209,214,222,302,303,304,305,306,308,311,312,315,317,318,319 ),assignment="Three"))`
 
-**In Class**: [Measures of a distribution](https://dl.dropbox.com/u/5098197/ISM/Numerical-Summaries.pdf)
+**In Class**: 
+* Starting R with Graphics. [PDF handout](../In-Class-Activities/StartRwithGraphics/R-stats-intro.pdf) and [Rmd template for your report](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-04/StartRwithGraphics-template.Rmd)
+* [Measures of a distribution](https://dl.dropbox.com/u/5098197/ISM/Numerical-Summaries.pdf)
 
 **On Your Own**: A *RadioLab* [episode about stochasticity](http://www.radiolab.org/2009/jun/15/)
 

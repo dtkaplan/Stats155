@@ -9,13 +9,14 @@ library(mosaic)
 opts_chunk$set(dev="svg",out.width="60%")
 ```
 
-This is a templace for the activity being introduced in class on *Starting R with Graphics*.  
+This is a template for the activity being introduced in class on *Starting R with Graphics*.  
 * Your R code goes in the "chunks" offset by the 
-<code>```{r}</code> fences.  So long as you follow the format in the examples, you'll be fine. (But you have to get the R statements right!)
+<code>```{r}</code> fences.  
+    So long as you follow the format in the examples, you'll be fine. (But you have to get the R statements right!)
 * You can use the simple Markdown system to put in headings, bullet points, whatever.
 * The R graphics will be included automatically.
 
-You can even include photos or other non-R graphics to illuminate your report.  You don't really need them for this report, but just for fun ...
+You can even include photos or other non-R graphics to illuminate your report.  You don't really need them for this report, but just for fun ...    
 
 <img src='http://www.drivepetty.com/blog/wp-content/uploads/2013/07/Happy-Birthday-King2.jpg' width="30%">
 
@@ -85,30 +86,4 @@ You can copy over the following chunk template for each of your plots
 Good luck!
 
 Your commentary goes here!!!!!
-
-It's up to you to construct the code for the other kinds of graphics, but here is a space to do it.
-
-```{r}
-# Replace this line with your density plot
-```
-
-Comments here
-
-```{r}
-# Replace this line with your box-and-whiskers plot.
-```
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
-
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r}
-summary(cars)
-```
-
-You can also embed plots, for example:
-
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
 
