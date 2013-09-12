@@ -139,9 +139,9 @@ Notes: `r I(todaysNotes("2012-09-12.html", "2013-02-06.html", "notes"))`
 
 **In Class**:
 
-* Weekly Quiz.  This week, it's about R. A [study-guide is available here](https://dl.dropbox.com/u/5098197/ISM/R-basics-guide.pdf).
+* Weekly Quiz.  This week, it's about R. A [study-guide is available here](https://dl.dropboxusercontent.com/u/5098197/Stat155Fall2013/ThingsWithHints/Quiz-1-R-Study-Guide.html).
 
-Notes: `r I(todaysNotes("2012-09-14.html", "i"))` 
+<!-- Notes: `r I(todaysNotes("2012-09-14.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-09-14-class) -->
 
 `r I(classDayContents( daynum=6 ))`
