@@ -1,0 +1,60 @@
+# Day 6 Notes
+
+```{r include=FALSE}
+require(mosaic)
+opts_chunk$set(tidy=FALSE,fig.width=5,fig.height=4,out.width="60%",dev="svg")
+options(width=60)
+```
+
+
+### Quick review of density and distributions
+
+Explain the density plot by reference to the dotplot of points at the bottom of the figure.  The height of the graph shows how dense the points are.
+
+More technically, imagine a graph --- the cumulative distribution function --- showing the fraction of cases that fall below a given value versus that given value.  This will be a upward stepping graph, like this:
+```{r}
+with(data=Galton,plot(ecdf(height))) # not a command the students need to know
+```
+The density plot is the derivative of this graph.  Note that if you integrate the derivative from $-\infty$ to $\infty$, you'll get 1, the total of increase in the original function.  In other words, the area under the entire density curve is 1.  That's what determines the units on the vertical axis of the density curve.
+
+When to use each:
+* Histogram: rarely.  Instead, use a density plot
+* Density plot: when there is just one or two distributions you want to compare.
+* Box-and-whisker plot: When you are comparing two or more distributions, or when you want to highlight outliers.
+
+```{r}
+bwplot(height ~ sex, data=Galton)
+```
+
+
+#### What's an outlier.
+
+The 1.5 IQR rule of thumb.  Demo this by showing a box-and-whisker plot with some outliers and showing how the whiskers extend to 1.5 IQR from the first and third quartiles.
+
+### Computational Exercise: Testing Robustness
+
+Technique: Creating an Outlier
+
+Let's change one height value in the Galton data to be an outrageous outlier:
+```{r}
+bogus = g
+bogus$height[25] = 800 # You don't need to use this command
+```
+
+Play with the various measures and see which ones are very different between `g` and `bogus`.
+
+### Example: Osteopenia.
+
+Here's a quote from [Wikipedia](http://en.wikipedia.org/wiki/Bone_mineral_density): 
+> Osteopenia is a condition where bone mineral density is lower than normal. It is considered by many doctors to be a precursor to osteoporosis. However, not every person diagnosed with osteopenia will develop osteoporosis. More specifically, osteopenia is defined as a bone mineral density T-score between -1.0 and -2.5.
+
+The article goes on:
+> The definition has been controversial. Steven R. Cummings, of the University of California, San Francisco, said in 2003 that "There is no basis, no biological, social, economic or treatment basis, no basis whatsoever" for using one standard deviation. Cummings added that "As a consequence, though, more than half of the population is told arbitrarily that they have a condition they need to worry about." [Quoted from this Gina Kolata article](http://www.nytimes.com/2003/09/28/us/bone-diagnosis-gives-new-data-but-no-answers.html)
+
+![bone density and osteopenia from surgeongeneral.gov](figure/BoneMineralDensity.gif) 
+
+Bone density falls with age.  The T-score is really just a Z-score, but compares a person to the distribution of young people.  [Some graphs](http://courses.washington.edu/bonephys/opbmd.html)
+
+Osteopenia is defined so that about 1/6 of young people have it and much larger fractions of old people will have it. 
+
+
