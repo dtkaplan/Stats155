@@ -1,4 +1,4 @@
-February 6, 2013 Class Notes
+Day 5
 --------------------------
 ```{r include=FALSE}
 require(mosaic, quietly=TRUE)
@@ -115,85 +115,6 @@ Sometimes you'll be interested in a location that's not Central, e.g.
 * Plausible: leaves out the very extremes
 * Mainstream: emphasizes the middle.
 
-
-### Example: One-Day Changes in Stock Prices
-
-The stock market goes up and down every day.  By how much?  
-```{r}
-apple = fetchData("M155/Stocks/aapl.csv")
-netflix = fetchData("M155/Stocks/nflx.csv")
-facebook = fetchData("M155/Stocks/fb.csv")
-```
-
-* What are the names of the variables? What is a case?
-* Create a new variable, `change` that is the ratio of the closing price to the opening price.
-```{r}
-apple = transform(apple, change=Close/Open)
-netflix = transform(netflix, change=Close/Open)
-facebook = transform(facebook, change=Close/Open)
-```
-
-What's the distribution?  What's a typical value?  Do the stocks have different typical values?  What does the standard deviation tell you here?
-
-
-#### Aside:
-
-If you want to plot out the values versus time, you need to turn the Date variable into a format that can be used by R.  Here's how:
-```{r}
-fetchData("getDJIAdata.R")
-apple = fixStockDate(apple)
-netflix = fixStockDate(netflix)
-facebook = fixStockDate(facebook)
-```
-
-### Activity: Sketch Some Distributions
-
-* Household Income in the US
-* Household Net Worth in the US
-* College tuition ([resource](http://centerforcollegeaffordability.org/archives/6728))
-* Number of courses completed by Macalester students.
-* Age of Macalester students.
-* House prices
-* Body weight of adults
-* SAT scores
-* Human gestational length
-* Infant birth weight
-
-
-You might want to start with an estimate of the mean or median and the 95% coverage interval.  
-Also, think about the tails of the distribution.  
-* Are they likely to stretch out one way or the other in an asymmetric way, that is whether the distribution is likely to be skew one way or the other.
-* Are they likely to be truncated.
-* From your sketch, estimate the standard deviation and the IQR.  Is one easier to estimate than the other.
-
-
-Spend 3 minutes using the web to see if you can get any confirmation from the Internet for your estimates.
-
-* <image src="http://upload.wikimedia.org/wikipedia/commons/a/aa/Distribution_of_Annual_Household_Income_in_the_United_States.png" width="80%">
-* [Distribution of income](http://en.wikipedia.org/wiki/Wealth_in_the_United_States#Distribution_of_wealth) --- Why is the mean so much larger than the median?  What would the box-and-whiskers plot look like?
-
-### Measurement and measurement bias
-* Instrumental or procedural error. Measure heights of people with a ruler, but with the ruler not level.
-* Subject or response bias: "How many of you are intravenous drug users?"
-* Global warming. Measurement gauges have been encroached on by urbanization.
-
-
-### Sampling and sampling bias
-* Self-selection bias for surveys
-* Problems with convenience samples: e.g., interview students at library on Friday night about their study habits
-* Selection and survival bias: we don't see the kids who drop out of school, tracking a random sample of Alzheimer's patients to see how long they survive --- you're more likely to sample those who survive a long time.
-
-### Random sampling
-* Sampling frame and formal methods.  Use `sample` 
-
-#### In-Class Activity
-
-* Sampling Bias Activity `s = select.books()` which needs to be proceeded by
-```{r}
-fetchData("simulate.r")
-```
-
-[Instructor's write up](../Activities/SelectingLibraryBooks.html)
 
 
 
