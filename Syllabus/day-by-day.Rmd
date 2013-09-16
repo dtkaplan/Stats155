@@ -126,9 +126,13 @@ Still under construction ...
 * Starting R with Graphics. [PDF handout](../In-Class-Activities/StartRwithGraphics/R-stats-intro.pdf) and [Rmd template for your report](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-04/StartRwithGraphics-template.Rmd)
 * [Measures of a distribution](https://dl.dropbox.com/u/5098197/ISM/Numerical-Summaries.pdf)
 
-**On Your Own**: A *RadioLab* [episode about stochasticity](http://www.radiolab.org/2009/jun/15/)
+**Resources**: 
+* [Instructor's notes](../Notes/Day-04/Day-04-notes.html)
+* A *RadioLab* [episode about stochasticity](http://www.radiolab.org/2009/jun/15/)
 
-Notes: `r I(todaysNotes("2012-09-12.html", "2013-02-06.html", "notes"))` 
+
+
+<!-- r I(todaysNotes("2012-09-12.html", "2013-02-06.html", "notes")) --> 
 
 `r I(classDayContents(daynum=5 ))`
 **Topic**: Groupwise Models
@@ -141,6 +145,9 @@ Notes: `r I(todaysNotes("2012-09-12.html", "2013-02-06.html", "notes"))`
 
 * Weekly Quiz.  This week, it's about R. A [study-guide is available here](https://dl.dropboxusercontent.com/u/5098197/Stat155Fall2013/ThingsWithHints/Quiz-1-R-Study-Guide.html).
 
+**Resources**:
+* [Instructor's notes](../Notes/Day-05/Day-05-notes.html)
+
 <!-- Notes: `r I(todaysNotes("2012-09-14.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-09-14-class) -->
 
@@ -151,10 +158,15 @@ Notes: `r I(todaysNotes("2012-09-12.html", "2013-02-06.html", "notes"))`
 
 **Assignment**: `r I(PN(c(354,"4RQ",407,408,501,502),assignment="Five"))`
 
-**Notes**: `r I(todaysNotes("2012-09-17.html", "i"))` 
+<!-- **Notes**:  I(todaysNotes("2012-09-17.html", "i")) -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-08-class) -->
 
-**In-Class**: [Unfit models](https://dl.dropbox.com/u/5098197/ISM/Unfit-Models.pdf) activity
+**In-Class**: 
+* Modeling wages with groupwise means
+
+**Resources**:
+* [Instructor's notes](../Notes/Day-06/Day-06-notes.html)
+* [Unfit models](https://dl.dropbox.com/u/5098197/ISM/Unfit-Models.pdf) activity
 
 <!--      WEEK 3      -->
 
