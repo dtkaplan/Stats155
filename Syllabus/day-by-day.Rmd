@@ -188,8 +188,17 @@ Still under construction ...
 <!-- `r I(todaysNotes("2012-09-19.html", "i"))` --> 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-11-class) -->
 
-
 `r I(classDayContents( daynum=8 ))`
+**Topic**: More on means as models, random sampling, and confidence intervals
+
+**In Class**:
+Weekly Quiz
+
+**Resources:**: 
+* [Instructor's notes](../Notes/Day-09/Day-09-notes.html)
+* Bias in sampling: Steven Strogatz on [why your friends have more friends than you do](http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?ref=opinion)
+
+`r I(classDayContents( daynum=9 ))`
 **Topic**: Language of Models
 
 **Reading**: SM §6.1, 6.2, 6.3, 6.4
@@ -198,18 +207,17 @@ Still under construction ...
 * Required: `r I(PN(c(513,523, 530, 531,601,602,604,611,613),assignment="Seven"))`
 * Optional, for the theoretically oriented.  `r I(PN(c(540),assignment="Seven-Opt"))`
 
-**In Class**:
-Weekly Quiz
+
 
 **Resources:**: 
-* [Instructor's notes](../Notes/Day-08/Day-08-notes.html)
+* [Instructor's notes](../Notes/Day-09/Day-09-notes.html)
 * Bias in sampling: Steven Strogatz on [why your friends have more friends than you do](http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?ref=opinion)
 * One of our data sets is based on the General Social Survey from 1985.  Here's an article based on the ongoing [General Social Survey in 2012](http://www.nytimes.com/2012/09/21/health/intangible-dividend-in-an-anti-poverty-experiment-happiness.html?_r=1&hp).
 
 <!-- `r I(todaysNotes("2012-09-21.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-13-class) -->
 
-`r I(classDayContents( daynum=9 ))`
+`r I(classDayContents( daynum=10 ))`
 **Topic**: From Model Terms to Formulas and Coefficients
 
 **Reading**: SM §6.5, 6.6, 6.7, SM §7.1, 7.2
@@ -230,7 +238,7 @@ Weekly Quiz
 
 <!--     WEEK 4     -->
 
-`r I(classDayContents( daynum=10 ))`
+`r I(classDayContents( daynum=11 ))`
 **Topic**: Formulas and Coefficients
 
 **Reading**: 
@@ -239,9 +247,9 @@ Weekly Quiz
 
 **Assignment**: 
 * Exercises `r I(PN(c("7RQ", 704, 705,710,711,712, 713,715),assignment="Nine"))`
-* Car project (group project): `r I(PN(c(723)))` 
+* Car project (group project): See assignment "Car Project" prob 7-23 on the assignment server.  Due by Monday's class. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
 * [Instructions for reading Google spreadsheets into R](http://rpubs.com/dtkaplan/GoogleSpreadsheets)
-* Using the R-Markdown system. LINK TO HANDIN SITE FOR SPREADSHEETS and REPORTS
+
 
 **In Class**:
 * [Untangling House Prices](https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf)
@@ -257,7 +265,9 @@ Weekly Quiz
 
 **Reading**: SM §7.10, SM §8.1, 8.2 
 
-**Assignment**: `r I(PN(c(714,716,721,722, 731, 801),assignment="Ten"))`
+**Assignment**: 
+* `r I(PN(c(714,716,721,722, 731, 801),assignment="Ten"))`
+* Used car prices, data and report due. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
 
 **In Class**: Weekly Quiz
 
@@ -265,7 +275,7 @@ Weekly Quiz
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-20-class)  -->
 
 
-`r I(classDayContents( daynum=12 ))`
+`r I(classDayContents( daynum=13 ))`
 **Topic**: Geometry of Least Squares Fitting
 
 **Reading**: SM §8.3
@@ -280,7 +290,7 @@ Weekly Quiz
 
 <!--     WEEK 5   -->
 
-`r I(classDayContents( daynum=13 ))`
+`r I(classDayContents( daynum=14 ))`
 **Topic**: Redundancy and Colinearity
 
 **Reading**: SM §8.4, 8.5
@@ -292,7 +302,7 @@ Weekly Quiz
 **Notes**: `r I(todaysNotes("2012-10-03.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-03-class) -->
 
-`r I(classDayContents( daynum=14 ))`
+`r I(classDayContents( daynum=15 ))`
 **Topic**: Correlation and Partitioning, $R^2$
 
 **Reading**: SM Ch. 9
@@ -304,7 +314,7 @@ Weekly Quiz
 **Notes**: `r I(todaysNotes("2012-10-05.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-05-class) -->
 
-`r I(classDayContents( daynum=15 ))`
+`r I(classDayContents( daynum=16 ))`
 **Topic**: Correlation and Partitioning (continued)
 
 **Reading**: SM Ch. 9 (review)
@@ -317,7 +327,7 @@ Weekly Quiz
 <!--      WEEK 6 -->
 
 
-`r I(classDayContents( daynum=16 ))`
+`r I(classDayContents( daynum=17 ))`
 **Topic**: Total and Partial Relationships
 
 **Reading**: SM Ch. 10
@@ -334,7 +344,7 @@ Weekly Quiz
 
 **On Your Own**: [Is coffee good for you?](http://well.blogs.nytimes.com/2012/05/16/coffee-drinkers-may-live-longer/?ref=health)
 
-`r I(classDayContents( daynum=17 ))`
+`r I(classDayContents( daynum=18 ))`
 **Topic**: Total and Partial Relationships (continued)
 
 **Reading**: SM Ch. 10 (review)
@@ -346,7 +356,7 @@ Weekly Quiz
 **Notes**: `r I(todaysNotes("2012-10-12.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-12-class) -->
 
-`r I(classDayContents( daynum=18 ))`
+`r I(classDayContents( daynum=19 ))`
 **Topic**: Confidence Intervals on Coefficients
 
 **Reading**: SM Ch. 12
@@ -358,7 +368,7 @@ Weekly Quiz
 
 <!--     WEEK 7   -->
 
-`r I(classDayContents( daynum=19 ))`
+`r I(classDayContents( daynum=20 ))`
 **Topic**: Review for Exam
 
 **Reading**:
@@ -369,7 +379,7 @@ Weekly Quiz
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-17-class) -->
 
 
-`r I(classDayContents( daynum=20 ))`
+`r I(classDayContents( daynum=21 ))`
 **Mid-term Exam**
 
 Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf) and then again, [with answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review-answers.pdf)
@@ -377,7 +387,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **[Exam Answers and Grading Rubric] to be posted.** 
 <!--(http://rpubs.com/dtkaplan/2243) --> 
 
-`r I(classDayContents( daynum=21 ))`
+`r I(classDayContents( daynum=22 ))`
 **Topic**: Probability Models
 
 **Reading**: SM Ch. 11
@@ -391,7 +401,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 <!--    WEEK 8 -->
 
-`r I(classDayContents(daynum=22))`
+`r I(classDayContents(daynum=23))`
 **Topic** Continuous Random Variables.  Confidence Intervals on Coefficients.
 
 **Reading**: Review SM Ch. 11.  Start on SM Ch. 12
@@ -400,7 +410,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 * `r I(PN(c(1111,1130,1135,1137),assignment="Nineteen"))`
 
 
-`r I(classDayContents( daynum=23 ))`
+`r I(classDayContents( daynum=24 ))`
 **Topic**: Confidence Intervals on Coefficients (continued)
 
 **Reading**: SM Ch. 12
@@ -414,7 +424,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-22-class) -->
 
 
-`r I(classDayContents( daynum=24 ))`
+`r I(classDayContents( daynum=25 ))`
 **Topic**: Hypothesis Testing
 
 **Reading**: SM Ch. 13
@@ -428,7 +438,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 
 
-`r I(classDayContents( daynum=25 ))`
+`r I(classDayContents( daynum=26 ))`
 **Topic**: Hypothesis Testing (continued)
 
 **Reading**: Review SM Ch. 13
@@ -446,7 +456,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **On Your Own**: The paper that won the [2012 Ignobel prize](http://www.improbable.com/ig/winners/) in neuroscience: [On brain activity in a dead salmon](http://www.jsur.org/ar/jsur_ben102010.pdf)
 
-`r I(classDayContents( daynum=26 ))`
+`r I(classDayContents( daynum=27 ))`
 **Topic**: Testing Whole Models with $latex R^2$ and F
 
 **Reading**: SM §14.1, 14.2, 14.3, 14.5
@@ -459,7 +469,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **Notes**: `r I(todaysNotes("2012-11-02.html", "i"))`  
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-02-class) -->
 
-`r I(classDayContents( daynum=27 ))`
+`r I(classDayContents( daynum=28 ))`
 **Topic**: Interpreting the p-value
 
 **Reading**: 
@@ -477,7 +487,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 <!--    WEEK   10 -->
 
-`r I(classDayContents( daynum=28 ))`
+`r I(classDayContents( daynum=29 ))`
 **Topic**: Hypothesis Testing on Parts of Models
 
 **Reading**: SM Ch. 15
@@ -491,7 +501,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 **On Your Own**: [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg)
 
-`r I(classDayContents( daynum=29 ))`
+`r I(classDayContents( daynum=30 ))`
 **Topic**: Hypothesis Testing on Parts of Models (continued)
 
 **Reading**: SM Ch. 15 (review)
@@ -504,7 +514,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **On Your Own**: [What is a p-value?](https://www.youtube.com/watch?v=ax0tDcFkPic&feature=related)
 
 
-`r I(classDayContents( daynum=30 ))`
+`r I(classDayContents( daynum=31 ))`
 **Topic**: Choosing model terms
 
 **Reading**: [XKCD cartoon](http://xkcd.com/675/)
@@ -516,7 +526,7 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 
 <!--     WEEK 11    -->
 
-`r I(classDayContents( daynum=31 ))`
+`r I(classDayContents( daynum=32 ))`
 **Topic**: Non parametrics
 
 **Reading**: [XKCD cartoon on frequentist vs Bayesian](http://xkcd.com/1132/)
@@ -541,7 +551,7 @@ You've now seen the core concepts and methods of statistical modeling.  The rest
 This is a good time to start to review.  As we explore these new contexts, do the exercises from Chapter 15 to solidify your understanding of that basic material.  These exercises will be due at the last class day.
 
 
-`r I(classDayContents( daynum=32 ))`
+`r I(classDayContents( daynum=33 ))`
 **Topic**: Logistic regression
 
 **Reading**: SM Ch. 16
@@ -555,7 +565,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 
 
-`r I(classDayContents( daynum=33 ))`
+`r I(classDayContents( daynum=34 ))`
 **Topic**: Odds Ratios and Logistic regression
 
 **Reading**: SM Ch. 16
@@ -568,7 +578,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 <!--    WEEK 12  -->
 
-`r I(classDayContents( daynum=34 ))`
+`r I(classDayContents( daynum=35 ))`
 **Topic**: Power and the Alternative Hypothesis
 
 **In Class**: 
@@ -579,7 +589,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 **Notes**: `r I(todaysNotes("2012-11-21.html", "i"))` 
 <!--  [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-21-class) -->
 
-`r I(classDayContents( daynum=35 ))`
+`r I(classDayContents( daynum=36 ))`
 **Topic**: Power. Logistic Regression.
 
 **Reading**: 
@@ -601,7 +611,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 
 
-`r I(classDayContents( daynum=36 ))`
+`r I(classDayContents( daynum=37 ))`
 **Topic**: Causation
 
 **Reading**: 
@@ -621,7 +631,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 <!-- WEEK 13   -->
 
-`r I(classDayContents( daynum=37 ))`
+`r I(classDayContents( daynum=38 ))`
 **Topic**: Causation
 
 **Reading**: 
@@ -635,7 +645,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 
 
-`r I(classDayContents( daynum=38 ))`
+`r I(classDayContents( daynum=39 ))`
 **Topic**: Causation
 
 **Reading**: SM Ch. 17 and [XKCD cartoon](http://xkcd.com/687/)
@@ -643,7 +653,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 **Assignment**: `r I(PN(c(1706,1707,1708,1710),assignment="Thirty-three"))`
 
 
-`r I(classDayContents( daynum=39 ))`
+`r I(classDayContents( daynum=40 ))`
 **Topic**: Experiment and Design
 
 **Reading**: SM Ch. 18

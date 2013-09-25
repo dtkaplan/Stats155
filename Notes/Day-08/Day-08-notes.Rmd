@@ -1,8 +1,7 @@
-Day 8 Notes
-===========================
+# Day 8 Notes
 
-```{r name="setup", child="notes-setup.Rmd"}
-# boilerplate
+```{r include=FALSE}
+require(mosaic)
 ```
 
 ### Before class
@@ -19,25 +18,8 @@ Since we didn't adopt a sensible measurement protocol, there is a large variatio
 
 ### Precision in Practice
 
-Do women earn less than men according to the 1985 CPS survey?
-```{r}
-cps = fetchData("CPS85")
-mod = mm(wage ~ sex, data=cps)
-coef(mod)
-```
-The coefficients suggest a difference, but how do we know how precise the measurements are?  That's what the confidence intervals are for.
-```{r}
-confint(mod)
-```
-If they don't overlap, we have good reason to think that the measurements are precise enough to indicate reliably/repeatably the difference.  
 
-If they overlap hugely, we don't have such reason.  
 
-If there's a bit of overlap, we'll need to be more careful: age and sex
-```{r}
-mod2 = mm(age ~ sex, data=cps)
-confint(mod2)
-```
 
 ### Confidence Intervals
 
@@ -58,14 +40,14 @@ Two main methods:
 
 With resampling replications, confint program will do this whichever way you ask:
 ```{r}
-trials = do(100)*mm(wage~sex, data=resample(cps))
+trials = do(100)*mm(wage~sex, data=resample(CPS85))
 confint( trials, method="stderr")
 confint( trials, method="quantile")
 ```
 
 Almost always, however, you'll take a short-cut and just ask for the confidence interval by passing the model itself, rather than a set of trials, to `confint`. As it happens, this is done with the standard error method.
 ```{r}
-mod = mm( net ~ sex, data=sample(run, size=800))
+mod = mm( time ~ sex, data=sample(TenMileRace, size=800))
 confint(mod)
 ```
 
@@ -90,9 +72,10 @@ The standard error depends on the **size of the sample**.
 
 Example:
 ```{r cache=TRUE}
-run = fetchData("repeat-runners.csv")
-trials = do(200)*mm( net ~ sex, data=sample(run,size=800))
-sd(trials)
+trials = do(200)*mm( net ~ sex, 
+                     data=sample(TenMileRace,size=800))
+sd(~F, data=trials)
+sd(~M, data=trials)
 ```
 Draw a plot of the standard error versus sample size.  Show that the standard error gets smaller as $1/\sqrt{n}$.  You need 4 times as much data to get an estimate that's twice as precise.
 
@@ -125,7 +108,7 @@ diff( coef(mod) )  # The point estimate
 trials = do(100)*diff( 
   coef( mm(wage ~ sex, data=resample(CPS85))))
 qdata(c(0.025, .975), M, data=trials)
-sd( trials) # Standard error
+sd( ~M, data=trials) # Standard error
 densityplot( ~ M, data=trials )
 ```
 So there seems to be a difference between the men's and women's average wages. 
@@ -149,15 +132,39 @@ How to add in additional variables, e.g. age and education?
 
 One intuitive idea is to break up the quantitative variables into categorical variables. For instance, `age`
 ```{r}
-mod3 = mm( wage ~ sex + sector + cut(age, breaks=c(0,20,40,60,80)), data=cps)
+mod3 = mm( wage ~ sex + sector + cut(age, breaks=c(0,20,40,60,80)), data=CPS85)
 ```
 Look at `confint(mod3)` and tell me about the overlap between the confidence intervals.  They are huge.  The problem is that there isn't much data in any one group.
 ```{r}
-tally( ~ sex + sector + cut(age, breaks=c(0,20,40,60,80)), data=cps)
+tally( ~ sex + sector + ntiles(age), data=CPS85)
 ```
 
 We can do better.  The key to doing better is to recognize that some pairs of groups are "nearby" and the nearby groups should have related results.  This is what `lm()` will do for us.  Time to take off the training 
 
+### Covariates
+
+Do single people earn less than married people according to the 1985 CPS survey?
+```{r}
+mod = mm(wage ~ married, data=CPS85)
+coef(mod)
+```
+The coefficients suggest a difference, but how do we know how precise the measurements are?  That's what the confidence intervals are for.
+```{r}
+confint(mod)
+```
+If they don't overlap, we have good reason to think that the measurements are precise enough to indicate reliably/repeatably the difference.  
+
+If they overlap hugely, we don't have such reason.  
+
+If there's a bit of overlap, we'll need to be more careful: age and sex
+```{r}
+mod2 = mm(age ~ sex, data=CPS85)
+confint(mod2)
+```
+
+What might the other factors be at work here?
+* Age
+* Sector of the economy
 
 
 ### Weekly quiz

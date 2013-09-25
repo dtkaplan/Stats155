@@ -1,0 +1,58 @@
+# Used-Car Prices
+
+```{r include=FALSE}
+# Leave this "chunk" alone
+require(mosaic)
+opts_chunk$set(fig.width=5,fig.height=4,out.width="50%",dev="svg",tidy=FALSE)
+options(width=50)
+```
+
+**Group Members**: Thomas Jefferson, Benjamin Franklin, John Adams, Robert Livingston, Roger Sherman
+
+## Introduction
+
+Describe the car model you selected, the variables (including price, age, location, and mileage) you chose to look at, etc.
+
+## Reading in the Spreadsheet
+
+You'll be reading in your spreadsheet from Google Docs.  This example is based on the data provided as part of the `mosaic` package, but copied over to Google Docs just to show how to read in from a spreadsheet.  Of course, you'll be setting up your own Google Doc and getting the public link to it to read in with `fetchGoogle` per [these instructions](http://rpubs.com/dtkaplan/GoogleSpreadsheets).
+
+Remember ... you need to change the name of the data source to that for your own Google spreadsheet.
+
+```{r}
+dataSource = "https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dEEya201eF9qamZ0VDlPbWY4eW1jemc&single=true&gid=0&output=csv"
+cars = fetchGoogle(dataSource)
+```
+
+
+
+## Description of Data
+
+Density plots, scatter plots, etc. Whatever you think is informative.
+
+```{r}
+xyplot(Price~Age, data=cars, 
+       ylab="Price ($)", xlab="Age (yrs)")
+```
+
+Comment briefly to say what each of your plots shows, e.g. "Price goes down with age."
+
+```{r}
+densityplot(~Mileage, data=cars)
+```
+
+
+## Models
+
+Here you'll give a few models, giving the model coefficients and interpreting them using language that might make sense to a well-educated car buyer.
+
+```{r}
+mod1 = lm( Price ~ Age, data=cars)
+coef(mod1)
+```
+
+Interpret your coefficients in everyday terms.
+
+Do several other models that you think might be of interest.
+
+Comment on anything that's surprising to you.
