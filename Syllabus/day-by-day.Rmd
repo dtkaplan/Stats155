@@ -229,10 +229,13 @@ Weekly Quiz
     * [XKCD cartoon](http://xkcd.com/418/).  What regression model for this?
 
 **In Class**: 
-* Partitioning variability.  
+* Partitioning variability.
 * [Selecting Model Terms](https://dl.dropbox.com/u/5098197/ISM/Select-Terms-Activity.pdf)
 
-**Notes**: `r I(todaysNotes("2012-09-24.html", "i"))` 
+**Resources**
+* [Instructor's notes](../Notes/Day-10/Day-10-notes.html)
+
+<!-- **Notes**: `r I(todaysNotes("2012-09-24.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-15-class) -->
 
 
@@ -252,6 +255,8 @@ Weekly Quiz
 
 
 **In Class**:
+* Weekly Quiz
+* Starting your Used Car Prices report.  [Document template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-10/used-car-report-template.Rmd).
 * [Untangling House Prices](https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf)
 
 **Notes**: 
@@ -260,7 +265,7 @@ Weekly Quiz
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-18-class) -->
 
 
-`r I(classDayContents( daynum=11 ))`
+`r I(classDayContents( daynum=12 ))`
 **Topic**: Fitting and Least Squares
 
 **Reading**: SM §7.10, SM §8.1, 8.2 
@@ -269,7 +274,7 @@ Weekly Quiz
 * `r I(PN(c(714,716,721,722, 731, 801),assignment="Ten"))`
 * Used car prices, data and report due. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
 
-**In Class**: Weekly Quiz
+**In Class**: 
 
 **Notes**: `r I(todaysNotes("2012-09-28.html", "i"))`  
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-20-class)  -->

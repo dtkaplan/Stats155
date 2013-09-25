@@ -1,0 +1,26 @@
+# Day 10 class notes
+
+```{r include=FALSE}
+require(mosaic)
+opts_chunk$set(fig.width=5,fig.height=4,out.width="60%",dev="svg")
+options(width=50)
+```
+
+I've said that `mm()` is like a motorcycle with training wheels.  It's simple to use, but it doesn't do very well in the real world, e.g. on the highway.
+
+Build a model of wage against married. Use `mm()`.  Do you really think that marital status determines wage?  What other theories do you have?
+
+Now build a model of wage against married, age, and educ.  Use `mm()`
+* Why so many NA's?
+* Make a prediction for married, age=55, educ=14.  Compare it to the prediction for single at that age and education.
+* How big are the confidence intervals?
+
+Now we're going to take the training wheels off.  Build the same model, but use `lm()`.
+* What do the coefficients stand for?
+* Make a prediction of wage for married, age=55, educ=14.  Compare it to the prediction for single at that age and eduction.
+* What's the confidence interval on the coefficients?
+
+Reviewing the uses of `lm()`.
+
+
+Fitting exponential decay to the swimming data.
