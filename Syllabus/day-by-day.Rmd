@@ -250,14 +250,16 @@ Weekly Quiz
 
 **Assignment**: 
 * Exercises `r I(PN(c("7RQ", 704, 705,710,711,712, 713,715),assignment="Nine"))`
-* Car project (group project): See assignment "Car Project" prob 7-23 on the assignment server.  Due by Monday's class. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
-* [Instructions for reading Google spreadsheets into R](http://rpubs.com/dtkaplan/GoogleSpreadsheets)
+* Originally scheduled but now deferred to Monday/Wednesday
+    * Car project (group project): See assignment "Car Project" prob 7-23 on the assignment server.  Due by Monday's class. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
+    * [Instructions for reading Google spreadsheets into R](http://rpubs.com/dtkaplan/GoogleSpreadsheets)
 
 
 **In Class**:
 * Weekly Quiz
-* Starting your Used Car Prices report.  [Document template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-10/used-car-report-template.Rmd).
-* [Untangling House Prices](https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf)
+* Also deferred to Monday
+    * Starting your Used Car Prices report.  [Document template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-10/used-car-report-template.Rmd).
+    * [Untangling House Prices](https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf)
 
 **Notes**: 
 
@@ -272,7 +274,9 @@ Weekly Quiz
 
 **Assignment**: 
 * `r I(PN(c(714,716,721,722, 731, 801),assignment="Ten"))`
-* Used car prices, data and report due. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
+* Car project (group project): See assignment "Car Project" prob 7-23 on the assignment server.  Due by Wednesday's class. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
+* [Instructions for reading Google spreadsheets into R](http://rpubs.com/dtkaplan/GoogleSpreadsheets)
+
 
 **In Class**: 
 
@@ -285,7 +289,10 @@ Weekly Quiz
 
 **Reading**: SM §8.3
 
-**Assignment**: `r I(PN(c(802, 804, 805, 811),assignment="Eleven"))`
+**Assignment**: 
+* `r I(PN(c(802, 804, 805, 811),assignment="Eleven"))`
+* Used car prices, data and report due. [Hand in your links here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform): 
+
 
 **In Class**: 
 * [Case versus Variable Spaces](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
