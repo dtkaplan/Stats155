@@ -278,7 +278,9 @@ Weekly Quiz
 * [Instructions for reading Google spreadsheets into R](http://rpubs.com/dtkaplan/GoogleSpreadsheets)
 
 
-**In Class**: 
+**In Class**:      
+* Starting your Used Car Prices report.  [Document template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-10/used-car-report-template.Rmd).
+* [Untangling House Prices](https://dl.dropbox.com/u/5098197/ISM/UntanglingHousePrices.pdf)
 
 **Notes**: `r I(todaysNotes("2012-09-28.html", "i"))`  
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2013-02-20-class)  -->

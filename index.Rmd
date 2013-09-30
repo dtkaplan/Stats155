@@ -18,7 +18,17 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
 
 Click on a date to see the syllabus/readings/assignments for that day. "Q" means quiz day.
 
-<iframe width='600' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dFIyT1JTRzhSV3UtMmZ5VGRUUGtKWnc&output=html&widget=true'></iframe>
+### Faculty Office Hours
+
+<iframe width='450' height='200' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dFFWMTJ3WXlfTkxDS3l0UG5vTzhsVmc&single=true&gid=0&output=html&widget=true'></iframe>
+
+[Faculty link for updating](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFFWMTJ3WXlfTkxDS3l0UG5vTzhsVmc&usp=sharing)
+
+### Preceptor Office Hours
+
+<iframe width='650' height='200' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dFIyT1JTRzhSV3UtMmZ5VGRUUGtKWnc&output=html&widget=true'></iframe>
+
+[Preceptor link for updating](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFIyT1JTRzhSV3UtMmZ5VGRUUGtKWnc&usp=sharing)
 
 **Where's the MSCS Reading Room?** Olin-Rice 254, in the central corridor of Olin-Rice, the corridor that runs parallel to the classroom corridor and faculty office corridor.
 
