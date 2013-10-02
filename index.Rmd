@@ -10,8 +10,8 @@ DL <- function(txt,i,style=c("dateNormal","dateBox","dateToday")) sprintf("<a hr
 
   |  |  |  |   |   |    |  |  |   |  |  |   |  |
 :-----:|:-----:|:-----|:-----:|---|---|---|---|---|---|---|---|---|---|
-**Sept** |  `r DL(4,1)` | `r DL(6,2)` | `r DL(9,3)` | `r DL(11,4)` | `r DL(13,5)` Q | `r DL(16,6)` | `r DL(18,7)` | `r DL(20,8)` Q |  `r DL(23,9)` | `r DL(25,10)` | `r DL(27,11)` Q | `r DL(30,12,style="dateToday")` 
-**Oct** | `r DL(2,13)` | `r DL(4,14)` Q | `r DL(7,15)` | `r DL(9,16)` | `r DL(11,17)` Q | `r DL(14,18)` | `r DL(16,19)` | <a href="#" class="tooltip"><em class="dateWarning">18</em><span><strong>Mid-term Exam</strong></span></a> | `r DL(21,21)` | `r DL(23,22)` | <a href="#" class="tooltip"><em >25</em><span><strong>Fall Break!</strong></span></a> | `r DL(28,23)` | `r DL(30,24)` |
+**Sept** |  `r DL(4,1)` | `r DL(6,2)` | `r DL(9,3)` | `r DL(11,4)` | `r DL(13,5)` Q | `r DL(16,6)` | `r DL(18,7)` | `r DL(20,8)` Q |  `r DL(23,9)` | `r DL(25,10)` | `r DL(27,11)` Q | `r DL(30,12)` 
+**Oct** | `r DL(2,13,style="dateToday")` | `r DL(4,14)` Q | `r DL(7,15)` | `r DL(9,16)` | `r DL(11,17)` Q | `r DL(14,18)` | `r DL(16,19)` | <a href="#" class="tooltip"><em class="dateWarning">18</em><span><strong>Mid-term Exam</strong></span></a> | `r DL(21,21)` | `r DL(23,22)` | <a href="#" class="tooltip"><em >25</em><span><strong>Fall Break!</strong></span></a> | `r DL(28,23)` | `r DL(30,24)` |
 **Nov** | `r DL(1,25)` | `r DL(4,26)` | `r DL(6,27)` | `r DL(8,28)` | `r DL(11,29)` | `r DL(13,30)` | `r DL(15,31)` | `r DL(18,32)` | `r DL(20,33)` | `r DL(22,34)` | `r DL(25,35)` | `r DL(27,36)` | <a href="#" class="tooltip"><em>29</em><span><strong>Thanksgiving!</strong></span></a> | 
 **Dec** | `r DL(2,37)` | `r DL(4,38)` | `r DL(6,39)` | `r DL(9,40)` |<a href="#" class="tooltip"><em class="dateWarning">11</em><span ><strong>Final exam 8am-10am. Extra Session.</strong></span></a> | <a href="#" class="tooltip"><em class="dateWarning">12</em><span ><strong>Final exam 10:30am-12:30pm. Extra Session.</strong></span></a> |   <a href="#" class="tooltip"><em class="dateWarning">16</em><span ><strong>Final exam 8am-10am. Official Time</strong></span></a> | 
 

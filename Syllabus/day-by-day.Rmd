@@ -297,9 +297,11 @@ Weekly Quiz
 
 
 **In Class**: 
-* [Case versus Variable Spaces](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
+* [Case Space versus Variable Space](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
 
-**Notes**: `r I(todaysNotes("2012-10-01.html", "i"))` 
+**Notes**: * [Instructor's notes](../Notes/Day-13/Day-13-notes.html)
+
+<!-- `r I(todaysNotes("2012-10-01.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-02-22-class) -->
 
 <!--     WEEK 5   -->
