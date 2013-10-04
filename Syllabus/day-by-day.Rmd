@@ -307,15 +307,22 @@ Weekly Quiz
 <!--     WEEK 5   -->
 
 `r I(classDayContents( daynum=14 ))`
-**Topic**: Redundancy and Colinearity
+**Topic**: Geometry and Model Vectors, Collinearity and Redundancy
 
 **Reading**: SM §8.4, 8.5
 
 **Assignment**:  `r I(PN(c("8RQ",805,812),assignment="Twelve"))`
 
-**In Class**: [Redundancy activity](https://dl.dropbox.com/u/5098197/ISM/redundancy.pdf) 
+**In Class**:   
+* [Case Space versus Variable Space](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
+* Weekly Quiz
 
-**Notes**: `r I(todaysNotes("2012-10-03.html", "i"))` 
+
+**Notes**: 
+* [Car price graphs](../Notes/Day-14/car-prices.html)
+* [Instructor's notes](../Notes/Day-14/Day-14-notes.html)
+
+<!-- `r I(todaysNotes("2012-10-03.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-03-class) -->
 
 `r I(classDayContents( daynum=15 ))`
@@ -325,7 +332,7 @@ Weekly Quiz
 
 **Assignment**: `r I(PN(c(901,902,904,905),assignment="Thirteen"))`
 
-**In Class**: Weekly Quiz
+**In Class**: 
 
 **Notes**: `r I(todaysNotes("2012-10-05.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-05-class) -->

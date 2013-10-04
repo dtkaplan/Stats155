@@ -1,0 +1,92 @@
+# Car Prices
+
+```{r include=FALSE}
+require(mosaic)
+require(ggplot2)
+opts_chunk$set(dev="svg",out.width="60%",tidy=FALSE)
+options(width=60)
+``` 
+
+## Honda Accord EXLV6NV
+
+```{r echo=FALSE}
+dataSource = "https://docs.google.com/spreadsheet/pub?key=0AiFKHafrY1ykdEJjVTJOUlpOTDg1TS1aMy1mTVc1M3c&single=true&gid=0&output=csv"
+accords = fetchGoogle(dataSource)
+accords = transform(accords,
+                    Location=factor(as.character(Location),
+                            levels=c('55015','15241','98501'),
+                            labels=c("MN","PA","WA")),
+                    Age = 2013 - Model.Year)
+```
+
+### Price versus Mileage
+
+```{r}
+xyplot(Price ~ Mileage, data=accords)
+mod1 = lm(Price ~ Mileage, data=accords)
+f = makeFun(mod1)
+plotFun(f(x)~x, add=TRUE, col="black")
+coef(mod1)
+```
+
+### Price versus Age
+
+```{r}
+xyplot(Price ~ Age, data=accords)
+mod2 = lm(Price ~ Age, data=accords)
+f2 = makeFun(mod2)
+plotFun(f2(x)~x, add=TRUE, col="red")
+coef(mod2)
+```
+
+### Price versus Age and Mileage
+
+
+```{r}
+xyplot(Price ~ Mileage, data=accords)
+mod3 = lm(Price ~ Mileage+Age, data=accords)
+f3 = makeFun(mod3)
+colors = rainbow(10)
+for (k in 1:10) {
+  plotFun(f3(Mileage=x,Age=a)~x, add=TRUE, col=colors[k],a=k)
+}
+coef(mod3)
+```
+
+### With an Interaction
+
+```{r}
+xyplot(Price ~ Mileage, data=accords)
+mod4 = lm(Price ~ Mileage*Age, data=accords)
+f4 = makeFun(mod4)
+colors = rainbow(10)
+for (k in 1:10) {
+  plotFun(f4(Mileage=x,Age=a)~x, add=TRUE, col=colors[k],a=k)
+}
+coef(mod4)
+```
+
+### Price versus Mileage interacting with Location
+
+```{r}
+ggplot(data=accords, aes(x=Mileage, y=Price)) + geom_point()  + aes(colour=Location) + aes(size=Age)  + stat_smooth(method=lm) + theme(legend.position="top") + labs(title="") 
+```
+
+### Plotting the Function of Age and Miles
+
+#### No Interaction
+```{r}
+plotFun(f3(Mileage=y,Age=x)~x&y,
+        x.lim=c(0,20),y.lim=c(0,200000),
+        xlab="Age (yrs)", ylab="Miles Driven", main="Price")
+plotPoints(Mileage ~ Age, data=accords, add=TRUE,pch=20,col="black")
+```
+
+#### Interaction
+
+```{r}
+plotFun(f4(Mileage=y,Age=x)~x&y,
+        x.lim=c(0,20),y.lim=c(0,200000),
+        xlab="Age (yrs)", ylab="Miles Driven", main="Price")
+plotPoints(Mileage ~ Age, data=accords, add=TRUE,pch=20,col="black")
+```

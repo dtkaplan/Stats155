@@ -1,0 +1,64 @@
+# Statistical Geometry and Computing
+
+```{r include=FALSE}
+require(mosaic)
+vectorAngle <- function(v1,v2,degrees=FALSE,subtractMean=FALSE) {
+  if (subtractMean) {
+    v1 <- v1 - mean(v1)
+    v2 <- v2 - mean(v2)
+  }
+  L1 <- sqrt(sum(v1^2))
+  L2 <- sqrt(sum(v2^2))
+  cosTheta <- sum(v1*v2)/(L1*L2)
+  ang <- acos(cosTheta)
+  if (degrees) return(180*ang/pi)
+  else return(ang)
+  }
+```
+
+### Instructor's Guide
+
+In this activity, students use the computer to confirm fundamental relationships in statistical geometry.
+
+### Objectives
+
+1. Demonstrate that the residual vector and the fitted model values vector are at right angles, regardless of the model chosen.  This means that the fitting process itself generates the right-angle relationship.  
+2. See that R^2 is an angle between two vectors.
+
+## Activity
+
+### Preliminaries
+
+Explain how to measure an angle.  You can do it with a protractor.  When computing the angle between two vectors, this only works if you can somehow get a protractor in to the space between the two vectors.  For two- and three-space, this is easy.  But for four and higher space, what could it mean.
+
+Instead, we use the dot product.  The rule is $\cos(\theta) = \frac{v_1 \cdot v_2}{| v_1 | | v_2 |}$.
+
+For students who don't know about the dot product, explain the operation algebraically and then demonstrate it on some coordinate pairs for which we do and don't know the angle.
+
+
+
+Start by having the students read in some data of interest and compute some model that makes sense to them.  For example:
+```{r}
+houses = fetchData("SaratogaHouses.csv")
+mod = lm( Price ~ Living.Area*Baths + Bedrooms*Fireplace, data=houses)
+```
+The angle between the fitted and residuals
+```{r}
+vectorAngle( fitted(mod), resid(mod), degrees=TRUE)
+```
+
+
+
+Sums of squares add up in the pythagorean way
+```{r}
+sum( fitted(mod)^2 ) + sum( resid(mod)^2 )
+with(sum( Price^2 ), data=houses)
+```
+R^2 relates to the cosine of the angle between the fitted model values and the response variable --- once the mean is subtracted out
+```{r}
+r.squared(mod)
+ang <- vectorAngle(with(data=houses,Price),fitted(mod), 
+                   subtractMean=TRUE)
+R <- cos(ang)
+R^2
+```
