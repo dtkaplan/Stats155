@@ -4,6 +4,18 @@ require(mosaic)
 set.seed(324) # for the random sample
 ```
 
+## Review of Car Project
+
+Show a projects
+* [one](http://rpubs.com/mwiduch/9161)
+
+Things to emphasize:
+* Coefficients have units.  The fact that the model.year:mileage coefficient is very small as a number doesn't mean that it is a small or trivial quantity. See model 5 [here](http://rpubs.com/bborgesr/9158)
+* Watch out for outliers shaping the results [three](http://rpubs.com/mibaid/9155)
+
+Graphs in two and three dimensions: [here](car-prices.html)
+
+
 
 ## Main Ideas for Today
 
@@ -62,9 +74,20 @@ with( small, educ )
 
 * interaction vectors as the component-wise products of the educ vector with each of the sector indicator vectors.
 
+#### Case Space versus Variable Space
+
+![Adam and Eve picture](http://dl.dropbox.com/u/5098197/ISM/Figures/Adam-and-Eve.png)
+
+#### [Activity comparing case space and variable space](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
+
+
 #### Fitting as a linear algebra problem
 
 Show a potential linear combination of the vectors.  Just make up the coefficients.
+
+Reaching the target with one and two explanatory vectors.
+
+Field Trip and the vector walk.
  
 * Point out that the vectors that are all zeros don't count.  They have nothing to contribute.
 
