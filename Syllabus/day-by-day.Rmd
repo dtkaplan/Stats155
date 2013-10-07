@@ -333,7 +333,7 @@ Weekly Quiz
 **Assignment**: `r I(PN(c(901,902,904,905),assignment="Thirteen"))`
 
 **In Class**: 
-* Counting Model Vectors [activity]() and [Rmd template]()
+* Counting Model Vectors [activity]() and [Rmd template](https://raw.github.com/dtkaplan/Stats155/gh-pages/In-Class-Activities/CountingModelVectors.Rmd)
 * Vector field trip
 
 **Notes**: [Instructor's notes](../Notes/Day-15/Day-15-notes.html) 

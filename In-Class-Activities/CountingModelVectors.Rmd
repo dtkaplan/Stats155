@@ -1,8 +1,14 @@
 # Counting Model Vectors
 
 ```{r include=FALSE}
-require(mosaic)
+require(mosaic)  # Leave this chunk alone
 ```
+
+###  Group Members
+
+add your names here!
+
+### Introduction
 
 We're going to pull out a small subset of the `CPS85` data in order to explore model vectors and their relationship to model terms.
 

@@ -13,7 +13,7 @@ set.seed(324) # for the random sample
 
 ### Activity: Count the vectors.
 
-[Link to the activity](../../In-Class-Activities/CountingModelVectors.html) and the [Rmd template]() which you should edit and hand in at the end of the activity.
+[Link to the activity](../../In-Class-Activities/CountingModelVectors.html) and the [Rmd template](https://raw.github.com/dtkaplan/Stats155/gh-pages/In-Class-Activities/CountingModelVectors.Rmd) which you should edit and hand in at the end of the activity.
 
 ## Case Space versus Variable Space
 
