@@ -192,10 +192,12 @@ hljs.initHighlightingOnLoad();
 <p>First, to construct the <code>small</code> data set, follow these instructions <strong>exactly</strong>.</p>
 
 <pre><code class="r">set.seed(1234)
-small &lt;- droplevels(sample(CPS85, size = 10))
-small &lt;- transform(small, ageGrp = as.character(ntiles(age, 3)))
+CPS85 &lt;- transform(CPS85, ageGrp = as.character(ntiles(age, 3)))
+small &lt;- droplevels(sample(CPS85, size = 10, orig.ids = FALSE))
 rownames(small) &lt;- NULL
 </code></pre>
+
+<h3>Levels of the Categorical Variables</h3>
 
 <p>In this small sample, you can see how many levels there are of each categorical variable with the command <code>with( small, levels( variableName ) )</code></p>
 
@@ -205,11 +207,19 @@ rownames(small) &lt;- NULL
 <pre><code>## [1] &quot;clerical&quot; &quot;manag&quot;    &quot;manuf&quot;    &quot;service&quot;
 </code></pre>
 
+<pre><code class="r">with(small, levels(ageGrp))
+</code></pre>
+
+<pre><code>## [1] &quot;1st&quot; &quot;2nd&quot; &quot;3rd&quot;
+</code></pre>
+
 <pre><code class="r">with(small, levels(union))
 </code></pre>
 
 <pre><code>## [1] &quot;Not&quot;   &quot;Union&quot;
 </code></pre>
+
+<h2>Activity</h2>
 
 <p>For each of the following models, your job is </p>
 
@@ -284,7 +294,49 @@ model.matrix(mod)
 
 <h3>Model 9: <code>wage ~ age * sector + age * sex</code></h3>
 
-<h3>Model 10: <code>wage ~ ageGrp*sector + ageGrp*sex</code></h3>
+<p>In this model, some of the coefficients are <code>NA</code>.  </p>
+
+<pre><code class="r">mod9 = lm(wage ~ age * sector + age * sex, data = small)
+coef(mod9)
+</code></pre>
+
+<pre><code>##       (Intercept)               age       sectormanag       sectormanuf 
+##           7.98372           0.04689           6.47622          -8.16496 
+##     sectorservice              sexM   age:sectormanag   age:sectormanuf 
+##          30.91322          -0.96043                NA           0.29478 
+## age:sectorservice          age:sexM 
+##          -0.72428                NA
+</code></pre>
+
+<p>Look at the model matrix and try to figure out why these are NA.</p>
+
+<h3>Model 10: <code>wage ~ ageGrp*sector + ageGrp*sex + age*sector</code></h3>
+
+<p>Again, some of the coefficients in the model are <code>NA</code>.  </p>
+
+<pre><code class="r">mod10 = lm(wage ~ ageGrp * sector + ageGrp * sex + age * sector, data = small)
+coef(mod10)
+</code></pre>
+
+<pre><code>##             (Intercept)               ageGrp2nd               ageGrp3rd 
+##                  3.5475                 -1.5600                 -5.4500 
+##             sectormanag             sectormanuf           sectorservice 
+##                  6.1250                 -2.8967                 -5.0950 
+##                    sexM                     age   ageGrp2nd:sectormanag 
+##                 -0.2325                  0.2225                      NA 
+##   ageGrp3rd:sectormanag   ageGrp2nd:sectormanuf   ageGrp3rd:sectormanuf 
+##                      NA                      NA                      NA 
+## ageGrp2nd:sectorservice ageGrp3rd:sectorservice          ageGrp2nd:sexM 
+##                 12.4800                      NA                      NA 
+##          ageGrp3rd:sexM         sectormanag:age         sectormanuf:age 
+##                      NA                      NA                  0.1192 
+##       sectorservice:age 
+##                      NA
+</code></pre>
+
+<p>Explain why.</p>
+
+<p>Are those coefficients also <code>NA</code> on the model fitted to the whole of <code>CPS85</code>?</p>
 
 <h3>Finally &hellip;</h3>
 

@@ -16,17 +16,22 @@ First, to construct the `small` data set, follow these instructions **exactly**.
 
 ```{r}
 set.seed(1234)
-small <- droplevels(sample(CPS85, size=10))
-small <- transform(small, ageGrp=as.character(ntiles(age,3)))
+CPS85 <- transform(CPS85, ageGrp=as.character(ntiles(age,3)))
+small <- droplevels(sample(CPS85, size=10,orig.ids=FALSE))
 rownames(small) <- NULL
 ```
+
+### Levels of the Categorical Variables
 
 In this small sample, you can see how many levels there are of each categorical variable with the command `with( small, levels( variableName ) )`
 
 ```{r}
 with( small, levels( sector ) )
+with( small, levels( ageGrp ) )
 with( small, levels( union ) )
 ```
+
+## Activity
 
 For each of the following models, your job is 
 * **FIRST**, to predict how many explanatory model vectors there will be in the model for this `small` data set.
@@ -75,7 +80,27 @@ sd( wage, data=small )
 
 ### Model 9: `wage ~ age * sector + age * sex`
 
-### Model 10: `wage ~ ageGrp*sector + ageGrp*sex`
+In this model, some of the coefficients are `NA`.  
+```{r}
+mod9 = lm( wage ~ age * sector + age * sex, data=small )
+coef(mod9)
+```
+Look at the model matrix and try to figure out why these are NA.
+
+
+
+### Model 10: `wage ~ ageGrp*sector + ageGrp*sex + age*sector`
+
+Again, some of the coefficients in the model are `NA`.  
+
+```{r}
+mod10 = lm( wage ~ ageGrp*sector + ageGrp*sex + age*sector, data=small )
+coef(mod10)
+```
+
+Explain why.
+
+Are those coefficients also `NA` on the model fitted to the whole of `CPS85`?
 
 ### Finally ...
 
