@@ -1,0 +1,76 @@
+# Counting Model Vectors
+
+```{r include=FALSE}
+require(mosaic)
+```
+
+We're going to pull out a small subset of the `CPS85` data in order to explore model vectors and their relationship to model terms.
+
+First, to construct the `small` data set, follow these instructions **exactly**.
+
+```{r}
+set.seed(1234)
+small <- droplevels(sample(CPS85, size=10))
+small <- transform(small, ageGrp=as.character(ntiles(age,3)))
+rownames(small) <- NULL
+```
+
+In this small sample, you can see how many levels there are of each categorical variable with the command `with( small, levels( variableName ) )`
+
+```{r}
+with( small, levels( sector ) )
+with( small, levels( union ) )
+```
+
+For each of the following models, your job is 
+* **FIRST**, to predict how many explanatory model vectors there will be in the model for this `small` data set.
+* Second, confirm or refute your prediction by using the `model.matrix()` command.
+* Third, explain any discrepancy between your prediction and the results of `model.matrix()`.
+* Fourth, find the standard deviation of the residuals.  If the model is a "perfect" fit, explain why.
+
+### EXAMPLE:
+
+How many explanatory model vectors in the model `wage ~ 1`?
+
+* Prediction: There's just one, the intercept.  A vector of all 1s.
+
+* Confirming
+```{r}
+mod = lm( wage~1, data=small )
+model.matrix(mod)
+```
+
+The prediction was right.
+
+The standard deviation of residuals is
+```{r}
+sd( resid(mod) )
+```
+Not at all a perfect fit.  Indeed, the model "explains" nothing, since the residuals have a standard deviation that is every bit as large as the response variable itself:
+```{r}
+sd( wage, data=small )
+```
+
+### Model 1: `wage ~ sex`
+
+### Model 2: `wage ~ sector`
+
+### Model 3: `wage ~ union`
+
+### Model 4: `wage ~ ageGrp`
+
+### Model 5: `wage ~ educ + sex`
+
+### Model 6: `wage ~ age + ageGrp`
+
+### Model 7: `wage ~ educ * sex`
+
+### Model 8: `wage ~ age * sector`
+
+### Model 9: `wage ~ age * sector + age * sex`
+
+### Model 10: `wage ~ ageGrp*sector + ageGrp*sex`
+
+### Finally ...
+
+Try fitting the last model to `CPS85` (rather than `small`) and look at the standard deviation of the residuals.  Comment on the difference from the residuals fitted to `small`).

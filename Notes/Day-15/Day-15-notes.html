@@ -3,8 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<title>Day 1</title>
+<title>Day 15 Notes Oct 7, 2013</title>
 
 <style type="text/css">
 body, td {
@@ -173,205 +174,264 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 
 
 </head>
 
 <body>
-<h1>Day 1</h1>
+<h1>Day 15 Notes Oct 7, 2013</h1>
 
-<h3>Questions for the students</h3>
-
-<ol>
-<li>What is statistics? (Shouldn&#39;t they know if they are taking the course?) Write down their suggestions (typically, &ldquo;science of data&rdquo;) and then move them toward &ldquo;The explanation of variation in the context of what remains unexplained.&rdquo;  This will remain abstract for a few weeks, but by the end of the semester it will hopefully seem very concrete.</li>
-<li>Why are you taking this course?  Students will hem and haw, trying to be polite, but knowing the real answer is, &ldquo;Because I&#39;m required to take it for my major.&#39;&#39;  I&#39;m not troubled by this.  My goal for the semester is to make the students agree that the people who require stats for the major were right to do so.</li>
-<li>What statistics have you had before?  Ferret out the AP students and ask them what techniques they covered.  Explain that there will be very little overlap with the AP course.  They will recognize some terminology, but any advantage they think they have is compensated for their need to overcome the misconceptions that often stem from an AP course.</li>
-</ol>
-
-<h3>Outline of the Course</h3>
-
-<ol>
-<li>Description of data.  We&#39;ll start with simple things: means, standard deviations, distributions.  Then quickly move on to describing the relationship among multiple variables.  You&#39;ll learn a formal language for constructing models that&#39;s very widely used in the natural and social sciences.  You&#39;ll also learn about the importance and uses of subjectivity and incorporating expert knowledge into your models.</li>
-<li>Randomness.  This is the core of a traditional statistics course, such as the AP course.  But we will be using a much richer system for describing data, so you won&#39;t see this until about mid-course. (Although we&#39;ll do an example today so that you won&#39;t feel we&#39;re neglecting it.)</li>
-<li>Bringing modeling and randomness together.</li>
-</ol>
-
-<h3>What&#39;s different about this course</h3>
-
-<ol>
-<li>We will be using techniques that are generally considered to be graduate level.</li>
-<li>We&#39;ll take computation very seriously.  That&#39;s one of the ways that we&#39;ll be able to make graduate-level statistics accessible in a first course.</li>
-<li>The major themes.  In a conventional stat course, tests&#39;&#39; are at the center.  But for us &hellip;
+<h2>Review of Model Vectors</h2>
 
 <ul>
-<li>Quantifying Effect size: How to measure the size or strength of a relationship.  We&#39;ll adopt a unified and powerful framework for this: building model formulas.</li>
-<li>Quantifying Precision and Strength of Evidence.</li>
-<li>Confounding and its implications for the collection and analysis of data.</li>
+<li>Intercept</li>
+<li>&ldquo;Main Effect&rdquo;</li>
+<li>Interaction Terms</li>
+</ul>
+
+<h3>Activity: Count the vectors.</h3>
+
+<p><a href="../../In-Class-Activities/CountingModelVectors.html">Link to the activity</a> and the <a href="">Rmd template</a> which you should edit and hand in at the end of the activity.</p>
+
+<h2>Case Space versus Variable Space</h2>
+
+<p><img src="http://dl.dropbox.com/u/5098197/ISM/Figures/Adam-and-Eve.png" alt="Adam and Eve picture"/></p>
+
+<h3><a href="https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf">Activity comparing case space and variable space</a></h3>
+
+<h2>Review of Vector Geometry and Linear Combinations</h2>
+
+<ul>
+<li>Vector has length and direction.</li>
+<li>Scaling and adding vectors</li>
+<li>Linear combination and subspaces.</li>
+<li>Projection: the nearest point in a subspace</li>
+<li>Extracting coefficients</li>
+<li>The dot product operator.</li>
+</ul>
+
+<h2>New vector Geometry ideas for today</h2>
+
+<ul>
+<li>There is a meaningful angle between any two vectors.
+
+<ul>
+<li>Two vectors define a planar subspace, so just measure the angle in that plane.</li>
 </ul></li>
-</ol>
-
-<h2>Doing Some Statistics</h2>
-
-<h3>What are grades like at Macalester?</h3>
-
-<p>Login to the RStudio server &hellip;</p>
-
-<pre><code class="r">g = fetchData(&quot;grades.csv&quot;)
-</code></pre>
-
-<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/grades.csv
-</code></pre>
-
-<pre><code class="r">head(g)
-</code></pre>
-
-<pre><code>##      sid grade   sessionID
-## 1 S31185    D+ session1784
-## 2 S31185    B+ session1785
-## 3 S31185    A- session1791
-## 4 S31185    B+ session1792
-## 5 S31185    B- session1794
-## 6 S31185    C+ session1795
-</code></pre>
-
-<pre><code class="r">tally(~grade, data = g, format = &quot;percent&quot;)
-</code></pre>
-
-<pre><code>## 
-##        A       A-       AU        B       B-       B+        C       C- 
-##  25.7032  23.7377   0.4744  13.7072   5.6591  17.2145   2.3382   0.8811 
-##       C+        D       D-       D+       NC        S    Total 
-##   2.8295   0.3050   0.1017   0.1355   0.2880   6.6249 100.0000
-</code></pre>
-
-<p>Not every grade is the same.  An obvious question: Why is this?  What factors influence grades?</p>
-
-<h3>Birthdays</h3>
-
-<p>Are birthday&#39;s evenly distributed? <a href="https://dl.dropboxusercontent.com/u/5098197/Stat155Fall2013/birthsByDay.html">Notes on birthdays</a></p>
-
-<p>Have students log-in to the ScoreR server.  Not everyone has an account.  If you don&#39;t</p>
-
-<h3>Smoking</h3>
-
-<h4>Is smoking bad for you?</h4>
-
-<!-- html table generated in R 3.0.1 by xtable 1.7-1 package -->
-
-<!-- Wed Sep  4 09:07:16 2013 -->
-
-<TABLE border=1>
-<CAPTION ALIGN="bottom"> Death Rate per 1000 Person-Years </CAPTION>
-<TR> <TH>  </TH> <TH> Smoking.Group </TH> <TH> Canadian </TH> <TH> British </TH> <TH> U.S. </TH>  </TR>
-  <TR> <TD align="right"> 1 </TD> <TD> Non-smokers </TD> <TD align="right"> 20.20 </TD> <TD align="right"> 11.30 </TD> <TD align="right"> 13.50 </TD> </TR>
-  <TR> <TD align="right"> 2 </TD> <TD> Cigarettes only </TD> <TD align="right"> 20.50 </TD> <TD align="right"> 14.10 </TD> <TD align="right"> 13.50 </TD> </TR>
-  <TR> <TD align="right"> 3 </TD> <TD> Cigars, pipes </TD> <TD align="right"> 35.50 </TD> <TD align="right"> 20.70 </TD> <TD align="right"> 17.70 </TD> </TR>
-   </TABLE>
-
-<p>Conclusion: </p>
-
-<h4>A covariate &hellip;</h4>
-
-<!-- html table generated in R 3.0.1 by xtable 1.7-1 package -->
-
-<!-- Wed Sep  4 09:07:16 2013 -->
-
-<TABLE border=1>
-<CAPTION ALIGN="bottom"> Mean Ages (years) </CAPTION>
-<TR> <TH>  </TH> <TH> Smoking.Group </TH> <TH> Canadian </TH> <TH> British </TH> <TH> U.S. </TH>  </TR>
-  <TR> <TD align="right"> 1 </TD> <TD> Non-smokers </TD> <TD align="right"> 54.90 </TD> <TD align="right"> 49.10 </TD> <TD align="right"> 57.00 </TD> </TR>
-  <TR> <TD align="right"> 2 </TD> <TD> Cigarettes only </TD> <TD align="right"> 50.50 </TD> <TD align="right"> 49.80 </TD> <TD align="right"> 53.20 </TD> </TR>
-  <TR> <TD align="right"> 3 </TD> <TD> Cigars, pipes </TD> <TD align="right"> 65.90 </TD> <TD align="right"> 55.70 </TD> <TD align="right"> 59.70 </TD> </TR>
-   </TABLE>
-
-<h4>Age Adjustment &hellip;</h4>
-
-<!-- html table generated in R 3.0.1 by xtable 1.7-1 package -->
-
-<!-- Wed Sep  4 09:07:16 2013 -->
-
-<TABLE border=1>
-<CAPTION ALIGN="bottom"> Age Adjusted Death Rate per 1000 Person-Years </CAPTION>
-<TR> <TH>  </TH> <TH> Smoking.Group </TH> <TH> Canadian </TH> <TH> British </TH> <TH> U.S. </TH>  </TR>
-  <TR> <TD align="right"> 1 </TD> <TD> Non-smokers </TD> <TD align="right"> 20.20 </TD> <TD align="right"> 11.30 </TD> <TD align="right"> 13.50 </TD> </TR>
-  <TR> <TD align="right"> 2 </TD> <TD> Cigarettes only </TD> <TD align="right"> 28.30 </TD> <TD align="right"> 12.80 </TD> <TD align="right"> 17.70 </TD> </TR>
-  <TR> <TD align="right"> 3 </TD> <TD> Cigars, pipes </TD> <TD align="right"> 21.20 </TD> <TD align="right"> 12.00 </TD> <TD align="right"> 14.20 </TD> </TR>
-   </TABLE>
-
-<p>Source: W.G. Cochran (1968) Biometrics 24(2):295-313</p>
-
-<h3>Student introductions</h3>
-
-<p>Those of you with laptops should go to <a href="http://www.mosaic-web.org/go/firepad/examples/teamedit.html?project=Math155&amp;doc=Intros">this link</a></p>
-
-<h3>Are Coins Fair?</h3>
-
-<p>The <a href="../Resources/magic-coins.html">magic coin exercise</a></p>
-
-<h3>Detecting Fraud</h3>
-
-<p><a href="../../Notes/coin-flipping.html">Coin flips</a></p>
-
-<h2>Administrative Matters</h2>
-
-<h4>The Pace of the Class</h4>
-
-<p>After giving you some time to settle back in for the semester, I will try to move pretty fast until about &frac34; of the way through the semester.  Then I will throttle back and go pretty easy for the last quarter of the semester.</p>
-
-<p>I do this because </p>
-
-<ul>
-<li>I want to use the last quarter of the semester to consolidate what you&#39;ve learned in the first &frac34;ths.</li>
-<li>Everyone is so busy in the last bit of the semester that they can&#39;t learn anything anyways.</li>
+<li>Redundancy and non-unique coefficients</li>
 </ul>
 
-<p>It&#39;s very important to remember</p>
+<h3>Fitting as a linear algebra problem</h3>
+
+<p>Show a potential linear combination of the vectors.  Just make up the coefficients.</p>
+
+<p>Reaching the target with one and two explanatory vectors.</p>
+
+<p>Field Trip and the vector walk.</p>
 
 <ul>
-<li>Not to panic because we a moving fast.  [But tell me if it&#39;s {\em too} fast for you to understand.]</li>
-<li>Don&#39;t fall behind with the assumption that you will catch up later.</li>
-<li>That, even though we&#39;ll slow down, there is still a final exam and a term project (that you&#39;ll be working on, cumulatively, through the semester).</li>
+<li>Point out that the vectors that are all zeros don&#39;t count.  They have nothing to contribute.</li>
 </ul>
 
-<h3>Grades</h3>
+<h4>What R does</h4>
 
-<h4>Components of the Grade</h4>
+<p>Our small set of data from last class &hellip;</p>
+
+<pre><code class="r">small = sample(CPS85, size = 3)[, c(&quot;wage&quot;, &quot;educ&quot;, &quot;sector&quot;)]
+small
+</code></pre>
+
+<pre><code>##     wage educ sector
+## 390 7.80   17   prof
+## 226 5.75   12   prof
+## 307 7.00    7  manuf
+</code></pre>
+
+<pre><code class="r">mod = lm(wage ~ educ * sector, data = small)
+</code></pre>
+
+<p>coef(mod)</p>
+
+<pre><code>
+* These are the multipliers on the corresponding vectors.
+* One of the indicator vectors has been dropped: it&#39;s not needed.
+   * Redundancy: the dropped indicator vector can be constructed from the other vectors in the model.  That&#39;s why it&#39;s not needed.
+   * QUESTION: How would you construct it from the other vectors?
+   * Every categorical variable has one vector that is redundant (when the intercept vector is included in the model) R marks the &quot;first&quot; vector, alphabetically, as redundant.  This is arbitrary.
+   * It&#39;s a **choice** to include the intercept vector.  `lm()` does it, `mm()` does not.  By including the intercept vector, one of the indicator vectors from each categorical variable is made redundant, and the meaning of the coefficients on the other vectors changes: difference from reference group rather than groupwise mean.
+* There&#39;s an NA in the interaction term.  This signals a vector that R discovered was redundant by examining the vectors.
+   * As opposed to categorical variables, where one knows ahead of time that one level must be redundant (if the intercept is in the model).
+   * How would you construct the redundant vector from the others already in the model?
+* With three non-redundant vectors, any set of three values can be reaced.  In particular, the 3 non-redundant vectors in `mod` can reach any possible response vector exactly.  That&#39;s why the residuals must be zero in the model.
+
+
+## Geometry of Fitting with Multiple Vectors
+
+### 1. Diagram with two explanatory vectors
+
+### 2. Show that the residual is orthogonal to each and every model vector.
+
+
+
+## More Geometrical Ideas
+
+
+1. The standard deviation, geometrically
+2. Fitting and orthogonality of the residual in high dimensions
+3. $R^2$.  Fraction of distance travelled to the response vector, but neglecting the intercept.
+4. Simpson&#39;s paradox
+    * Saratoga Houses: Bedrooms and Living.Area
+    * SAT and per pupil expenditures
+
+## Standard deviation
+
+We&#39;ve seen the standard deviation in it&#39;s role as describing the width of a distribution. That&#39;s an excellent way to think about the standard deviation.  
+
+### Two rules of thumb for estimating the standard deviation:
+* The half-width at half height for a bell-shaped distribution
+* One quarter length of the 95% coverage interval
+
+### The arithmetic: 
+
+First, the variance
+
+* $s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - m)^2$
+
+Then the standard deviation
+* $s = \sqrt{s^2}$ ... duh!
+
+### The units
+Same as those of the quantity itself
+
+### Geometrically
+
+Consider the very simple, all-cases-the-same model: `x ~ 1`  The only &quot;explanatory&quot; vector is the intercept vector.
+
+* The coefficient from this model is the grand mean $m$ of the values $x$.
+* The residuals are $x_i - m$.  The sum of squares of the residual is the square length of the residual vector.
+
+New idea: the &quot;average per component length&quot; of a vector.  This would be useful in describing the typical size of a residual for each case.
+
+* It might seem obvious that this should just be the length of the vector divided by the dimension of the space in which the vector lives.  But there&#39;s a better way.  The square-length divided by the dimension of the space.  What&#39;s nice about this is that it&#39;s more or less independent of the size of the sample.
+
+ACTIVITY:
+Have students fit the all-cases-the-same model to the Galton height data, but with different sample sizes.
+
+
+```r
+runners = fetchData(&quot;Cherry-Blossom-2008.csv&quot;)
+nrow(runners)
+</code></pre>
+
+<pre><code>## [1] 12302
+</code></pre>
+
+<pre><code class="r">small = sample(runners, size = 200)
+big = sample(runners, size = 8000)
+mod1 = lm(age ~ 1, data = small)
+mod2 = lm(age ~ 1, data = big)
+# average length per component
+sqrt(sum(resid(mod1)^2))/200
+</code></pre>
+
+<pre><code>## [1] 0.7542
+</code></pre>
+
+<pre><code class="r">sqrt(sum(resid(mod2)^2))/8000
+</code></pre>
+
+<pre><code>## [1] 0.1145
+</code></pre>
+
+<pre><code class="r"># average square length per component
+sum(resid(mod1)^2)/200
+</code></pre>
+
+<pre><code>## [1] 113.8
+</code></pre>
+
+<pre><code class="r">sum(resid(mod2)^2)/8000
+</code></pre>
+
+<pre><code>## [1] 105
+</code></pre>
+
+<pre><code class="r"># and the square root of that
+sqrt(sum(resid(mod1)^2)/200)
+</code></pre>
+
+<pre><code>## [1] 10.67
+</code></pre>
+
+<pre><code class="r">sqrt(sum(resid(mod2)^2)/8000)
+</code></pre>
+
+<pre><code>## [1] 10.24
+</code></pre>
 
 <ul>
-<li>Exercises most every day. Some small projects. [30%]</li>
-<li>Weekly Quizzes on Wednesday [10%]</li>
-<li>Mid-term and Final Exam. [15% &amp; 30%]</li>
-<li>Term project. [10%]</li>
-<li>Class participation. [5%]</li>
-<li>Extra credit.
-The percentages are a rough guide.  I&#39;ll explain the actual calculation later in the course when you are in a position to understand it.</li>
+<li><p>Note that the average square length is consistent between the two sample sizes, but the average length is not.  We want our estimates to be about the system under study, not the irrelevant details of the sample we chose to collect.  So the average square length is better.</p></li>
+<li><p>But what is the dimension of the space that the residual lives in?  \( n-1 \) since the residual is always orthogonal to the intercept vector.</p></li>
 </ul>
 
-<h4>Will I get an A?</h4>
+<h3>Fitting and orthogonality</h3>
 
-<p>That depends on you.  Here&#39;s my overall policy:</p>
+<p>The residuals will be orthogonal to each and every model vector</p>
 
-<ul>
-<li>A: You have completly mastered the material in the course.</li>
-<li>B: You have a good, solid understanding, good enough that I think you can go on to the next level with no worries. Examples of the next level: econometrics, Math 253, advanced research methods in psychology, summer research in biology.</li>
-<li>C: Know the material well enough that you should be able to try the next level, but I&#39;m not certain that you will be able to succeed without taking special care.</li>
-</ul>
+<pre><code class="r">mod = lm(wage ~ age * educ + exper, data = CPS85)
+with(data = CPS85, sum(resid(mod) * exper))
+</code></pre>
 
-<p>Typical grade in the class has been something like a B+.  There have
-not been very many Cs, but it does happen.</p>
+<pre><code>## [1] -1.02e-12
+</code></pre>
 
-<h4>Assignment Grading Policy</h4>
+<pre><code class="r">with(data = CPS85, sum(resid(mod) * age))
+</code></pre>
 
-<p>Assignments are due the midnight BEFORE class.  We use an electronic system for handling assignments so that I don&#39;t have to wait until you get to class for you to hand in your work.</p>
+<pre><code>## [1] -1.458e-12
+</code></pre>
 
-<p>Often the assignments will cover matters to be covered in the following class itself. This means, in order to do the assignment successfully, you have to learn the material on your own, or by working with your friends and classmates.  </p>
+<pre><code class="r">with(data = CPS85, sum(resid(mod) * educ))
+</code></pre>
 
-<p>BUT &hellip; I would be out of a job if you could always do this.  I recognize that there are some things that you might not be able to learn on your own with the materials that are provided.  So, you are free to go back and correct your answers AFTER class, if you learned
-something in class to change your mind.  You&#39;ll get FULL CREDIT for such changed answers.</p>
+<pre><code>## [1] 2.391e-12
+</code></pre>
 
-<p>BUT &hellip; Many of you would wait until after class to hand in your work, and then I wouldn&#39;t know what I need to talk about during class.  So, every once in a while, I will give you a grade based on your submissions before class.  I won&#39;t worry about whether you have the answers right, just whether you submitted them. But I will notice if you are just randomly hitting buttons &mdash; that&#39;s easy, because there is a time stamp on each submission.  So, be honest.</p>
+<pre><code class="r">with(data = CPS85, sum(resid(mod) * age * educ))
+</code></pre>
 
-<p>There are lots of assignments.  It doesn&#39;t matter if you miss a few or hand them in late.  The main point of the assignments is to exercise and develop your skills.  They are calisthenics for statistics.  Do them regularly and you will be in good shape.</p>
+<pre><code>## [1] 8.23e-11
+</code></pre>
+
+<pre><code class="r"># but not
+with(data = CPS85, sum(resid(mod) * exper * educ))
+</code></pre>
+
+<pre><code>## [1] -2521
+</code></pre>
+
+<h1>Alignment and Simpson&#39;s Paradox</h1>
+
+<p>By careful choice of covariates, you can influence what the role of the variable is.</p>
+
+<p>Simpson&#39;s paradox, or more generally the dependence of the coefficients of the variables on the covariates, is a simple consequence of alignment.  It&#39;s going to happen, like it or not.</p>
+
+<p>We&#39;ll need more guidance on the choice of covariates.</p>
+
+<p>Approaches we will see:
+1. Use of experimental assignment and randomization to create orthogonality
+2. Analysis of covariance
+3. Causation-related inference.</p>
+
+<h1>The Coefficient of Variation: \( R^2 \)</h1>
+
+<p>How much have we explained &hellip; what fraction of the distance to the response variable have we gone.</p>
+
+<p>BUT &hellip; want to emphasize variance, not the mean.  So we want the fraction orthogonal to the intercept.  We don&#39;t want to give undue credit to something that happens to be aligned with the intercept.</p>
 
 </body>
 

@@ -1,0 +1,184 @@
+# Day 15 Notes Oct 7, 2013
+
+```{r include=FALSE}
+require(mosaic)
+set.seed(324) # for the random sample
+```
+
+## Review of Model Vectors
+
+* Intercept
+* "Main Effect"
+* Interaction Terms
+
+### Activity: Count the vectors.
+
+[Link to the activity](../../In-Class-Activities/CountingModelVectors.html) and the [Rmd template]() which you should edit and hand in at the end of the activity.
+
+## Case Space versus Variable Space
+
+![Adam and Eve picture](http://dl.dropbox.com/u/5098197/ISM/Figures/Adam-and-Eve.png)
+
+### [Activity comparing case space and variable space](https://dl.dropbox.com/u/5098197/ISM/case-vs-variable-space.pdf)
+
+
+
+
+## Review of Vector Geometry and Linear Combinations
+
+* Vector has length and direction.
+* Scaling and adding vectors
+* Linear combination and subspaces.
+* Projection: the nearest point in a subspace
+* Extracting coefficients
+* The dot product operator.
+
+
+## New vector Geometry ideas for today
+
+* There is a meaningful angle between any two vectors.
+    * Two vectors define a planar subspace, so just measure the angle in that plane.
+* Redundancy and non-unique coefficients
+
+
+
+### Fitting as a linear algebra problem
+
+Show a potential linear combination of the vectors.  Just make up the coefficients.
+
+Reaching the target with one and two explanatory vectors.
+
+Field Trip and the vector walk.
+ 
+* Point out that the vectors that are all zeros don't count.  They have nothing to contribute.
+
+#### What R does
+
+Our small set of data from last class ...
+```{r}
+small = sample(CPS85,size=3)[,c("wage","educ","sector")]
+small
+mod = lm( wage ~ educ*sector, data=small)
+```
+coef(mod)
+```
+
+* These are the multipliers on the corresponding vectors.
+* One of the indicator vectors has been dropped: it's not needed.
+   * Redundancy: the dropped indicator vector can be constructed from the other vectors in the model.  That's why it's not needed.
+   * QUESTION: How would you construct it from the other vectors?
+   * Every categorical variable has one vector that is redundant (when the intercept vector is included in the model) R marks the "first" vector, alphabetically, as redundant.  This is arbitrary.
+   * It's a **choice** to include the intercept vector.  `lm()` does it, `mm()` does not.  By including the intercept vector, one of the indicator vectors from each categorical variable is made redundant, and the meaning of the coefficients on the other vectors changes: difference from reference group rather than groupwise mean.
+* There's an NA in the interaction term.  This signals a vector that R discovered was redundant by examining the vectors.
+   * As opposed to categorical variables, where one knows ahead of time that one level must be redundant (if the intercept is in the model).
+   * How would you construct the redundant vector from the others already in the model?
+* With three non-redundant vectors, any set of three values can be reaced.  In particular, the 3 non-redundant vectors in `mod` can reach any possible response vector exactly.  That's why the residuals must be zero in the model.
+
+
+## Geometry of Fitting with Multiple Vectors
+
+### 1. Diagram with two explanatory vectors
+
+### 2. Show that the residual is orthogonal to each and every model vector.
+
+
+
+## More Geometrical Ideas
+
+
+1. The standard deviation, geometrically
+2. Fitting and orthogonality of the residual in high dimensions
+3. $R^2$.  Fraction of distance travelled to the response vector, but neglecting the intercept.
+4. Simpson's paradox
+    * Saratoga Houses: Bedrooms and Living.Area
+    * SAT and per pupil expenditures
+
+## Standard deviation
+
+We've seen the standard deviation in it's role as describing the width of a distribution. That's an excellent way to think about the standard deviation.  
+
+### Two rules of thumb for estimating the standard deviation:
+* The half-width at half height for a bell-shaped distribution
+* One quarter length of the 95% coverage interval
+
+### The arithmetic: 
+
+First, the variance
+
+* $s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - m)^2$
+
+Then the standard deviation
+* $s = \sqrt{s^2}$ ... duh!
+
+### The units
+Same as those of the quantity itself
+
+### Geometrically
+
+Consider the very simple, all-cases-the-same model: `x ~ 1`  The only "explanatory" vector is the intercept vector.
+
+* The coefficient from this model is the grand mean $m$ of the values $x$.
+* The residuals are $x_i - m$.  The sum of squares of the residual is the square length of the residual vector.
+
+New idea: the "average per component length" of a vector.  This would be useful in describing the typical size of a residual for each case.
+
+* It might seem obvious that this should just be the length of the vector divided by the dimension of the space in which the vector lives.  But there's a better way.  The square-length divided by the dimension of the space.  What's nice about this is that it's more or less independent of the size of the sample.
+
+ACTIVITY:
+Have students fit the all-cases-the-same model to the Galton height data, but with different sample sizes.
+
+```{r message=FALSE}
+runners = fetchData("Cherry-Blossom-2008.csv")
+nrow(runners)
+small = sample(runners, size=200)
+big = sample(runners, size=8000)
+mod1 = lm( age ~ 1, data=small)
+mod2 = lm( age ~ 1, data=big)
+# average length per component
+sqrt(sum(resid(mod1)^2))/200
+sqrt(sum(resid(mod2)^2))/8000
+# average square length per component
+sum(resid(mod1)^2)/200
+sum(resid(mod2)^2)/8000
+# and the square root of that
+sqrt(sum(resid(mod1)^2)/200)
+sqrt(sum(resid(mod2)^2)/8000)
+```
+
+* Note that the average square length is consistent between the two sample sizes, but the average length is not.  We want our estimates to be about the system under study, not the irrelevant details of the sample we chose to collect.  So the average square length is better.
+
+* But what is the dimension of the space that the residual lives in?  $n-1$ since the residual is always orthogonal to the intercept vector.
+
+### Fitting and orthogonality
+
+The residuals will be orthogonal to each and every model vector
+```{r}
+mod = lm( wage ~ age*educ + exper, data=CPS85)
+with( data=CPS85, sum( resid(mod)*exper) )
+with( data=CPS85, sum( resid(mod)*age) )
+with( data=CPS85, sum( resid(mod)*educ) )
+with( data=CPS85, sum( resid(mod)*age*educ) )
+# but not
+with( data=CPS85, sum( resid(mod)*exper*educ) )
+```
+
+
+
+Alignment and Simpson's Paradox
+===========
+By careful choice of covariates, you can influence what the role of the variable is.
+
+Simpson's paradox, or more generally the dependence of the coefficients of the variables on the covariates, is a simple consequence of alignment.  It's going to happen, like it or not.
+
+We'll need more guidance on the choice of covariates.
+
+Approaches we will see:
+1. Use of experimental assignment and randomization to create orthogonality
+2. Analysis of covariance
+3. Causation-related inference.
+
+The Coefficient of Variation: $R^2$
+============
+How much have we explained ... what fraction of the distance to the response variable have we gone.
+
+BUT ... want to emphasize variance, not the mean.  So we want the fraction orthogonal to the intercept.  We don't want to give undue credit to something that happens to be aligned with the intercept.

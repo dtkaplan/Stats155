@@ -333,8 +333,12 @@ Weekly Quiz
 **Assignment**: `r I(PN(c(901,902,904,905),assignment="Thirteen"))`
 
 **In Class**: 
+* Counting Model Vectors [activity]() and [Rmd template]()
+* Vector field trip
 
-**Notes**: `r I(todaysNotes("2012-10-05.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-15/Day-15-notes.html) 
+
+<!-- `r I(todaysNotes("2012-10-05.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-05-class) -->
 
 `r I(classDayContents( daynum=16 ))`
