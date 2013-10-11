@@ -1,0 +1,25 @@
+# Day 16 Notes
+
+Topics continued from Day 15
+
+Working in Case Space
+
+```{r}
+fetchData("mLineFit.R")
+```
+
+Learning to use the program ...
+```{r eval=FALSE}
+mLineFit(length ~ width, data=KidsFeet)
+```
+
+In production: what's the relationship between wage and age?
+```{r eval=FALSE}
+mLineFit(wage ~ age, data=CPS85)
+```
+
+## Redundancy and Colinearity
+
+CPS85
+
+CPS85-corrected.csv

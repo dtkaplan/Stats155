@@ -1,0 +1,167 @@
+# Day 17 Notes 
+================================
+
+```{r include=FALSE}
+require(mosaic)
+```
+
+
+
+## Review
+
+### Vectors
+
+* The model triangle and partitioning of variation.
+* Redundancy and linear combinations
+    * Vector V is redundant when there is enough information in the other vectors to reconstruct V.
+    * The only allowable operation is linear combination of the other vectors.
+    * Why categorical variables always involve (at least) one redundant variable.
+    * Other vectors might turn out to be redundant, based on what else is in the model.
+* Redundancy is the extreme case of collinearity.
+    * Example with `CPS85`.  Age, experience, and education are closely related.  Build a model of one versus the others.  Look at the residuals.  Any odd ones?
+    * `fetchData("CPS85-corrected.csv")` fixes this error.  Look at how different the dependence of wage on age, experience, and education (and the confidence intervals of the coefficients) is in this slightly corrected data file.
+```{r}
+CPSfixed = fetchData("CPS85-corrected.csv")
+confint(lm( wage ~ sex + age + educ + exper, data=CPS85))
+confint(lm( wage ~ sex + age + educ + exper, data=CPSfixed))
+```
+
+### R^2
+$R^2$ between zero and 1.  
+* Use delta with nested models to decide if a model is better than junk.
+* SAT versus GPA, $R^2 \approx 0.16$.  Based on thousands of student records.
+* Little $r$ and the meaning of $r=0.40$
+
+Question about grades: How would you decide if the SAT is deficient or whether it is as good as it can possibly be and grades are deficient?
+
+### Covariates and Vectors
+
+A Covariate is a variable that might be important to how things work, but which you're not directly interested in.
+
+Example: SAT scores.
+We saw how adding in frac seemed to change the relationship between sat outcomes and expenditures.  
+
+There are three variables, so we know they live in a three-dimensional subspace of the 50-dimensional variable space.  Look at the angles among them
+
+Look at the angles among these variables:
+```{r}
+acos( cor(sat ~ frac, data=SAT) )*180/pi
+acos( cor(expend ~ frac, data=SAT) )*180/pi
+acos( cor(sat ~ expend, data=SAT) )*180/pi
+```
+
+Draw the vector diagram in 3-space.
+Fit sat to frac and expend separately.
+Then do the simultaneous fit.
+
+Example: Saratoga Housing
+```{r}
+houses = fetchData("SaratogaHouses.csv")
+acos( cor( Price ~ Living.Area, data=houses) )*180/pi
+acos( cor( Price ~ "Y"==Fireplace, data=houses) )*180/pi    
+acos( cor( Living.Area ~ "Y"==Fireplace, data=houses) )*180/pi
+```
+
+
+Survey Project
+===============
+
+1. Hand out [project description](http://dl.dropbox.com/u/5098197/Exercises/HTML/ISM-ISM-Spring-2011-Term-Project/ISM-ISM-Spring-2011-Term-Project-A.html?access=ISM3) They are going to be creating a Google Form to collect the data.
+2. Ask for suggestions about project areas
+3. Have students form groups around common interests. 
+
+
+Partial versus total
+===============
+
+Suppose I have a used car.  I'm going away for a year and thinking of selling it.  On the other hand, it would be nice to have a car available when I get back.  How much will it cost me to delay selling the car for a year?
+
+Consider several models of used car prices fitted to data on used Hondas:
+```{r}
+cars = fetchData("used-hondas.csv")
+mod1 = lm( Price ~ Age, data=cars )
+mod2 = lm( Price ~ Mileage, data=cars )
+mod3 = lm( Price ~ Mileage + Age, data=cars )
+mod4 = lm( Price ~ Mileage * Age, data=cars )
+```
+
+Each of the first three is nested in the 4th.  You can play around with the various models this way:
+```{r eval=FALSE}
+fetchData("mLM.R")
+mLM( Price ~ Age*Mileage, data=cars )
+```
+Include and exclude terms to try to answer this question:
+> Which is the right model to use to inform my car-selling decision?
+
+Tempting to use model 1, since Age is the only variable that I'm interested in.
+```{r}
+xyplot( fitted(mod1)+Price ~ Age, data=cars )
+```
+
+It's a bit hard to see the model.  Let's try another way of plotting it.
+```{r}
+f1 = makeFun(mod1)
+plotPoints(Price ~ Age, data=cars)
+plotFun( f1(Age)~ Age, add=TRUE)
+```
+How much the price goes down with a year depends on how old the car is, but you can get the rate from the derivative of the function.  Let's evaluate that derivative for an 8-year old car with 50,000 miles:
+```{r}
+f1 = makeFun(mod1)
+df1 = D(f1(Age)~Age)
+df1(Age=8)
+```
+Or, since I'm really thinking about a 1-year difference:
+```{r}
+f1( Age=c(9,8), Mileage=50000 )
+```
+Take the difference.
+QUESTION: How come I get the same answer for the finite-difference and the derivative?
+
+But let's consider mod4
+```{r}
+f4 = makeFun(mod4)
+plotFun( f4(Age=a,Mileage=m)~a&m, 
+         a.lim=c(0,10), m.lim=c(0,100000),
+         levels=1000*(1:20),npts=200)
+plotPoints( Mileage ~ Age, data=cars,add=TRUE,
+            pch=20, col="red")
+```
+
+Examine the change as age goes up by one year.  Should I hold mileage constant or should I let the mileage change with age in the typical way?  
+
+Here's the same question another way: Do I want to compare cars with different mileages and different ages, or do I want to compare cares with different ages and the same mileage.
+
+Calculating the partial derivative or partial change:
+* Take a finite-difference approach 
+```{r}
+f4( Age=c(8,9),Mileage=50000)
+```
+
+* Use partial derivatives
+```{r}
+df4da = D( f4(Age=Age,Mileage=Mileage)~Age)
+df4da(Age=8, Mileage=50000 )
+```
+
+* Do it analytically, using the coefficients to construct the model polynomial.
+
+
+### Review of Partial Derivatives
+
+Relate to the two-variable polynomial: $f(x,y) = a_0 + a_1 x + a_2 y + a3 x y + ...$
+
+Relate to the three-variable polynomial.
+
+* Calculation from model function by evaluating at nearby points
+
+### Real-world examples
+
+* Insurance example: Should we pay people not to be on the College's health plan?
+* NGOs and development aid: Speaker Christie Hansen talked about how donors for health funding in Kenya ended up funding other activities as the government moved money away from health toward agriculture, etc.
+* Merit aid. Will it reduce net tuition or increase it. Depends on whether we substantially change the yield.
+
+### Activity
+
+[Total-vs-partial In-class activity](https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf)
+
+Car data: work with the two-dimensional graphs
