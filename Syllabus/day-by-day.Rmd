@@ -378,7 +378,7 @@ Weekly Quiz
 **Assignment**: `r I(PN(c("10RQ",1005,1011,1012,1020),assignment="Sixteen"))`
 
 **In Class**: 
-* Rmd worksheet on total versus partial change. [template here]()
+* Rmd worksheet on total versus partial change. [template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-18/partial-change-activity.Rmd)
 * Our usual Weekly Quiz is cancelled, since we have a mid-term exam next Friday.
 
 **Notes**: `r I(todaysNotes("2012-10-12.html", "i"))` 
