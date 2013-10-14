@@ -1,0 +1,94 @@
+# Total vs Partial
+
+```{r include=FALSE}
+require(mosaic) # leave this chunk alone
+opts_chunk$set(dev="svg",out.width="50%")
+```
+
+### Authors: Barack Obama, John Boehner, Harry Reid
+
+## Car Prices
+
+Make a model of used car prices.  You're welcome to use the `used-hondas.csv` data, but it's nicer if you use the data you collected yourself.
+
+```{r}
+cars = fetchData("used-hondas.csv")
+# or use fetchGoogle( the publish-to-web URL of your spreadsheet )
+names(cars) # the variable names
+```
+
+If you're using your own data, remember to check the names of the variables and modify the ones here to match yours.
+
+### Price versus age and mileage
+
+Here are two models of price.  For each, the function from the model has been explicitly created with `makeFun()`:
+```{r}
+mod1 = lm( Price ~ Age + Mileage, data=cars )
+f1 = makeFun( mod1 )
+mod2 = lm( Price ~ Age * Mileage, data=cars )
+f2 = makeFun( mod2 )
+```
+
+#### Mod 1 Example
+
+For `mod1`, the coefficients themselves tell you the partial change with respect to age and mileage:
+```{r}
+coef(mod1)
+```
+
+Compare this to the partial differences:
+```{r}
+f1( Age=5, Mileage=40000 ) - f1( Age=4, Mileage=40000)
+f1( Age=4, Mileage=40001 ) - f1( Age=4, Mileage=40000)
+```
+
+Make sure you understand what these partial differences correspond to on the contour graph of price versus age and mileage:
+```{r}
+plotFun( f1(Age=x, Mileage=y)~x&y, x.lim=c(2,7), y.lim=c(20000,60000) )
+```
+
+#### Mod 2
+
+With `mod2`, because of the interaction term, it's harder to get the partial differences from the coefficients.  But the procedure is the same in terms of making and evaluating the function.  
+
+For `mod2`
+* Evaluate the function `f2()` to see the partial differences at the same values as in the above example.
+* Make a graph of the price function.  Make sure that you understand how the function evaluations correspond to points on the graph.
+* Calculate the **total change** for a car that ages from 4 to 5 years while the mileage increases from 40,000 to 50,000.
+
+## Housing Prices
+
+Using the `SaratogaHouses.csv` data, estimate the partial change of adding a fireplace onto a house of 2000 square feet living area, 3 bedrooms, and 2 baths.
+
+```{r}
+houses = fetchData("SaratogaHouses.csv")
+names(houses)
+```
+
+Make models both with and without interactions between living area and fireplace. (You can also put in bedrooms and baths, if you like.) 
+
+* How much does the partial change of a fireplace depend on the particular model? 
+
+
+
+## Wages
+
+What's the value of a college education? (Or, what was it in the decades before 1985, when the `CPS85` data were collected?)
+
+Find both the **partial** and the **total change** of extending education from 12 years to 16 years in this model
+
+```{r}
+wmod1 = lm(wage ~ educ*sector + educ*exper, data=CPS85)
+w1 = makeFun(wmod1)
+```
+
+* You'll have to choose a sector and an amount of experience to create a number for the partial change.  Do so.
+
+* As `educ` changes, so does `exper`, since the year of education comes at the cost of a reduced amount of experience.  You might also reasonably infer a change in sector due to education.
+    * What's the total change of `educ` when balanced against a corresponding change in `exper`, while holding `sector` constant?
+    * How much does a plausible change in `sector` change things?
+
+
+
+
+
