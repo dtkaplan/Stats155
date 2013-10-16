@@ -1,0 +1,11 @@
+# Day 19 Notes - Oct 16, 2013
+
+## Form groups for project
+
+## Review for midterm
+
+## Nested models 
+
+What constitutes nesting.
+
+Why R^2 goes up as more terms are added.

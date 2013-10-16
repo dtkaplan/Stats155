@@ -362,8 +362,7 @@ Weekly Quiz
 **Assignment**: `r I(PN(c(922, 923,1001,1004,1010),assignment="Fifteen"))`
 
 **In Class**: 
-* [Total versus Partial](https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf)
-* Form groups for the [term project](../Resources/term-project-2013.html).  Enter information about your project and group [on this Google Doc](https://docs.google.com/document/d/1pfZJMs0WLnZ9sPl7uzUi3AgSxWMFWOkwDvS4wNnlZ0U/edit?usp=sharing) so that the whole class can see.
+
 
 **Notes**: `r I(todaysNotes("2012-10-10.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-10-class) -->
@@ -378,13 +377,44 @@ Weekly Quiz
 **Assignment**: `r I(PN(c("10RQ",1005,1011,1012,1020),assignment="Sixteen"))`
 
 **In Class**: 
-* Rmd worksheet on total versus partial change. [template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-18/partial-change-activity.Rmd)
+* [Total versus Partial](https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf)
+
 * Our usual Weekly Quiz is cancelled, since we have a mid-term exam next Friday.
 
 **Notes**: `r I(todaysNotes("2012-10-12.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-12-class) -->
 
+
+<!--     WEEK 7   -->
+
 `r I(classDayContents( daynum=19 ))`
+**Topic**: Review for Exam
+
+**Reading**:
+
+**Assignment**: [Review Problems](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf) 
+
+**In Class**:
+* Form groups for the [term project](../Resources/term-project-2013.html).  Enter information about your project and group [on this Google Doc](https://docs.google.com/document/d/1pfZJMs0WLnZ9sPl7uzUi3AgSxWMFWOkwDvS4wNnlZ0U/edit?usp=sharing) so that the whole class can see.
+* Rmd worksheet on total versus partial change. [template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-18/partial-change-activity.Rmd)
+
+**Notes**: `r I(todaysNotes("2012-10-17.html", "i"))` 
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-17-class) -->
+
+....................
+
+`r I(classDayContents( daynum=20 ))`
+**Mid-term Exam**
+
+Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf) and then again, [with answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review-answers.pdf)
+
+**[Exam Answers and Grading Rubric] to be posted.** 
+<!--(http://rpubs.com/dtkaplan/2243) --> 
+
+.....................
+
+
+`r I(classDayContents( daynum=21 ))`
 **Topic**: Confidence Intervals on Coefficients
 
 **Reading**: SM Ch. 12
@@ -394,26 +424,6 @@ Weekly Quiz
 **Notes**: `r I(todaysNotes("2012-10-15.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-15-class) -->
 
-<!--     WEEK 7   -->
-
-`r I(classDayContents( daynum=20 ))`
-**Topic**: Review for Exam
-
-**Reading**:
-
-**Assignment**: [Review Problems](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf) 
-
-**Notes**: `r I(todaysNotes("2012-10-17.html", "i"))` 
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-17-class) -->
-
-
-`r I(classDayContents( daynum=21 ))`
-**Mid-term Exam**
-
-Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review.pdf) and then again, [with answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term-Review-answers.pdf)
-
-**[Exam Answers and Grading Rubric] to be posted.** 
-<!--(http://rpubs.com/dtkaplan/2243) --> 
 
 `r I(classDayContents( daynum=22 ))`
 **Topic**: Probability Models
