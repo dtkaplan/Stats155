@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Day 18 Notes</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Day 18 Notes</h1>
+
+<h2>Where We Are</h2>
+
+<p>At this point in the course, after the &ldquo;Week of Theory,&rdquo; you should have a better understanding of:
+1. Why the coefficients on any given term depend on what other terms are in the model. That Simpson&#39;s Paradox is not the act of an angry deity, but a simple consequence of alignment of explanatory vectors.
+2. The role that the intercept plays.  Why it&#39;s a choice to represent a model whose model values are groupwise means as either the means themselves or a reference mean and deltas to the other means.
+3. That alignment of vectors makes things a bit harder, but is not a fundamental difficulty so long as the alignment is not absolute, as in redundancy.  We can measure alignment between two vectors as an angle.  But we need a way to measure alignment between a vector and a set of vectors.
+4. That a rough measure of the &ldquo;quality of a model&rdquo; is the size of the residuals.  The smaller the typical residual, the better the model.</p>
+
+<p>You should already know how to fit models, even pretty complicated models that include lots of variables.  You understand that the model itself takes the form of a function, but that there are important attributes of a model that go beyond just the function itself, e.g. the residuals, model coefficients, confidence intervals on model coefficients.  </p>
+
+<p>But models are looking like they hard to interpret.  The quantification of effect size is complicated by interaction terms.  It&#39;s also complicated by the change in coefficients when an additional model term is put into a model.</p>
+
+<h1>Where We&#39;re Heading</h1>
+
+<p>This week, we&#39;ll be developing some tools for interpreting models.  </p>
+
+<ul>
+<li>The &ldquo;official&rdquo; statistical method for measuring alignment: not an angle but \( R^2 \) and \( r \): the coefficient of determination and the correlation coefficient.  (Bad names: these &ldquo;coefficients&rdquo; are not like coefficients in models.  That&#39;s why \( R^2 \) and \( r \) are so widely used.)</li>
+<li>The use of partial derivatives applied to model functions to quantify effect size.  This will simplify the interpretation of effect size.  However, you&#39;ll discover that you need to be thoughtful about whether a partial derivative is what you want or not. </li>
+</ul>
+
+<h1>Accounting for Variation</h1>
+
+<p>The definition offered for &ldquo;statistics&rdquo; at the beginning of the semester was</p>
+
+<blockquote>
+<p>The explanation of or accounting for variation in the context of what remains unexplained.</p>
+</blockquote>
+
+<p>At this point, you should know
+1. What is meant by variation.<br/>
+2. What is meant by &ldquo;explanation&rdquo; and why &ldquo;accounted for&rdquo; might be a more accurate. That We&#39;re concerned in our models with explaining just one quantity, labelled the &ldquo;response variable,&rdquo; and are using the explanatory variable to do the explaining or accounting for.
+3. That &ldquo;what remains unexplained&rdquo; is represented by the residual.  So it&#39;s not at this point a philosophical statement of what we don&#39;t know, but just the difference between what the model says and what actually happened.</p>
+
+<p>Now we need to sort through the meaning of &ldquo;in the context of&rdquo;.</p>
+
+<p>We will eventually reach \( R^2 \), a very widely used quantity.  So you might as well know what \( R^2 \) is: a ratio of variances: the variance in the fitted divided by the variance of the response. That is, how much the model created versus how much there was to create.</p>
+
+<p>Two ways do display \( R^2 \):</p>
+
+<ul>
+<li>Do summary() on the model.</li>
+<li>Use do(1), which is arranged to extract the \( R^2 \).</li>
+</ul>
+
+<p>Some questions:</p>
+
+<ul>
+<li>(theoretical) Why variance and not standard deviation or something else? Ans: Partitioning.</li>
+<li>(theoretical) Why var(fitted)/var(response) rather than var(fitted)/var(resid)?</li>
+<li>(theoretical) Why the fitted model values can never have a larger variance than the response variable?</li>
+<li>(practical) How big is big enough?</li>
+</ul>
+
+<h1>Partitioning of Variability</h1>
+
+<h3>Variance</h3>
+
+<ul>
+<li>Show that sd, IQR, 95% coverage don&#39;t partition variation. That is, the IQR of the fitted + IQR of resids is not necessarily IQR of response variable.</li>
+<li>Var does partition variation.  This has to do with the residual being perpendicular to the fitted model values and the pythagorean theorem. </li>
+</ul>
+
+<h3>Why not, say, var(fitted)/var(resid)?</h3>
+
+<p>That would be reasonable, too.  var(fitted)/var(response) has a nice property of being easy to interpret.  It&#39;s always between 0 and 1.</p>
+
+<p>Later on we&#39;ll switch to a more technical statistic, called the F statistic, which is</p>
+
+<ul>
+<li>F = (var(fitted)/m-1)/(var(resid)/(n-m-1))
+This has nice properties in terms of the shape of the probability distribution.  But fundamentally, it has no advantage over \( R^2 \).</li>
+</ul>
+
+<h3>Why is var(fitted) always no bigger than var(response)?</h3>
+
+<p>This has to do with the length of vectors.  The variance is proportional to the length of the vector (after subtracting out the mean).  The triangle inequality mandates that the length of the leg of a right triangle cannot be longer than the length of the hypotenuse.</p>
+
+<p>Actually, you can create models that have a var(fitted) larger than var(response).  This involves either of two strategies:</p>
+
+<ol>
+<li>Not fitting the model.  If you don&#39;t fit, there&#39;s no guarantee that the residual is perpendicular to the fitted model values.</li>
+<li>Not including an intercept (or, the equivalent, which can be had by including a categorical variable).  This messes up the link between the length of the vector and the variance.</li>
+</ol>
+
+<p>Example (which shows one reason not to leave off the intercept):</p>
+
+<pre><code class="r">mod = lm(length ~ width - 1, data = KidsFeet)
+</code></pre>
+
+<pre><code>## Error: object &#39;KidsFeet&#39; not found
+</code></pre>
+
+<pre><code class="r">var(fitted(mod))
+</code></pre>
+
+<pre><code>## Error: object &#39;mod&#39; not found
+</code></pre>
+
+<pre><code class="r">with(KidsFeet, var(length))
+</code></pre>
+
+<pre><code>## Error: object &#39;KidsFeet&#39; not found
+</code></pre>
+
+<p>To avoid this problem, there&#39;s another definition of \( R^2 \) used by <code>summary()</code> that reduces to the ratio of variances when the vector of 1s is in the model subspace.</p>
+
+<h3>How Big is Big Enough?</h3>
+
+<p>This depends on your purpose.</p>
+
+<ul>
+<li>\( R^2 = 0.01 \) on daily stock-market prices would be plenty for me to become the richest person in the world.</li>
+<li>Rule of thumb often heard: Bigger than 0.15.  But this has no clear justification.
+EXAMPLE: SAT versus freshman GPA: \( R^2 = 0.16 \)  WATCH OUT, people sometimes report R in order to make it seem that the number is bigger.
+Why this is wrong: it doesn&#39;t take into account how much evidence there is.  Suppose you did an experiement comparing 10 cases to 10 controls.  In reality, there was no relationship.  What do you see?</li>
+</ul>
+
+<pre><code class="r">max(do(100) * cor(rnorm(10), rnorm(10))^2)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;do&quot;
+</code></pre>
+
+<p>TURN THIS INTO A BLOG: Early inference.</p>
+
+<ul>
+<li>Comparing models.  Bigger \( R^2 \) is better.  (But is it really?)</li>
+<li>Hypothesis testing approach: Can we detect the effect?</li>
+</ul>
+
+<h3>Correlation Coefficient.</h3>
+
+<h4>History.</h4>
+
+<ul>
+<li>Ellipical scatter plots.</li>
+<li>Ellipses: ratio of minor to major axis legthth.</li>
+</ul>
+
+<h4>Relationship between \( R^2 \) and \( r \)</h4>
+
+<p>\( r \) is just for a straight-line model
+    * Example using ccf versus month: obviously a relationship but not a straight-line relationship</p>
+
+<h3>Comparing Models</h3>
+
+<ul>
+<li>How R<sup>2</sup> Changes as we add in model terms</li>
+<li>Nesting</li>
+<li>Random vectors.  Use <code>shuffle()</code> and a small data set.</li>
+</ul>
+
+<h3>The &ldquo;Coefficient of Determination&rdquo; \( R^2 \)</h3>
+
+<ul>
+<li>\( R^2 \) as ratio of variances
+
+<ul>
+<li>Meaning of \( R^2 \) as fraction of variance accounted for by model</li>
+<li>Meaning of correlation coefficient r</li>
+</ul></li>
+</ul>
+
+<h1>Orthogonality and Alignment</h1>
+
+<p>Orthogonality of explanatory vectors is a nice, simplifying property. (One more demo of that today.)</p>
+
+<h3>Why Groupwise means are so simple</h3>
+
+<p>They are so simple that it&#39;s tempting to try to cast everything in terms of groupwise means.  But this is too limiting &mdash; it doesn&#39;t, for example, allow us to deal with quantitative explanatory variables.</p>
+
+<p>Are there lessons to learn in terms of simplifying the interpretation of other kinds of coefficients?</p>
+
+<p>EXAMPLE: Suppose you have decided that the issue in wages is about unionization and whether or not the worker is a service worker &mdash; all the other sectors are equivalent.  You add a new variable to the wage data:</p>
+
+<pre><code class="r">cps = fetchData(&quot;CPS85&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;fetchData&quot;
+</code></pre>
+
+<pre><code class="r">cps = transform(cps, service = sector == &quot;service&quot;)
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<pre><code class="r">mod1 = mm(wage ~ service, data = cps)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;mm&quot;
+</code></pre>
+
+<p>A colleague comes along with a theory that construction workers need to be broken out separately.  You&#39;re skeptical, but you do this anyways</p>
+
+<pre><code class="r">cps = transform(cps, const = sector == &quot;const&quot;)
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<pre><code class="r">mod2 = mm(wage ~ service + const, data = cps)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;mm&quot;
+</code></pre>
+
+<p>Compare the two models:</p>
+
+<pre><code class="r">coef(mod1)
+</code></pre>
+
+<pre><code>## Error: object &#39;mod1&#39; not found
+</code></pre>
+
+<pre><code class="r">coef(mod2)
+</code></pre>
+
+<pre><code>## Error: object &#39;mod2&#39; not found
+</code></pre>
+
+<p>Notice two things
+1. There&#39;s a redundancy.  Why?  (There are really only three groups: service, construction and the rest.)
+2. The first two coefficients didn&#39;t change from mod1 to mod2, even though we added in a new model term.</p>
+
+<p>By comparison, consider these two models:</p>
+
+<pre><code class="r">coef(lm(wage ~ age, data = cps))
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<pre><code class="r">coef(lm(wage ~ age + exper, data = cps))
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<p>The coefficients change hugely.</p>
+
+<p>Don&#39;t think that this is about <code>mm()</code> versus <code>lm()</code>.  It&#39;s a matter of the vectors and whether they are orthogonal to one another or not.</p>
+
+<p>You can test whether two vectors are orthogonal by taking their dot product:</p>
+
+<pre><code class="r">with(data = cps, sum(service * const))  # orthogonal
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<pre><code class="r">with(data = cps, sum(age * exper))  # not orthogonal
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<p>When the new vector is orthogonal to the one already in the model, the inclusion of the new vector in the model won&#39;t change the coefficients on the old vector. </p>
+
+<h4>Angle program in <code>m155development.R</code></h4>
+
+<pre><code class="r">fetchData(&quot;m155development.R&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;fetchData&quot;
+</code></pre>
+
+<p>This takes a model formula or a pair of numerical vectors.  </p>
+
+<pre><code class="r">with(data = cps, angle(service, const))  # orthogonal
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<pre><code class="r">with(data = cps, angle(age, exper))  # not orthogonal
+</code></pre>
+
+<pre><code>## Error: object &#39;cps&#39; not found
+</code></pre>
+
+<p>Remember that when using angle on a model or a model formul, you are finding the angle between the response and the subspace due to all the explanatory vectors.  </p>
+
+<pre><code class="r">angle(age ~ exper, data = cps)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;angle&quot;
+</code></pre>
+
+<pre><code class="r">angle(age ~ exper - 1, data = cps)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;angle&quot;
+</code></pre>
+
+<h2>In PROGRESS</h2>
+
+<p>Overall idea: \( R^2 \) summarizes the alignment on a 0-1 scale. 0 means not at all aligned (orthogonal); 1 means perfectly aligned (which might be 0 or 180 degrees). It always includes the intercept in the model &mdash; the point is to account for variation.   That&#39;s why it can be calculated as the variance of the fitted divided by the variance of the response.</p>
+
+<p>Another way to think of it: The fraction of the square-distance that you&#39;ve travelled to the response on the busses provided by your model vectors.</p>
+
+<h3>Little \( r \)</h3>
+
+<ul>
+<li>Just the square-root of \( R^2 \) from the simple model <code>A ~ B</code> with A and B both quantitative.</li>
+<li>People who don&#39;t want to talk about model coefficients use the correlation coefficient. 
+
+<ul>
+<li>The sign reflects the sign of the coefficient.<br/></li>
+<li>But the magnitude isn&#39;t an effect size.</li>
+</ul></li>
+<li>\( r \) is stupid if the relationship is nonlinear (try ccf versus month in utility data)</li>
+<li>Our practices: 
+
+<ul>
+<li>Use the coefficients to describe effect size (or, more generally, partial derivatives)</li>
+<li>Include what needs to be included in the model to capture the phenomena of interest.</li>
+</ul></li>
+</ul>
+
+<h3>Watch Out</h3>
+
+<ul>
+<li>Sometimes people report \( R \) instead of \( R^2 \) because it looks bigger!  You should be aware of this.</li>
+<li>Example: SAT scores and college GPA have \( R \approx 0.4 \).  That sounds pretty large, but remember that \( R^2 \approx 0.16 \).  It wouldn&#39;t really matter which one you use, but it&#39;s wrong to compare two different things as if they were the same. 
+
+<ul>
+<li>In SAT scores, there&#39;s a question of whether the lack of predictability is due to SAT or to GPA.  How would you decide?</li>
+</ul></li>
+</ul>
+
+</body>
+
+</html>
+

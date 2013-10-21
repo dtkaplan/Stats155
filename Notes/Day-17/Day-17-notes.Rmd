@@ -160,8 +160,5 @@ Relate to the three-variable polynomial.
 * NGOs and development aid: Speaker Christie Hansen talked about how donors for health funding in Kenya ended up funding other activities as the government moved money away from health toward agriculture, etc.
 * Merit aid. Will it reduce net tuition or increase it. Depends on whether we substantially change the yield.
 
-### Activity
-
-[Total-vs-partial In-class activity](https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf)
 
 Car data: work with the two-dimensional graphs

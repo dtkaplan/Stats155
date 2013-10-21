@@ -1,0 +1,24 @@
+# Day 21 Friday Oct 18
+
+Mid-term Exam 
+
+```
+\paragraph{Problem 1.} 
+\Sexpr{knit_child(text=getURL('http://dtkaplan.github.io/MOSAIC-Exercises/Statistics/Rnw-Latex/variation-201.Rnw'))}
+
+\paragraph{Problem 2.} 
+\Sexpr{knit_child(text=getURL('http://dtkaplan.github.io/MOSAIC-Exercises/Statistics/Rnw-Latex/DF-F2013-001.Rnw'))}
+
+\paragraph{Problem 3.} 
+\Sexpr{knit_child(text=getURL('http://dtkaplan.github.io/MOSAIC-Exercises/Statistics/Rnw-Latex/DF-F2013-002.Rnw'))}
+
+\paragraph{Problem 4.} 
+\Sexpr{knit_child(text=getURL('http://dtkaplan.github.io/MOSAIC-Exercises/Statistics/Rnw-Latex/Folliage-1.Rnw'))}
+
+\paragraph{Problem 5.} 
+\Sexpr{knit_child(text=getURL('http://dtkaplan.github.io/MOSAIC-Exercises/Statistics/Rnw-Latex/car-model-graphs.Rnw'))}
+```
+
+University graduation rates computer exam.
+
+

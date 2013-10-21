@@ -1,11 +1,63 @@
 # Day 19 Notes - Oct 16, 2013
 
-## Form groups for project
+```{r include=FALSE}
+require(mosaic)
+```
 
-## Review for midterm
+
+
+
+## Announcements:
+
+* Remember the mid-term exam on Friday.  
+    * You won't need a computer for it.  I'll have a computer that you can use to do calculations, or you can use R, but you can't use any other resources.
+    * You can bring a 1-page sheet of notes.  The only restriction is that you write (or type) this yourself.  No xeroxing, no cut-and-paste from your friends' notes, etc.
+* Clearing up partial derivatives and coefficients
+    * When you want to measure the effect size of an explanatory variable, a partial derivative is appropriate for a quantitative variable and a partial difference is appropriate for a categorical variable.
+    * It's perfectly reasonable to make a finite-difference approximation to the derivative: calculating the model value at two different levels for the input.  You may also face the occasional situation when you need to be changing more than one variable simultaneously, as with the age-experience-educ triplet in the wage data.
+    * For models with just main effects, you can easily read the partial derivatives off from the coefficients.  For models with interactions, this is a little bit harder, since it involves adding together two or more terms.
+      Example:
+```{r}
+mod = lm( height ~ sex + mother*father, data=Galton )
+coef( mod )
+```
+The partial with respect to mother is the coefficient on mother plus the coefficient on mother:father multiplied by the father's height.  That is, the partial derivative with respect to mother is a function of father.
+
 
 ## Nested models 
 
 What constitutes nesting.
 
 Why R^2 goes up as more terms are added.
+
+### Hold Constant or Not
+
+The in-class activity: Two variations:
+* old: [Total-vs-partial In-class activity](https://dl.dropbox.com/u/5098197/ISM/total-partial.pdf)
+* new: `Rmd` worksheet on total versus partial change. [template here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-18/partial-change-activity.Rmd)
+
+## Form groups for project
+
+Form groups for the [term project](../Resources/term-project-2013.html).  Enter information about your project and group [on this Google Doc](https://docs.google.com/document/d/1pfZJMs0WLnZ9sPl7uzUi3AgSxWMFWOkwDvS4wNnlZ0U/edit?usp=sharing) so that the whole class can see.
+
+### Review
+
+We saw a general strategy for modeling when the concern is with effect size:
+
+1. Decide which sort of effect you want to study: total or partial.
+2. Construct a model that includes both the variable you are interested in and any covariates that you want to hold constant.  What sort of model 
+terms (e.g. interactions) you want to include is another matter, you have a choice.
+3. Compute a partial derivative with respect to the variable whose effect size you want to study holding the other variables constant.
+
+IMPORTANT: Leaving a covariate **out** of a model does not hold it constant.  Ignoring is not the same thing as holding constant.
+
+### More than one variable?
+
+It can occasionally happen that you want to study the effect of a variable that necessarily has an effect on another variable.  For instance, suppose we want to study the effect of education on wages.  But each year of education necessarily leads to a year less of "experience."  So, include both in the model:
+```{r tidy=FALSE}
+mod = lm( wage ~ sex*poly(exper,2)*educ + sector*educ, data=CPS85)
+f = makeFun(mod)
+f(sex="M", exper=9, educ=15,sector="prof") - f( sex="M", exper=10, educ=14, sector="prof")
+```
+
+You could also do this by constructing the differential involving both experience and education, but this will do.
