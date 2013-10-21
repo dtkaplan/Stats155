@@ -1,13 +1,10 @@
-Stats 155 Class Notes 2012-10-15
-================================
+# Day 21 Notes: Oct 21, 2013
 
-```{r name="setup", child="notes-setup.Rmd"}
-# boilerplate
-options(na.rm=TRUE)
+```{r include=FALSE}
+require(mosaic)
 ```
+### Plans for the Week
 
-Plans for the Week
--------------------
 
 1. A bit more about total vs partial change (Monday)
     * Gradepoint average example
@@ -19,15 +16,10 @@ Plans for the Week
     * Interpretation
         * Role of the variable **given** the covariates. (Monday)
         * Coverage activity (Wednesday)
-3. Mid-term Exam
 
-Next Monday will be about collinearity and confidence intervals
 
-Next Wednesday about probability models.
 
-Then, after Fall break, we'll move into hypothesis testing.
-
-Where We Are
+## Where We Are
 -----------------
 
 You should understand that ...
@@ -36,8 +28,8 @@ You should understand that ...
 * If you're going to be holding a covariate constant, you need to include that variable in the model.  There is still an open question about whether to include interaction terms, transformation terms, etc.  We have the hint of an idea that terms can be evaluated based on the way they change $R^2$ and whether a term adds more to $R^2$ than would a random variable.
 * Leaving a variable out of a model does not leave out that variable's influence on the system, it just hides it from your view.  So include covariates and use the interpretation/"experiment-on-model" phase to hold constant what you're not interested in.
 
-Where We're Heading
-----------------
+## Where We're Heading
+
 
 * Sampling distributions, resampling distributions, and confidence intervals on model coefficients can be constructed using the same methodology as we used when examining groupwise means.
 * Examining confidence intervals on model coefficients gives another way to judge the effectiveness of including additional model terms.  When the new terms are highly aligned with other terms in the model, the confidence intervals can grow uselessly large.
@@ -65,8 +57,9 @@ Sampling Distributions and Re-sampling Distributions
 Construct an interval using `do()` and `resample()`.
 ```{r}
 s = do(100)*lm( width ~ sex + length, data=resample(KidsFeet) )
-sd(s) # standard error
-densityplot( ~length, data=s)
+sd(~sex, data=s) # standard error on sex coef.
+sd(~length, data=s) # standard error on length coef
+densityplot( ~length, data=s) # resampling distribution
 ```
 
 Using `confint()`
@@ -175,6 +168,7 @@ grades = fetchData("grades.csv")
 g2pt = fetchData("grade-to-number.csv")
 courses = fetchData("courses.csv")
 grades = merge(grades, g2pt)
+grades = subset(grades, complete.cases(grades))
 ```
 
 ```{r}
