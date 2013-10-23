@@ -65,10 +65,12 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 **Reading**: SM Ch. 11
 
 **Assignment**: 
-* An App about Confidence Intervals.  Listen to the audio on [this app]([App showing CI geometry](http://glimmer.rstudio.com/mosaic/CIgeometry/).  Suggestions for improving this App are appreciated.  [Enter them here.](https://docs.google.com/document/d/1rpAW34tpmg0awVTCZbS_kIfiEfhd5UwyiLOnSkFp-oE/edit?usp=sharing)If you know something about programming in R (e.g. you've taken CS 121) there might be a in-semester or summer job for you.
+* An App about Confidence Intervals.  Listen to the audio on [this app](http://glimmer.rstudio.com/mosaic/CIgeometry/).  Suggestions for improving this App are appreciated.  [Enter them here.](https://docs.google.com/document/d/1rpAW34tpmg0awVTCZbS_kIfiEfhd5UwyiLOnSkFp-oE/edit?usp=sharing)If you know something about programming in R (e.g. you've taken CS 121) there might be a in-semester or summer job for you.
 * `r I(PN(c("11RQ",1101,1102,1104,1105,1110,1121,1122),assignment="Eighteen"))`
 
-**Notes**: `r I(todaysNotes("2012-10-24.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-22/Day-22-notes.html)
+
+<!-- `r I(todaysNotes("2012-10-24.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-24-class) -->
 
 

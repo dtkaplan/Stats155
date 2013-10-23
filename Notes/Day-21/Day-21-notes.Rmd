@@ -158,6 +158,7 @@ Key idea: if we collected another sample, the deterministic component would be t
 
 Why does it depend on the number of cases: orthogonality of random vectors in high dimensions.
 
+[App showing CI geometry](http://glimmer.rstudio.com/mosaic/CIgeometry/)
 
 
 ### Groupwise means on the GPA. 
