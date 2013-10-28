@@ -1,0 +1,16 @@
+# Day 23: Oct. 28, 2013
+
+## Quick review of probability models
+
+1. The normal distribution
+2. The lognormal distribution and stock market returns
+    * Some [data on yearly returns](http://www.1stock1.com/1stock1_112.htm)
+3. Poisson and exponential distributions.
+
+## In-class activity
+
+[Taking the bus to your job interview](Some [data on yearly returns](http://www.1stock1.com/1stock1_112.htm)
+
+## Grades and confidence intervals on GPA
+
+
