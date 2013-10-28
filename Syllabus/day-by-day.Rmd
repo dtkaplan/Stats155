@@ -82,8 +82,15 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Reading**: Review SM Ch. 11.  Start on SM Ch. 12
 
+**In Class**:
+* Activity: Modeling Bus Commute Times: [Rmd for editing](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-23/bus-travel.Rmd) and [html](../Notes/Day-23/Day-23-notes.html)
+* Confidence in Grades.
+
 **Assignment**: 
 * `r I(PN(c(1111,1130,1135,1137),assignment="Nineteen"))`
+
+**Notes**: [Instructor's notes](../Notes/Day-23/Day-23-notes.html)
+
 
 
 `r I(classDayContents( daynum=24 ))`
