@@ -204,7 +204,7 @@ hljs.initHighlightingOnLoad();
 <p>You construct a simulation:</p>
 
 <pre><code class="r">n = 1000
-waitTime &lt;- rexp(n, rate = 1/10)  # 10 minutes on average
+waitTime &lt;- rexp( n, rate=1/10) # 10 minutes on average
 </code></pre>
 
 <p>Write R statements to display the distribution of wait times.  Confirm using R that the average wait time is close to what you&#39;ve specified.</p>
@@ -221,7 +221,7 @@ waitTime &lt;- rexp(n, rate = 1/10)  # 10 minutes on average
 
 <p>Add in the length of the bus ride.</p>
 
-<pre><code class="r">transitTime = runif(n, min = 20, max = 35)
+<pre><code class="r">transitTime = runif(n, min=20, max=35)
 totalTravel = waitTime + transitTime
 </code></pre>
 
@@ -229,8 +229,10 @@ totalTravel = waitTime + transitTime
 <li>Calculate a safe estimate (for the purposes of getting to your job interview on time) for how long early to get to the bus stop so that you can be confident that you&#39;ll get to the interview on time.  Try confidence levels of 90%, 95%, and 99%.<br/></li>
 </ul>
 
-<pre><code class="r"># Place here: your R statements to find your estimate of how long the trip
-# to your interview will take.
+<pre><code class="r"># Place here: 
+# your R statements to find your 
+# estimate of how long the trip to your 
+# interview will take.
 
 </code></pre>
 
@@ -244,10 +246,11 @@ totalTravel = waitTime + transitTime
 
 <p>You call up your statistics major friend from college.  She gives you these statements to use:</p>
 
-<pre><code class="r">busIntervals = rexp(n, rate = 1/10)
-passengerNumber = rpois(n, lambda = 5 * busIntervals/10)
-passengerWaits = rep(busIntervals, times = passengerNumber)
-transitTime = runif(length(passengerWaits), min = 20, max = 35)
+<pre><code class="r">busIntervals = rexp(n, rate=1/10)
+passengerNumber = rpois(n, lambda=5*busIntervals/10) 
+passengerWaits = rep(busIntervals, times=passengerNumber)
+transitTime = runif(length(passengerWaits), 
+                    min=20, max=35)
 totalTime = passengerWaits + transitTime
 </code></pre>
 
@@ -266,13 +269,13 @@ totalTime = passengerWaits + transitTime
 
 <h2>Going a bit further</h2>
 
-<p>You realize that your 10-minute average wait time estimate is from the passengers&#39; point of view, but the busses&#39;.  You&#39;re not sure what the actual average wait time is from the busses.  So try a few quesses until you find a number that is consistent with your passengers&#39; view observation of a 10-minute average.</p>
+<p>You realize that your 10-minute average wait time estimate is from the passengers&#39; point of view, not the busses&#39;.  You&#39;re not sure what the actual average interval is between busses.  So try a few guesses until you find a number that is consistent with your passengers&#39; view observation of a 10-minute average.</p>
 
 <pre><code class="r"># Change what needs to be changed here
-busIntervals = rexp(n, rate = 1/10)
-passengerNumber = rpois(n, lambda = 5 * busIntervals/10)
-passengerWaits = rep(busIntervals, times = passengerNumber)
-transitTime = runif(length(passengerWaits), min = 20, max = 35)
+busIntervals = rexp(n, rate=1/10)
+passengerNumber = rpois(n, lambda=5*busIntervals/10) 
+passengerWaits = rep(busIntervals, times=passengerNumber)
+transitTime = runif(length(passengerWaits), min=20, max=35)
 totalTime = passengerWaits + transitTime
 </code></pre>
 

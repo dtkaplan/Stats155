@@ -1,5 +1,10 @@
 # Getting to your Job Interview
 
+```{r include=FALSE}
+require(mosaic) # Leave this "chunk" alone
+opts_chunk$set(tidy=FALSE,dev="svg",out.width="50%")
+```
+
 You take the bus to work and pass the time by reading the Proust classic <span title="Literally: In search of lost time.">*À la recherche du temps perdu*</span>. 
 
 Last week, while riding to work, you sat next to someone older who became increasingly frustrated as your bus was delayed by mobs of people getting on and off.  She glanced at your book and muttered, as if to you, "How is a passenger like a fish?"  Strange.  But, thanks to your work in statistics, as well as your proficiency with French, you responded without delay: "Because they are both <span title="'Fish,' in French. In probability, a classic model for the number of passengers who arrive at a bus stop in an interval of time.">poisson</span>."  Your seat-mate brighted up immediately and started a conversation with you about your college experience, and her work in data analytics.  
@@ -46,7 +51,8 @@ totalTravel = waitTime + transitTime
 * Calculate a safe estimate (for the purposes of getting to your job interview on time) for how long early to get to the bus stop so that you can be confident that you'll get to the interview on time.  Try confidence levels of 90%, 95%, and 99%.  
 
 ```{r}
-# Place here: your R statements to find your 
+# Place here: 
+# your R statements to find your 
 # estimate of how long the trip to your 
 # interview will take.
 
@@ -66,7 +72,8 @@ You call up your statistics major friend from college.  She gives you these stat
 busIntervals = rexp(n, rate=1/10)
 passengerNumber = rpois(n, lambda=5*busIntervals/10) 
 passengerWaits = rep(busIntervals, times=passengerNumber)
-transitTime = runif(length(passengerWaits), min=20, max=35)
+transitTime = runif(length(passengerWaits), 
+                    min=20, max=35)
 totalTime = passengerWaits + transitTime
 ```
 
@@ -84,7 +91,7 @@ Answer these questions:
 
 ## Going a bit further
 
-You realize that your 10-minute average wait time estimate is from the passengers' point of view, but the busses'.  You're not sure what the actual average wait time is from the busses.  So try a few quesses until you find a number that is consistent with your passengers' view observation of a 10-minute average.
+You realize that your 10-minute average wait time estimate is from the passengers' point of view, not the busses'.  You're not sure what the actual average interval is between busses.  So try a few guesses until you find a number that is consistent with your passengers' view observation of a 10-minute average.
 
 ```{r}
 # Change what needs to be changed here
