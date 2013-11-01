@@ -1,0 +1,78 @@
+# Day 25, Nov 1, 2013
+
+```{r include=FALSE}
+require(mosaic)
+opts_chunk$set(tidy=FALSE,dev="svg",out.width='60%')
+options(width=40)
+```
+
+## Unit of Analysis
+
+Consider class sizes at Macalester.  Here's some data:
+```{r}
+classes = fetchData("courses.csv")
+names(classes)
+densityplot(~enroll, data=classes)
+mean(~enroll, data=classes)
+```
+
+These data are from the college's point of view.  They are truthful (but all the classes under size 10 were dropped, because the data were collected for the purpose of studying grades).
+
+The distribution is right-skew, so the mean is bigger than the median.
+```{r}
+median(~enroll, data=classes)
+```
+
+Maybe these data are log-normal:
+```{r}
+densityplot(~log(enroll), data=classes)
+exp(mean(~log(enroll), data=classes))
+```
+
+We can argue about whether the mean or median provides the better description of the typical class size.  But it's more important to think about **why** one is interested in this at all.
+
+### Perspective One: Classes as the Unit of Analysis
+
+Example Questions:
+
+* What size classrooms do we need?
+* How many extra sessions would we need to put a cap on enrollment in each class?
+* How many classes are as large as this one?
+```{r}
+tally( ~ enroll>=35, data=classes, format="proportion")
+```
+* But **not**.  What is the student experience?
+
+
+### Perspective Two: Students as the Unit of Analysis
+
+Suppose we transform the data from the student's point of view.  For a class of size 35, there are 35 students in the class, so we should replicate the number 35 by 35 times.  Similarly, for a class of size 10, the size should be replicated 10 times, for each of the 10 students.
+
+This statement will do that (but you don't need to know a statement like this):
+```{r}
+students = with(classes, rep(enroll, times=enroll))
+```
+
+* What's a student's typical class size?
+```{r}
+mean(~students)
+median(~students)
+```
+
+* How many of your classes are as large as this one?
+```{r}
+tally( ~ students>=35, format="proportion")
+```
+
+
+The distribution:
+```{r}
+densityplot(~students)
+```
+### Back to the Busses
+
+Getting to your job interview: [HTML](../Day-24/in-class.html), [RMD](../Day-24/in-class.html)
+
+Walk through the probability calculations.
+
+Should the bus company report from the busses' or the passengers' point of view?  They are both legitimate, but they serve different purposes.

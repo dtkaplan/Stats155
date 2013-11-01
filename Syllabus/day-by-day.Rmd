@@ -104,7 +104,9 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 * Activity: Modeling Bus Commute Times: [Rmd for editing](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-23/bus-travel.Rmd) and [html](../Notes/Day-23/Day-23-notes.html). Hand in a link to your RPubs-published document [here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
 * Confidence in Grades.
 
-**Notes**: `r I(todaysNotes("2012-10-22.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-24/Day-24-notes.html)
+
+`r I(todaysNotes("2012-10-22.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-22-class) -->
 
 
@@ -114,6 +116,10 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 **Reading**: SM Ch. 13
 
 **Assignment**: `r I(PN(c(1301),assignment="Twenty-one"))`
+
+**In Class**:
+* (Delayed from Wednesday) Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
+
 
 **Notes**: `r I(todaysNotes("2012-10-29.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-29-class) -->
