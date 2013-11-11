@@ -50,7 +50,7 @@ Your birthday is a number that plays an important part in your thought process. 
 
 Spreadsheet reading command:
 ```{r}
-esp = fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dE5iMjZrcGFjTUtJSjg0T05NLW84Mmc&single=true&gid=0&output=csv")
+ESPdata <- fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&single=true&gid=0&output=csv")
 ```
 
 ### Power
