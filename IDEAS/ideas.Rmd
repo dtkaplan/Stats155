@@ -1,0 +1,5 @@
+## Heart Attacks and Hospital Stays
+
+Create models of length of stay and hospital charges.  
+
+<http://wiki.stat.ucla.edu/socr/index.php/SOCR_Data_AMI_NY_1993_HeartAttacks>
