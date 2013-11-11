@@ -78,7 +78,21 @@ Find an average R^2 for each p and draw the graph of R^2 versus p.
 
 ### From R^2 to F
 
+
+
+
 Construction of F
+
+```{r}
+n <- nrow(KidsFeet)
+degreesOfFreedom=5
+trials = do(5000)* lm(width ~ rand(degreesOfFreedom), data=KidsFeet)
+F = with(data=trials,
+         (r.squared/degreesOfFreedom)/((1-r.squared)/(n - (degreesOfFreedom+1))))
+histogram(F)
+plotFun( df(x,5,32) ~ x, add=TRUE, col="red", lwd=2)
+
+```
 
 Comparing the distribution of F to the distribution of R^2.  F is much more stable, easier to interpret.  We look for F near 1 if the null is true.
 

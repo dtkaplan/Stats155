@@ -92,6 +92,12 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 
 **In Class**: 
+* [ESP Data Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&usp=sharing) and the command for reading in the data to R
+
+
+    `ESPdata <- fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&single=true&gid=0&output=csv")`
+
+
 <!-- [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/) -->
 
 **Notes**: [Instructor's notes](../Notes/Day-29/Day-29-notes.html)
