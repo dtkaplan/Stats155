@@ -1,0 +1,74 @@
+# Instructor's Guide: The Survey Project
+
+Insufficiently generalized problem.  E.g. sports affects GPA --- what are the determinants of GPA.
+
+They ask questions that the respondants cannot reasonably be expected to study.  E.g. how many hours a week do you study.
+
+Elicit a likert answer, rather than "which is your favorite."
+
+What's your major is useless.  How involved in each of these divisions:
+get a likert scale.
+
+GPA is always useless
+
+Demographic questions are useful for establishing if your sample is like the population.
+
+Never lead with demographic questions.  Ask something interesting to engage the reader.
+
+Don't ask binary questions unless there is a clear binary answer.  Instead, ask likelihood questions (always, sometimes, rarely, never).
+
+Students tend to think about responses and not about explanatory variables.  Ask them to theorize about what would be good explanatory variables, and then operationalize those explanatory factors into a survey question or observaton.
+
+Ask the students: Why are you interested in this?  This can help elicit the students ideas about what their response and explanatory variables are.
+
+Asking questions where the answers are uninformative is, obviously, not a goal in itself.  But it's good for students to have to address the question of whether a factor was informative.
+
+Awareness questions.  Are you aware that the health center offers these services?  List them
+
+Bogus questions to test the audience.  Are you aware that the health center offers financial advising?  But preface the block of questions with "Some of these may not be actual services?"
+
+Not everyone needs to come to meet with the instructor.  More is better, but the main thing is that two or so students actually meet with me.
+
+CAVEATS: 
+* The small sample, collected conveniently, will not be representative.  It takes a lot of work to get a representative sample.  But you can ask questions to assess whether your sample is representative.
+* Their p-values will be "mehh."  But think of this as a preliminary study to guide a more resource-intensive follow up.
+
+## Are there enough exercise machines.
+
+Don't ask, Are you satisfied with the number of machines?
+
+* When you've gone to the gym, how often can you not get on a machine?
+* When you can't, how long do you have to wait?  Do you wait?  
+* Don't ask, "Do you have a favorite machine?"  Instead, ask,
+how willing are you to use each of these types of machines if it were available and no other type was available."
+* What are your favorite times.  Break up by hours of the day, and give a likert response.
+* If you knew that machines were likely to be available, how likely are you to go to the gym during these times.  For example, put up an info graphic, here's the utilization of these machines at five minute intervals.
+
+visit the gym: Record every five minutes, how many of each machine is in use.
+
+## What influences you to eat meals off campus
+
+Questions to ask:
+Response:
+* Breakfast:
+    * How often do you eat breakfast at all. Every day, just about every day, sometimes, rarely, never.
+    * How often do you eat breakfast **on campus**.
+* Lunch:
+* Dinner:
+
+    
+* When was the last time you ate off campus:
+    * Breakfast: Today or yesterday, in the last week, in the last month, never this year 
+    * Lunch:
+    * Dinner:
+    
+    
+Explanatory:
+* Are you on the meal plan?  Which meal plan are you on.
+* Do you live on campus?
+* Do you have a class at the noon-hour or nearby.
+* How often do you have a schedule conflict (job, training, classes) that would interfere with your getting to an on-campus on time.
+    * separately. Breakfast lunch and dinner.
+
+    
+   * 

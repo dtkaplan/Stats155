@@ -1,0 +1,84 @@
+# Day 29, Nov. 11, 2013
+
+```{r include=FALSE}
+require(mosaic)
+```
+
+## Review of Vocabulary
+
+* Two hypotheses:
+   * Null Hypothesis.  The star of the show.
+        Some ways to think about it:
+        * nothing is going on
+        * coefficients are zero
+        * vectors are random
+        You either **reject** or **fail to reject** the Null.
+    * The Alternative Hypothesis.  A supporting actor.
+        * Your best guess of what's happening
+        * The smallest interesting effect
+        * The results of a preliminary study.
+        You use this to design your study.  The Alternative needs to be very specific and drawn from expert knowledge.  There is a tradition in statistics education of referring to the alternative as an "anything but" kind of hypothesis.  This is a bad idea.
+* Two kinds of error
+    * Type I: Reject the Null even though the Null is right
+    * Type II: Fail to reject the Null even though the Alternative is right.
+* p-value: probability of the observed value or stronger under the Null
+    * significance level --- the p-value is the "achieved significance level".  Comes from the idea of using confidence intervals to do a hypothesis test: related to the confidence level.
+* power: probability of rejecting the Null under the Alternative Hypothesis.
+
+## The Summary Report and the p-value
+
+Show the t-statistic and the translation into a p-value.
+
+Show the p-value reported on R^2.
+
+Notice that the alternative plays no role whatsoever in the regression report.
+
+### App for playing with Significance and Power
+
+```{r eval=FALSE}
+fetchData("mHypTest.R")
+mHypTest() # by default, a coefficient
+```
+
+### Shuffling 
+
+A proof for the existence of Extra-Sensory Perception!  If I can get you to focus on a number, I can predict, to some extent, your thought process.
+
+Your birthday is a number that plays an important part in your thought process.  Generate a random number between 0 and your birday.
+
+[Permutation test by hand](http://dl.dropbox.com/u/5098197/ISM/Activities/permutation-test.pdf)
+
+Spreadsheet reading command:
+```{r}
+esp = fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dE5iMjZrcGFjTUtJSjg0T05NLW84Mmc&single=true&gid=0&output=csv")
+```
+
+### Power
+
+How did I know that I could reject the Null in the shuffling problem?  I did a little simulation.
+```{r}
+mysim <- function(n=15) {
+   days = resample(1:31,size=n)
+   nums = ceiling( runif(n,min=0,max=days))
+   mod = lm(nums~days)
+   list(r2=r.squared(mod), p=summary(mod)$coef[2,4])
+}
+s15 = do(1000)*mysim(30) # typical R^2 is about 0.4
+mean(~r2, data=s15)
+tally( ~ p<0.05, data=s15,format='proportion')
+```
+
+Do `mHypTest(TRUE)` setting the "effect size" to about 0.4
+
+### R^2 as a test statistic
+
+Activity: fit the kids' feet data with different numbers of model terms: `rand(p)` 
+
+Find an average R^2 for each p and draw the graph of R^2 versus p.
+
+### From R^2 to F
+
+Construction of F
+
+Comparing the distribution of F to the distribution of R^2.  F is much more stable, easier to interpret.  We look for F near 1 if the null is true.
+

@@ -1,0 +1,14 @@
+# Day 26 Notes, Nov 4, 2013
+
+## Problem of the day # 1169
+
+## Interview with Construction Workers group
+
+## Confidence Intervals on Coefficients
+
+## Hypothetical Reasoning
+
+Sensitivity and Specificity
+
+## Start on Hypothesis Testing
+

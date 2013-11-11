@@ -1,0 +1,47 @@
+# Problem of the Week 1169
+
+```{r include=FALSE}
+require(mosaic)
+require(reshape2)
+set.seed(3234)
+```
+
+Take a standard 6-sided die and roll it 6 times.  Which is more likely: getting exactly three distinct faces or getting exactly five distinct faces.
+
+## A Solution
+
+A quick simulation to get an idea of the scale of the probabilities:
+```{r}
+sim <- table(do(10000)*
+        length(unique(resample(1:6)))
+      )
+sim
+```
+
+In this particular simulation, 3 faces is winning, but it's very close to 5 faces. Out of the 10000 trials, 3s happen ```r sim['5']-sim['3']``` ,more often.
+
+We can get a ballpark estimate on the confidence interval on 5 with the simple $s = \sqrt{(p(1-p)/n}$ estimator, giving roughly ```r 10000*sqrt(.23*(1-.23)/10000)```.
+
+100 times as many trials will give a standard error 10 times smaller.  We could easily do this directly, but for display purposes I'll repeat the above simulation 100 times so that we can display the sampling distribution of the 10000-trial simulation.
+
+```{r cache=TRUE}
+manySims <- do(100)*table(
+  do(10000)*length(unique(resample(1:6)))
+  )
+```
+
+Here are the basic results:
+```{r}
+colSums(manySims)
+```
+with a difference in occurrence in each of the 10000-trial runs of 
+```{r}
+mean(manySims[['5']] - manySims[['3']])
+```
+
+The standard error of the difference between threes and fives:
+```{r}
+sd( manySims[['5']] - manySims[['3']] )/sqrt(100)
+```
+
+No discernable difference in 1,000,000 trials.

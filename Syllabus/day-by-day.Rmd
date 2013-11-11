@@ -43,108 +43,10 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 ### Past Days Moved to Bottom of Syllabus
 
-## Second Half of Course
-
-
-`r I(classDayContents( daynum=21 ))`
-**Topic**: Confidence Intervals on Coefficients
-
-**Reading**: SM Ch. 12
-
-**Assignment**: `r I(PN(c(1021,1201,1202,1204,1205),assignment="Seventeen"))`
-
-**Notes**: [Instructor's notes](../Notes/Day-21/Day-21-notes.html)
-
-<!-- `r I(todaysNotes("2012-10-15.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-15-class) -->
-
-
-`r I(classDayContents( daynum=22 ))`
-**Topic**: Probability Models
-
-**Reading**: SM Ch. 11
-
-**Assignment**: 
-* An App about Confidence Intervals.  Listen to the audio on [this app](http://glimmer.rstudio.com/mosaic/CIgeometry/).  Suggestions for improving this App are appreciated.  [Enter them here.](https://docs.google.com/document/d/1rpAW34tpmg0awVTCZbS_kIfiEfhd5UwyiLOnSkFp-oE/edit?usp=sharing)If you know something about programming in R (e.g. you've taken CS 121) there might be a in-semester or summer job for you.
-* `r I(PN(c("11RQ",1101,1102,1104,1105,1110,1121,1122),assignment="Eighteen"))`
-
-**Notes**: [Instructor's notes](../Notes/Day-22/Day-22-notes.html)
-
-<!-- `r I(todaysNotes("2012-10-24.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-24-class) -->
+## Remaining Weeks of Course
 
 
 
-<!--    WEEK 8 -->
-
-`r I(classDayContents(daynum=23))`
-**Topic** Continuous Random Variables.  Confidence Intervals on Coefficients.
-
-**Reading**: Review SM Ch. 11.  Start on SM Ch. 12
-
-**In Class**:
-
-
-**Assignment**: 
-* `r I(PN(c(1111,1130,1135,1137),assignment="Nineteen"))`
-
-**Notes**: [Instructor's notes](../Notes/Day-23/Day-23-notes.html)
-
-
-
-`r I(classDayContents( daynum=24 ))`
-**Topic**: Confidence Intervals on Coefficients (continued)
-
-**Reading**: SM Ch. 12
-
-**Assignment**: `r I(PN(c("12RQ",1210,1212),assignment="Twenty"))`
-
-**In Class**:
-* Kaplan's section: Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
-* Activity: Modeling Bus Commute Times: [Rmd for editing](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-23/bus-travel.Rmd) and [html](../Notes/Day-23/Day-23-notes.html). Hand in a link to your RPubs-published document [here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
-* Confidence in Grades.
-
-**Notes**: [Instructor's notes](../Notes/Day-24/Day-24-notes.html)
-
-`r I(todaysNotes("2012-10-22.html", "i"))` 
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-22-class) -->
-
-
-`r I(classDayContents( daynum=25 ))`
-**Topic**: Hypothesis Testing
-
-**Reading**: SM Ch. 13
-
-**Assignment**: `r I(PN(c(1301),assignment="Twenty-one"))`
-
-**In Class**:
-* (Delayed from Wednesday) Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
-
-
-**Notes**: `r I(todaysNotes("2012-10-29.html", "i"))` 
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-29-class) -->
-
-<!--     WEEK 9    -->
-
-
-
-`r I(classDayContents( daynum=26 ))`
-**Topic**: Hypothesis Testing (continued)
-
-**Reading**: Review SM Ch. 13
-
-**Assignment**: 
-* `r I(PN(c("13RQ",1302),assignment="Twenty-two"))`
-* Discuss your draft [Survey Project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) with your instructor. 
-
-**In Class**: `r I(PN(c(1315)))`
-
-**On Your Own**: An [introduction to Bayes Theorem](http://lesswrong.com/lw/2b0/bayes_theorem_illustrated_my_way/)
-
-**Notes**: `r I(todaysNotes("2012-10-31.html", "i"))` 
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-31-class) -->
-
-**On Your Own**: The paper that won the [2012 Ignobel prize](http://www.improbable.com/ig/winners/) in neuroscience: [On brain activity in a dead salmon](http://www.jsur.org/ar/jsur_ben102010.pdf)
 
 `r I(classDayContents( daynum=27 ))`
 **Topic**: Testing Whole Models with $latex R^2$ and F
@@ -156,7 +58,8 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 **In Class**: 
 * `r I(PN(c(1422)))`
 
-**Notes**: `r I(todaysNotes("2012-11-02.html", "i"))`  
+**Notes**: [Instructor's notes](../Notes/Day-27/Day-27-notes.html)
+<!-- `r I(todaysNotes("2012-11-02.html", "i"))`  -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-02-class) -->
 
 `r I(classDayContents( daynum=28 ))`
@@ -170,7 +73,9 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **In Class**: `r I(PN(c(1421)))`
 
-**Notes**: `r I(todaysNotes("2012-11-05.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-28/Day-28-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-05.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-05-class) -->
 
 **On Your Own**: [Journalistic deficit disorder](http://www.economist.com/node/21563275)
@@ -182,11 +87,16 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Reading**: SM Ch. 15
 
-**Assignment**: `r I(PN(c("15RQ",1501),assignment="Twenty-five"))`
+**Assignment**: 
+* `r I(PN(c("15RQ",1501),assignment="Twenty-five"))`
 
-**In Class**: [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/)
 
-**Notes**: `r I(todaysNotes("2012-11-07.html", "i"))` 
+**In Class**: 
+<!-- [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/) -->
+
+**Notes**: [Instructor's notes](../Notes/Day-29/Day-29-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-07.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-07-class) -->
 
 **On Your Own**: [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg)
@@ -198,7 +108,9 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Assignment**: `r I(PN(c(1502,1504,1505,1511),assignment="Twenty-six"))`
 
-**Notes**: `r I(todaysNotes("2012-11-09.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-30/Day-30-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-09.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-09-class) -->
 
 **On Your Own**: [What is a p-value?](https://www.youtube.com/watch?v=ax0tDcFkPic&feature=related)
@@ -209,9 +121,13 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Reading**: [XKCD cartoon](http://xkcd.com/675/)
 
-**Assignment**:  `r I(PN(c(1512,1521),assignment="Twenty-seven"))`
+**Assignment**:  
+* `r I(PN(c(1512,1521),assignment="Twenty-seven"))`
+* Get final approval for your [survey project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) from your instructor.
 
-**Notes**: `r I(todaysNotes("2012-11-12.html", "i"))` 
+**Notes**: [Instructor's notes](../Notes/Day-31/Day-31-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-12.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-12-class) -->
 
 <!--     WEEK 11    -->
@@ -223,9 +139,11 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 
 **Assignment**: 
 *`r I(PN(c(1522),,assignment="Twenty-eight"))`
-* Get final approval for your [survey project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) from your instructor.
 
-**Notes**: `r I(todaysNotes("2012-11-14.html", "i"))` 
+
+**Notes**:  [Instructor's notes](../Notes/Day-32/Day-32-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-14.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-14-class) -->
 
 -----------------
@@ -737,3 +655,102 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 **[Exam Answers and Grading Rubric] to be posted.** 
 <!--(http://rpubs.com/dtkaplan/2243) --> 
 
+`r I(classDayContents( daynum=21 ))`
+**Topic**: Confidence Intervals on Coefficients
+
+**Reading**: SM Ch. 12
+
+**Assignment**: `r I(PN(c(1021,1201,1202,1204,1205),assignment="Seventeen"))`
+
+**Notes**: [Instructor's notes](../Notes/Day-21/Day-21-notes.html)
+
+<!-- `r I(todaysNotes("2012-10-15.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-15-class) -->
+
+
+`r I(classDayContents( daynum=22 ))`
+**Topic**: Probability Models
+
+**Reading**: SM Ch. 11
+
+**Assignment**: 
+* An App about Confidence Intervals.  Listen to the audio on [this app](http://glimmer.rstudio.com/mosaic/CIgeometry/).  Suggestions for improving this App are appreciated.  [Enter them here.](https://docs.google.com/document/d/1rpAW34tpmg0awVTCZbS_kIfiEfhd5UwyiLOnSkFp-oE/edit?usp=sharing)If you know something about programming in R (e.g. you've taken CS 121) there might be a in-semester or summer job for you.
+* `r I(PN(c("11RQ",1101,1102,1104,1105,1110,1121,1122),assignment="Eighteen"))`
+
+**Notes**: [Instructor's notes](../Notes/Day-22/Day-22-notes.html)
+
+<!-- `r I(todaysNotes("2012-10-24.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-24-class) -->
+
+
+
+<!--    WEEK 8 -->
+
+`r I(classDayContents(daynum=23))`
+**Topic** Continuous Random Variables.  Confidence Intervals on Coefficients.
+
+**Reading**: Review SM Ch. 11.  Start on SM Ch. 12
+
+**In Class**:
+
+
+**Assignment**: 
+* `r I(PN(c(1111,1130,1135,1137),assignment="Nineteen"))`
+
+**Notes**: [Instructor's notes](../Notes/Day-23/Day-23-notes.html)
+
+
+
+`r I(classDayContents( daynum=24 ))`
+**Topic**: Confidence Intervals on Coefficients (continued)
+
+**Reading**: SM Ch. 12
+
+**Assignment**: `r I(PN(c("12RQ",1210,1212),assignment="Twenty"))`
+
+**In Class**:
+* Kaplan's section: Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
+* Activity: Modeling Bus Commute Times: [Rmd for editing](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-23/bus-travel.Rmd) and [html](../Notes/Day-23/Day-23-notes.html). Hand in a link to your RPubs-published document [here](https://docs.google.com/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform).
+* Confidence in Grades.
+
+**Notes**: [Instructor's notes](../Notes/Day-24/Day-24-notes.html)
+
+`r I(todaysNotes("2012-10-22.html", "i"))` 
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-22-class) -->
+
+
+`r I(classDayContents( daynum=25 ))`
+**Topic**: Hypothesis Testing
+
+**Reading**: SM Ch. 13
+
+**Assignment**: `r I(PN(c(1301),assignment="Twenty-one"))`
+
+**In Class**:
+* (Delayed from Wednesday) Sign up for meeting to review your term project ideas.  [Sign-up sheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dFJJNFBNNEt5b1hnVVp4bGhIa2VPRVE&usp=sharing)
+
+
+**Notes**: `r I(todaysNotes("2012-10-29.html", "i"))` 
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-29-class) -->
+
+<!--     WEEK 9    -->
+
+
+
+`r I(classDayContents( daynum=26 ))`
+**Topic**: Hypothesis Testing (continued)
+
+**Reading**: Review SM Ch. 13
+
+**Assignment**: 
+* `r I(PN(c("13RQ",1302),assignment="Twenty-two"))`
+* Discuss your draft [Survey Project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) with your instructor. 
+
+**In Class**: `r I(PN(c(1315)))`
+
+**On Your Own**: An [introduction to Bayes Theorem](http://lesswrong.com/lw/2b0/bayes_theorem_illustrated_my_way/)
+
+**Notes**: `r I(todaysNotes("2012-10-31.html", "i"))` 
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-31-class) -->
+
+**On Your Own**: The paper that won the [2012 Ignobel prize](http://www.improbable.com/ig/winners/) in neuroscience: [On brain activity in a dead salmon](http://www.jsur.org/ar/jsur_ben102010.pdf)

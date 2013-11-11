@@ -1,0 +1,26 @@
+# Day 26 in Class: Nov 4, 2013
+
+
+```{r include=FALSE}
+require(mosaic)
+```
+## Roll of the Dice
+
+```{r}
+trials <- do(1000)*length(unique(sample(1:6, replace=TRUE)))
+```
+
+
+## A more realistic die?
+
+A the outcomes from a physical die does not necessarily have the equal probabilities associated with textbook dice.  How big a discrepancy is needed to make an observable difference in the probabilities of 3s and 5s?
+
+For example, suppose one face was twice as likely as any other given face to come up.
+
+```{r}
+t_2 <- do(1000)*length(unique(sample(1:6,prob=c(1,1,2,1,1,1), 6,replace=TRUE)))
+tally(t_2)
+```
+
+The standard error is approximately $1000 \sqrt(.27*(1-.27)/1000) = ```r 1000*sqrt(.27*(1-.27)/1000)``` , or 
+

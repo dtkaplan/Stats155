@@ -1,0 +1,118 @@
+# Getting to your Job Interview
+
+```{r include=FALSE}
+require(mosaic) # Leave this "chunk" alone
+opts_chunk$set(tidy=FALSE,dev="svg",out.width="50%")
+```
+
+You take the bus to work and pass the time by reading the Proust classic <span title="Literally: In search of lost time.">*À la recherche du temps perdu*</span>. 
+
+Last week, while riding to work, you sat next to someone older who became increasingly frustrated as your bus was delayed by mobs of people getting on and off.  She glanced at your book and muttered, as if to you, "How is a passenger like a fish?"  Strange.  But, thanks to your work in statistics, as well as your proficiency with French, you responded without delay: "Because they are both <span title="'Fish,' in French. In probability, a classic model for the number of passengers who arrive at a bus stop in an interval of time.">poisson</span>."  Your seat-mate brighted up immediately and started a conversation with you about your college experience, and her work in data analytics.  
+
+She handed you her card.  "I think you'd fit in well at my company.  Give me a call."
+
+Your interview is this morning, just before the start time at your current job.  You don't want to be late --- that's a horrible impression to make when meeting a potential new employer.  At the same time, you feel that you need to expand a little on your "poisson" witticism.
+
+You decide to make a probability model of how long it takes to get to work.  Based on that, you'll decide how early to leave so that there is little chance that you'll be late.  Even better, you'll be able to talk about your calculation at the interview.
+
+Unfortunately, you don't have much information.  You know that each morning you wait at your starting point a varying amount of time for the bus, about 10 minutes, on average.  One day, you waited 45 minutes, but it's almost always less than 20 minutes.  But when you look at the bus schedule, you see that the bus company claims that during rush hour the busses arrive on average every 7 minutes.  That's hardly your experience.
+
+You also know that the number of people waiting with you varies as people arrive at the stop.  Typically, it's about 5 people who get on the stop, but it's been as many as 15, and it's hardly ever fewer than three.
+
+You also are familiar with the irritating pattern where you wait for your bus, but then the next bus is right behind.  Sometimes even two busses are within sight when your bus stops.  Once, though, you got to the bus stop just as your bus was pulling away.  You were saved because the next bus was right behind.  You had only to wait about 15 seconds. Lucky!
+
+The bus ride itself takes between 20 and 35 minutes.
+
+You decide, based on the information you have at hand, to model your wait as an exponential process with a mean time of 10.  You'll model the travel time as a uniform random variable between 20 and 35 minutes.
+
+You construct a simulation:
+```{r}
+n = 1000
+waitTime <- rexp( n, rate=1/10) # 10 minutes on average
+```
+
+Write R statements to display the distribution of wait times.  Confirm using R that the average wait time is close to what you've specified.
+
+```{r}
+# Put your statements here
+```
+
+Using the distribution, answer these questions:
+* How likely is a 45 minute (or longer) wait?
+* How often does the next bus come within 2 minutes of your bus?
+
+Add in the length of the bus ride.
+
+```{r}
+transitTime = runif(n, min=20, max=35)
+totalTravel = waitTime + transitTime
+```
+
+* Calculate a safe estimate (for the purposes of getting to your job interview on time) for how long early to get to the bus stop so that you can be confident that you'll get to the interview on time.  Try confidence levels of 90%, 95%, and 99%.  
+
+```{r}
+# Place here: 
+# your R statements to find your 
+# estimate of how long the trip to your 
+# interview will take.
+mean(~totalTravel)
+qdata(.95, totalTravel)
+qdata(.99, totalTravel)
+```
+
+You don't really believe your model's result for how often busses come within 2 minutes.  That's hardly ever your experience.  You're going to feel pretty silly at the interview telling them that you used a model that was so obviously wrong.
+
+Then you realize that the exponential distribution is only part of the story.  It's the distribution from the point of view of the busses.  A passenger's experience is different.  The longer the interval between busses, the larger the number of people waiting.  Hardly anyone benefits from the very short intervals between busses because hardly any passengers come to the stop during that short period.
+
+You need to generate a list of bus arrival times from the perspective of a passenger.  The more passengers arrive before the bus comes, the more people experience that interbus arrival time.
+
+A poisson process will do the job for modeling how many passengers arrive for a given bus, with the rate, per bus interval, being proportional to the interval itself.
+
+You call up your statistics major friend from college.  She gives you these statements to use:
+
+```{r}
+busIntervals = rexp(n, rate=1/10)
+passengerNumber = rpois(n, lambda=5*busIntervals/10) 
+passengerWaits = rep(busIntervals, times=passengerNumber)
+transitTime = runif(length(passengerWaits), 
+                    min=20, max=35)
+totalTime = passengerWaits + transitTime
+```
+
+Answer these questions:
+
+* What are the travel-time estimates with 90%, 95%, and 99% confidence?
+* What fraction of passenger waiting times are below 2 minutes?
+* What's the mean passenger waiting time?  Is this consistent with your observation that you wait about 10 minutes on average?
+
+```{r}
+# Your R statements here
+mean(~totalTime)
+qdata(.95, totalTime)
+qdata(.99, totalTime)
+densityplot(~totalTime)
+```
+
+*Your narrative answer goes here.*
+
+## Going a bit further
+
+You realize that your 10-minute average wait time estimate is from the passengers' point of view, not the busses'.  You're not sure what the actual average interval is between busses.  So try a few guesses until you find a number that is consistent with your passengers' view observation of a 10-minute average.
+
+```{r}
+# Change what needs to be changed here
+busIntervals = rexp(n, rate=1/10)
+passengerNumber = rpois(n, lambda=5*busIntervals/10) 
+passengerWaits = rep(busIntervals, times=passengerNumber)
+transitTime = runif(length(passengerWaits), min=20, max=35)
+totalTime = passengerWaits + transitTime
+```
+
+When you have a reasonable model that gives a passenger wait near 10 minutes, recalculate your estimates for the travel time that estimates the longest likely with 90%, 95%, and 99% confidence.
+
+```{r}
+# Your statements here
+
+```
+
+Good luck at your interview!
