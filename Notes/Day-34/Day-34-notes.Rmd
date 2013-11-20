@@ -1,0 +1,32 @@
+# Day 34 notes, Nov 22, 2013
+```{r include=FALSE}
+require(mosaic)
+```
+
+
+### Our Data from Wednesday's class
+
+       | Southern | Northern
+-------|----------|---------
+Water  |   4      | 1
+Land   |   2      | 1
+
+Here's a spreadsheet: [link to edit](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&usp=sharing), [URL to load](https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&single=true&gid=0&output=csv) using `fetchGoogle()`.
+
+
+How much data should we collect to be able to reject the Null.
+
+
+Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
+
+Show logistic regression
+
+```{r}
+m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
+f1 <- makeFun(m1)
+f1("Yes", 50)
+plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
+m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
+f2 <- makeFun(m2)
+plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
+```
