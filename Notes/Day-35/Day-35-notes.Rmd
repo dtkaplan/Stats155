@@ -1,0 +1,6 @@
+# Day 35 Notes, Nov 27, 2013
+
+## A visit to power
+
+The deer-crossing example from last semester.
+

@@ -1,0 +1,123 @@
+# Day 32 Notes, Nov. 20, 2013
+
+```{r include=FALSE}
+require(mosaic)
+opts_chunk$set(tidy=FALSE,dev="svg",out.width="60%")
+```
+
+
+## Review of the three main reports
+
+### Regression Report
+
+Gives coefficient and standard error for individual coefficients.
+
+Null Hypothesis: The coefficient being examined would be zero with a large enough sample.  The other vectors are doing what they will.
+
+t distribution: 
+* Chi by eye: bigger in magnitude than 2 suggests significance.
+* Parameter: degrees of freedom of residual.
+
+Shape:
+```{r}
+plotFun(dt(x, 1) ~ x, x.lim=c(-10,10))
+plotFun(dt(x, 3) ~ x, add=TRUE, col="red")
+plotFun(dt(x, 10) ~ x, add=TRUE, col="green", lwd=2)
+plotFun(dnorm(x, mean=0, sd=1) ~ x, add=TRUE, col="black", lwd=3)
+```
+
+#### Calculation of p:
+
+1. Divide coef by standard error --- that's the t.
+2. Evaluate the t distribuion at the observed t statistic at **both** tails.
+
+```{r}
+mod = lm( width ~ length + sex + domhand + biggerfoot, 
+          data=KidsFeet )
+summary(mod)$coef
+# How many cases
+nrow(KidsFeet)
+# How many vectors
+sum(!is.na(coef(mod)))
+# Number of residual vectors : 39-5 => 34
+2*pt(-abs(4.702993), df=34)
+```
+Report says: 4.155301e-05
+
+Confidence intervals apply here: use shuffle.
+
+Where does t come from?
+
+```{r}
+small = sample(KidsFeet, 8)
+mod0 = lm( width ~ length + sex + domhand + biggerfoot, 
+           data=KidsFeet )
+trials = do(500)*(summary(lm( shuffle(width) ~ length + sex + shuffle(domhand) + biggerfoot, 
+    data=small))$coef[4,3])
+histogram(~result, data=trials)
+plotFun(dt(x,3)~x, add=TRUE, col="red")
+plotFun(dnorm(x)~x, add=TRUE, col="blue")
+```
+
+Implement the Null.  Extract t. Repeat many times. 
+
+Plot the distribution of t values.  
+
+### R^2
+
+The model considered as a whole.  Translate to F for ease of finding p-values.
+
+Null Hypothesis: None of the vectors is any better than junk.
+
+Could get a confidence interval with resampling.
+
+### ANOVA Report
+
+Duplicating it by hand.
+
+Partial R^2
+
+Null Hypothesis: The group of vectors being examined is no different from junk vectors.  We estimate the size of junk vectors by considering the size of residuals.
+
+#### Calculation of p:
+
+Evaluate the F distribution with the appropriate degrees of freedom in the numerator and denominator at the observed F statistic at **one tail**, the high one, of the distribution.
+
+Order dependence: race and wages in CPS85
+
+```{r}
+mod0 = lm( wage ~ race + sex + sector + educ + exper, data=CPS85 )
+summary(mod0)
+anova(mod0)
+mod1 = lm( wage ~ sex + sector + educ + exper + race, data=CPS85 )
+summary(mod1)
+anova(mod1)
+anova(mod1)$"F value"
+```
+
+## Categorical Responses
+
+Yes/No.  Conversion to 1/0.
+
+`lm()` gives the proportion of 1s.
+
+Toss globe to find proportion of Earth covered by water.
+
+Separate tallies for Northern and Southern hemisphere.
+
+
+
+Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
+
+Show logistic regression
+
+```{r}
+m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
+f1 <- makeFun(m1)
+f1("Yes", 50)
+plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
+m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
+f2 <- makeFun(m2)
+plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
+```
+

@@ -7,6 +7,27 @@ knitr::opts_chunk$set(tidy=FALSE)
 options(width=100)
 ```
 
+## Warmup
+
+What determines grades?
+
+The data:
+```{r message=FALSE}
+grades = fetchData("grades.csv")
+courses = fetchData("courses.csv")
+gp = fetchData("grade-to-number.csv") 
+all = merge(courses, grades)
+all = merge(all, gp)
+```
+
+
+```{r cache=TRUE}
+mod1 = lm( gradepoint ~ sid + iid, data=all)
+mod2 = lm( gradepoint ~ iid + sid, data=all)
+mod3 = lm( gradepoint ~ dept + level + enroll + sid, data=all)
+mod4 = lm( gradepoint ~ dept + level + enroll + iid + sid, data=all)
+```
+
 ## Where We Are
 
 
