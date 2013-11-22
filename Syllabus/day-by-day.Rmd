@@ -46,113 +46,6 @@ PN <- function(probs,assignment="Assignment Name",prefix="Assignment" ){
 ## Remaining Weeks of Course
 
 
-
-
-`r I(classDayContents( daynum=27 ))`
-**Topic**: Testing Whole Models with $latex R^2$ and F
-
-**Reading**: SM §14.1, 14.2, 14.3, 14.5
-
-**Assignment**: `r I(PN(c(1401,1402),assignment="Twenty-three"))`
-
-**In Class**: 
-* `r I(PN(c(1422)))`
-
-**Notes**: [Instructor's notes](../Notes/Day-27/Day-27-notes.html)
-<!-- `r I(todaysNotes("2012-11-02.html", "i"))`  -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-02-class) -->
-
-`r I(classDayContents( daynum=28 ))`
-**Topic**: Interpreting the p-value
-
-**Reading**: 
-* SM §14.4
-* [XKCD cartoon](http://xkcd.com/882/) and [another](http://xkcd.com/628/) and [yet another](http://xkcd.com/892/)
-
-**Assignment**: `r I(PN(c("14RQ",1404,1405,1411,1412,1424),assignment="Twenty-four"))`
-
-**In Class**: `r I(PN(c(1421)))`
-
-**Notes**: [Instructor's notes](../Notes/Day-28/Day-28-notes.html)
-
-<!-- `r I(todaysNotes("2012-11-05.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-05-class) -->
-
-**On Your Own**: [Journalistic deficit disorder](http://www.economist.com/node/21563275)
-
-<!--    WEEK   10 -->
-
-`r I(classDayContents( daynum=29 ))`
-**Topic**: Hypothesis Testing on Parts of Models
-
-**Reading**: SM Ch. 15
-
-**Assignment**: 
-* `r I(PN(c("15RQ",1501),assignment="Twenty-five"))`
-
-
-**In Class**: 
-* [ESP Data Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&usp=sharing) and the command for reading in the data to R
-
-
-    `ESPdata <- fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&single=true&gid=0&output=csv")`
-
-
-<!-- [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/) -->
-
-**Notes**: [Instructor's notes](../Notes/Day-29/Day-29-notes.html)
-
-<!-- `r I(todaysNotes("2012-11-07.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-07-class) -->
-
-**On Your Own**: [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg)
-
-`r I(classDayContents( daynum=30 ))`
-**Topic**: Hypothesis Testing on Parts of Models (continued)
-
-**Reading**: SM Ch. 15 (review)
-
-**Assignment**: `r I(PN(c(1502,1504,1505,1511),assignment="Twenty-six"))`
-
-**Notes**: [Instructor's notes](../Notes/Day-30/Day-30-notes.html)
-
-<!-- `r I(todaysNotes("2012-11-09.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-09-class) -->
-
-**On Your Own**: [What is a p-value?](https://www.youtube.com/watch?v=ax0tDcFkPic&feature=related)
-
-
-`r I(classDayContents( daynum=31 ))`
-**Topic**: Choosing model terms
-
-**Reading**: [XKCD cartoon](http://xkcd.com/675/)
-
-**Assignment**:  
-* `r I(PN(c(1512,1521),assignment="Twenty-seven"))`
-* Get final approval for your [survey project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) from your instructor.
-
-**Notes**: [Instructor's notes](../Notes/Day-31/Day-31-notes.html)
-
-<!-- `r I(todaysNotes("2012-11-12.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-12-class) -->
-
-<!--     WEEK 11    -->
-
-`r I(classDayContents( daynum=32 ))`
-**Topic**: Non parametrics
-
-**Reading**: [XKCD cartoon on frequentist vs Bayesian](http://xkcd.com/1132/)
-
-**Assignment**: 
-*`r I(PN(c(1522),,assignment="Twenty-eight"))`
-
-
-**Notes**:  [Instructor's notes](../Notes/Day-32/Day-32-notes.html)
-
-<!-- `r I(todaysNotes("2012-11-14.html", "i"))` -->
-<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-14-class) -->
-
------------------
 ### Toward the End of the Semester
 
 You've now seen the core concepts and methods of statistical modeling.  The rest of the semester is intended to help you review and solidify your understanding.  We'll do this by using statistical models in three contexts:
@@ -165,14 +58,11 @@ You've now seen the core concepts and methods of statistical modeling.  The rest
 This is a good time to start to review.  As we explore these new contexts, do the exercises from Chapter 15 to solidify your understanding of that basic material.  These exercises will be due at the last class day.
 
 
+
 `r I(classDayContents( daynum=33 ))`
 **Topic**: Logistic regression
 
 **Reading**: SM Ch. 16
-
-**Assignment**: `r I(PN(c(),assignment="Twenty-nine"))` BLANK FOR NOW
-
-**In Class**: Modeling Barry Bonds
 
 **Notes**: `r I(todaysNotes("2012-11-16.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-16-class) -->
@@ -184,7 +74,11 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 **Reading**: SM Ch. 16
 
-**In Class**: [Power and deer crossings](http://rpubs.com/dtkaplan/deer-crossing)
+**In Class**:
+* Water/Land spreadsheet: [edit](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&usp=sharing). Or, [load into R](https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&single=true&gid=0&output=csv) using `fetchGoogle()`.
+* [Theme Song](http://www.youtube.com/watch?v=G6djgavbp7c)
+* [Making book](http://en.wikipedia.org/wiki/Dutch_book)
+* The **last weekly quiz**
 
 **Notes**: `r I(todaysNotes("2012-11-19.html", "i"))` 
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-19-class) -->
@@ -193,12 +87,11 @@ This is a good time to start to review.  As we explore these new contexts, do th
 <!--    WEEK 12  -->
 
 `r I(classDayContents( daynum=35 ))`
-**Topic**: Power and the Alternative Hypothesis
+**Topic**: Moving onward with survey project
 
 **In Class**: 
-* [Deer crossing](http://rpubs.com/dtkaplan/deer-crossing) ... continued
+* [Processing Survey Data](http://rpubs.com/dtkaplan/m155-processing-survey-data) and the template itself: [cut and paste from here](https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyProcessing.Rmd)
 
-* The **last weekly quiz**
 
 **Notes**: `r I(todaysNotes("2012-11-21.html", "i"))` 
 <!--  [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-21-class) -->
@@ -210,7 +103,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 * SM Ch. 16
 
 **In Class**:
-* [Processing Survey Data](http://rpubs.com/dtkaplan/m155-processing-survey-data) and the template itself: [cut and paste from here](https://raw.github.com/dtkaplan/Statistical-Modeling-A-Fresh-Approach/gh-pages/Activities/SurveyProcessing.Rmd)
+ [Power and deer crossings](http://rpubs.com/dtkaplan/deer-crossing)
 
 **Assignment**: 
 * `r I(PN(c("16RQ",1601,1602,1604),assignment="Thirty"))`
@@ -760,3 +653,110 @@ Review Problems: [without answers](https://dl.dropbox.com/u/5098197/ISM/Mid-Term
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-10-31-class) -->
 
 **On Your Own**: The paper that won the [2012 Ignobel prize](http://www.improbable.com/ig/winners/) in neuroscience: [On brain activity in a dead salmon](http://www.jsur.org/ar/jsur_ben102010.pdf)
+
+`r I(classDayContents( daynum=27 ))`
+**Topic**: Testing Whole Models with $latex R^2$ and F
+
+**Reading**: SM §14.1, 14.2, 14.3, 14.5
+
+**Assignment**: `r I(PN(c(1401,1402),assignment="Twenty-three"))`
+
+**In Class**: 
+* `r I(PN(c(1422)))`
+
+**Notes**: [Instructor's notes](../Notes/Day-27/Day-27-notes.html)
+<!-- `r I(todaysNotes("2012-11-02.html", "i"))`  -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-02-class) -->
+
+`r I(classDayContents( daynum=28 ))`
+**Topic**: Interpreting the p-value
+
+**Reading**: 
+* SM §14.4
+* [XKCD cartoon](http://xkcd.com/882/) and [another](http://xkcd.com/628/) and [yet another](http://xkcd.com/892/)
+
+**Assignment**: `r I(PN(c("14RQ",1404,1405,1411,1412,1424),assignment="Twenty-four"))`
+
+**In Class**: `r I(PN(c(1421)))`
+
+**Notes**: [Instructor's notes](../Notes/Day-28/Day-28-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-05.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-05-class) -->
+
+**On Your Own**: [Journalistic deficit disorder](http://www.economist.com/node/21563275)
+
+<!--    WEEK   10 -->
+
+`r I(classDayContents( daynum=29 ))`
+**Topic**: Hypothesis Testing on Parts of Models
+
+**Reading**: SM Ch. 15
+
+**Assignment**: 
+* `r I(PN(c("15RQ",1501),assignment="Twenty-five"))`
+
+
+**In Class**: 
+* [ESP Data Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&usp=sharing) and the command for reading in the data to R
+
+
+    `ESPdata <- fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dGJPam1QSkdaSlNlVVQ1Ni1HVHJpNlE&single=true&gid=0&output=csv")`
+
+
+<!-- [Evaluating your election result model](http://glimmer.rstudio.com/mosaic/Election2012/) -->
+
+**Notes**: [Instructor's notes](../Notes/Day-29/Day-29-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-07.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-07-class) -->
+
+**On Your Own**: [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg)
+
+`r I(classDayContents( daynum=30 ))`
+**Topic**: Hypothesis Testing on Parts of Models (continued)
+
+**Reading**: SM Ch. 15 (review)
+
+**Assignment**: `r I(PN(c(1502,1504,1505,1511),assignment="Twenty-six"))`
+
+**Notes**: [Instructor's notes](../Notes/Day-30/Day-30-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-09.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-09-class) -->
+
+**On Your Own**: [What is a p-value?](https://www.youtube.com/watch?v=ax0tDcFkPic&feature=related)
+
+
+`r I(classDayContents( daynum=31 ))`
+**Topic**: Choosing model terms
+
+**Reading**: [XKCD cartoon](http://xkcd.com/675/)
+
+**Assignment**:  
+* `r I(PN(c(1512,1521),assignment="Twenty-seven"))`
+* Get final approval for your [survey project](https://dl.dropbox.com/u/5098197/ISM/survey-project.pdf) from your instructor.
+
+**Notes**: [Instructor's notes](../Notes/Day-31/Day-31-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-12.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-12-class) -->
+
+<!--     WEEK 11    -->
+
+`r I(classDayContents( daynum=32 ))`
+**Topic**: Non parametrics
+
+**Reading**: [XKCD cartoon on frequentist vs Bayesian](http://xkcd.com/1132/)
+
+**Assignment**: 
+*`r I(PN(c(1522),,assignment="Twenty-eight"))`
+
+
+**Notes**:  [Instructor's notes](../Notes/Day-32/Day-32-notes.html)
+
+<!-- `r I(todaysNotes("2012-11-14.html", "i"))` -->
+<!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-14-class) -->
+
+-----------------
+

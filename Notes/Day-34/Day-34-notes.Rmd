@@ -1,20 +1,106 @@
 # Day 34 notes, Nov 22, 2013
 ```{r include=FALSE}
 require(mosaic)
+opts_chunk$set(tidy=FALSE)
 ```
 
+
+## EXAMPLE:  
+
+Difference in age between husband and wife in couples getting married.
+
+Ask: Who is older in a married couple, the man or the woman?  By how much?  
+
+Let's see if the data support this:
+```{r}
+m = fetchData("marriage.csv")
+mod0 = mm( Age ~ Person, data=m )
+mod0
+confint(mod0)
+mod1 = lm( Age ~ Person, data=m )
+summary(mod1)$coef
+```
+The point estimate is about right, but the margin of error is so large that we can't take this estimate very seriously.  The p-value is so large that we can't reject the null that there is no relationship between `Person` and age.
+
+Try adding in some other variables, astrological sign, years of education, etc. and show that this doesn't help much.
+
+Finally, add in the `BookpageID` variable.  
+```{r}
+mod2 = lm( Age ~ Person + BookpageID, data=m )
+anova(mod2)
+head(confint(mod2))
+```
+
+This gives an individual ID to each marriage.  Putting this in the model effectively holds the couple constant when considering the `Person`.  In terms of ANOVA, `BookpageID` is eating up lots and lots of variance.
+
+## How Linear Regression can work on Yes/No Variables
 
 ### Our Data from Wednesday's class
 
        | Southern | Northern
--------|----------|---------
+-------|:--------:|:-------:
 Water  |   4      | 1
 Land   |   2      | 1
 
 Here's a spreadsheet: [link to edit](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&usp=sharing), [URL to load](https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&single=true&gid=0&output=csv) using `fetchGoogle()`.
 
+```{r}
+globe <- fetchGoogle("https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dG1SM19taXVadVp0QkloM3BQNl9LZnc&single=true&gid=0&output=csv")
+summary(lm(Water=="W" ~ 1, data=globe))
+```
+Compare to the obvious answer: 5 out of 8 are water.
 
-How much data should we collect to be able to reject the Null.
+Notice that the confidence interval covers the conventional wisdom of 2/3. 
+
+### Exploring Some Hypotheses
+
+#### Hypothesis I
+
+The Northern hemisphere and the Southern hemisphere have different fractions of the Earth's surface.  In other words, the area of the Southern hemisphere is different from 50% of total area.  (Silly, but so might be many scientific hypotheses.  Try it out.)
+
+```{r}
+summary(lm(Hemisphere=="S" ~ 1, data=globe))$coef
+```
+
+* What's the Null corresponding to the given p-value?
+* How to calculate an appropriate p-value for conventional wisdom?
+* How much data should we collect to have a fair chance of rejecting the Null?  What's the alternative hypothesis?  Calculate sample size to make the standard error small enough to rule out the Null in favor of the Alternative.
+
+
+
+#### Hypothesis II
+
+Do we have evidence to support the hypothesis that the Southern hemisphere area is not 50% of the Earth's surface?
+
+```{r}
+summary(lm(Water=="W" ~ 1 + Hemisphere, data=globe))$coef
+```
+
+How much data should we collect to be able to reject the Null?  What's your Alternative.
+
+
+## How Linear Regression Doesn't Work
+
+Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
+
+
+## Logistic Regression
+
+[Theme Song](http://www.youtube.com/watch?v=G6djgavbp7c)
+
+Question: What does 5 to 9 mean?
+
+Show logistic regression
+
+```{r}
+m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
+f1 <- makeFun(m1)
+f1("Yes", 50)
+plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
+m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
+f2 <- makeFun(m2)
+plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
+```
 
 
 Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
