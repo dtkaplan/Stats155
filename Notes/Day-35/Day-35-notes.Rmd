@@ -1,5 +1,52 @@
 # Day 35 Notes, Nov 25, 2013
 
+```{r include=FALSE}
+require(mosaic, quietly=TRUE)
+```
+
+
+## Models of Yes/No Variables
+
+## How Linear Regression Doesn't Work
+
+Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
+
+
+### Logistic Regression
+
+[Theme Song](http://www.youtube.com/watch?v=G6djgavbp7c)
+
+Question: What does 5 to 9 mean?
+
+Show logistic regression
+
+```{r}
+m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
+f1 <- makeFun(m1)
+f1("Yes", 50)
+plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
+m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
+f2 <- makeFun(m2)
+plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
+```
+
+
+Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
+
+Show logistic regression
+
+```{r}
+m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
+f1 <- makeFun(m1)
+f1("Yes", 50)
+plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
+m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
+f2 <- makeFun(m2)
+plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
+```
+
+
+
 ## Review
 
 ### Example: Heating and Electricity Use

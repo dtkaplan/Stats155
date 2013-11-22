@@ -5,11 +5,11 @@ opts_chunk$set(tidy=FALSE)
 ```
 
 
-## EXAMPLE:  
+## Review Example  
 
 Difference in age between husband and wife in couples getting married.
 
-Ask: Who is older in a married couple, the man or the woman?  By how much?  
+Ask: Who is older in a married couple, the man or the woman?  By how much?  Students will think they know the answer.
 
 Let's see if the data support this:
 ```{r}
@@ -79,40 +79,5 @@ summary(lm(Water=="W" ~ 1 + Hemisphere, data=globe))$coef
 How much data should we collect to be able to reject the Null?  What's your Alternative.
 
 
-## How Linear Regression Doesn't Work
-
-Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
 
 
-## Logistic Regression
-
-[Theme Song](http://www.youtube.com/watch?v=G6djgavbp7c)
-
-Question: What does 5 to 9 mean?
-
-Show logistic regression
-
-```{r}
-m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
-f1 <- makeFun(m1)
-f1("Yes", 50)
-plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
-m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
-f2 <- makeFun(m2)
-plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
-```
-
-
-Example: Whickham: model by smoking.  Then by smoking and age.  Make a prediction from the model fitted by lm().
-
-Show logistic regression
-
-```{r}
-m1 <- lm( outcome=="Alive" ~ smoker + age, data=Whickham )
-f1 <- makeFun(m1)
-f1("Yes", 50)
-plotFun( f1("Yes", age) ~ age, age.lim=range(20,100))
-m2 <- glm( outcome=="Alive" ~ smoker + age, data=Whickham, family="binomial" )
-f2 <- makeFun(m2)
-plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
-```
