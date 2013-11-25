@@ -4,6 +4,43 @@
 require(mosaic, quietly=TRUE)
 ```
 
+## Review
+
+### Example: Heating and Electricity Use
+
+In theory, the electricity used in a house for lighting, computers, etc. should also be heating the house; eventually the energy in the electricity is transformed into heat.  But how much?  Perhaps the amount of electricity is small compared to the amount of heat.
+
+Let's look just at winter months, November through March, when heating is used pretty steadily:
+```{r}
+utils = fetchData("utilities.csv")
+winter = subset(utils, temp < 55 & ccf > 45 & month != 10)
+bwplot( gasbill/elecbill ~ as.factor(month), data=winter)
+```
+It looks like roughly twice as much is paid for gas as electricity.  So there's more money going into heating than lighting and other electricity uses. Considering that electricity is a much more expensive form of energy than natural gas, this suggests that there is much more energy being used for heating than for lighting.
+
+But since energy is a physical quantity, there is a very good theory of it.  In fact, both kWh and ccf are forms of energy, and so there is a conversion between them.  (Actually, ccf is a volume, but since the volumetric energy density of natural gas varies only by a few percent depending on other factors, we can treat it approximately as an energy.)  Looking it up on in [Wikipedia](http://en.wikipedia.org/wiki/Therm) indicates that a ccf is roughly 29.3 kWh.
+
+```{r}
+bwplot( kwh/(29.3*ccf) ~ as.factor(month), data=winter)
+```
+
+Electricity energy use is about 10-20% compared to gas energy use in the winter months.  This suggests that we should be able to detect the electricity use.  It should show up as a negative coefficient on `kwh` in a model of `ccf`, with a magnitude of about $1/29.3$ (the conversion factor between kwh and ccf).
+```{r}
+mod1 = lm( ccf ~ kwh, data=winter )
+summary( mod1 )
+anova( mod1 )
+```
+Alas, we can't reject the null.  Note that the two reports are giving the same information. There is only explanatory vector and so there is no "team" effect for ANOVA to help us understand.
+
+But there are other factors that affect natural gas use, and we may be able to explain some of these.  Doing so will reduce the size of the residuals and may make it easier to see the effect of electricity use on natural gas use.
+```{r}
+mod2 = lm( ccf ~ kwh + temp, data=winter )
+summary(mod2)
+anova(mod2)
+```
+When put first in the model, `kwh` shows up as significant in ANOVA.  But when put last (try it!), it doesn't.  That's because both `temp` and `kwh` have a common contributing cause: winter.  `temp` is capable of explaining some of `kwh` and so putting `temp` first grabs some of the credit.
+
+
 
 ## Models of Yes/No Variables
 
@@ -47,41 +84,6 @@ plotFun( f2("Yes", age) ~ age, age.lim=range(20,100))
 
 
 
-## Review
-
-### Example: Heating and Electricity Use
-
-In theory, the electricity used in a house for lighting, computers, etc. should also be heating the house; eventually the energy in the electricity is transformed into heat.  But how much?  Perhaps the amount of electricity is small compared to the amount of heat.
-
-Let's look just at winter months, November through March, when heating is used pretty steadily:
-```{r}
-utils = fetchData("utilities.csv")
-winter = subset(utils, temp < 55 & ccf > 45 & month != 10 )
-bwplot( gasbill/elecbill ~ as.factor(month), data=winter)
-```
-It looks like roughly twice as much is paid for gas as electricity.  So there's more money going into heating than lighting and other electricity uses. Considering that electricity is a much more expensive form of energy than natural gas, this suggests that there is much more energy being used for heating than for lighting.
-
-But since energy is a physical quantity, there is a very good theory of it.  In fact, both kWh and ccf are forms of energy, and so there is a conversion between them.  (Actually, ccf is a volume, but since the volumetric energy density of natural gas varies only by a few percent depending on other factors, we can treat it approximately as an energy.)  Looking it up on in [Wikipedia](http://en.wikipedia.org/wiki/Therm) indicates that a ccf is roughly 29.3 kWh.
-
-```{r}
-bwplot( kwh/(29.3*ccf) ~ as.factor(month), data=winter)
-```
-
-Electricity energy use is about 10-20% compared to gas energy use in the winter months.  This suggests that we should be able to detect the electricity use.  It should show up as a negative coefficient on `kwh` in a model of `ccf`, with a magnitude of about $1/29.3$ (the conversion factor between kwh and ccf).
-```{r}
-mod1 = lm( ccf ~ kwh, data=winter )
-summary( mod1 )
-anova( mod1 )
-```
-Alas, we can't reject the null.  Note that the two reports are giving the same information. There is only explanatory vector and so there is no "team" effect for ANOVA to help us understand.
-
-But there are other factors that affect natural gas use, and we may be able to explain some of these.  Doing so will reduce the size of the residuals and may make it easier to see the effect of electricity use on natural gas use.
-```{r}
-mod2 = lm( ccf ~ kwh + temp, data=winter )
-summary(mod2)
-anova(mod2)
-```
-When put first in the model, `kwh` shows up as significant in ANOVA.  But when put last (try it!), it doesn't.  That's because both `temp` and `kwh` have a common contributing cause: winter.  `temp` is capable of explaining some of `kwh` and so putting `temp` first grabs some of the credit.
 
 ## A visit to power
 
