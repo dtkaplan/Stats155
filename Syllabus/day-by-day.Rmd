@@ -109,17 +109,17 @@ This is a good time to start to review.  As we explore these new contexts, do th
 * SM Ch. 16
 
 **In Class**:
- [Power and deer crossings](http://rpubs.com/dtkaplan/deer-crossing)
+* Case-Control Studies and odds ratios
+* [Power and deer crossings](../Notes/Day-36/AccidentReduction.html)
 
 **Assignment**: 
 * `r I(PN(c("16RQ",1601,1602,1604),assignment="Thirty"))`
 
+**Notes**: [Instructor's notes](../Notes/Day-36/Day-36-notes.html)
 
 **On Your Own**:
 * [Why most published research findings are false](http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124)
 * [Advice on choosing a major](http://xkcd.com/1052/) to the tune of "A Modern Major General." [Listen here](http://www.youtube.com/watch?v=pRexBMPeRTo). See also the original from [The Pirates of Penzance](http://www.youtube.com/watch?v=zSGWoXDFM64), an [elemental version](http://www.youtube.com/watch?v=AcS3NOQnsQM), and, without endorsement, [a collection](http://www.youtube.com/playlist?list=PL81E47F8C9314A1D7)
-
-**Notes**: [Instructor's notes](../Notes/Day-36/Day-36-notes.html)
 
 <!-- `r I(todaysNotes("2012-11-26.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-11-26-class) -->
