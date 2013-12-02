@@ -137,6 +137,7 @@ This is a good time to start to review.  As we explore these new contexts, do th
 **In-Class**:
 * [Processing Survey Data](../Notes/Day-37/SurveyProcessing.html) and the template itself: [cut and paste from here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-37/SurveyProcessing.Rmd)
 * Writing up your survey report in R. [Notes](../Notes/Day-37/SurveyReport.html).  You will want to copy the [raw template from here](https://raw.github.com/dtkaplan/Stats155/gh-pages/Notes/Day-37/SurveyReport.Rmd) to cut and paste into RStudio.
+* Another [spoof of correlation implying causation](http://www.businessweek.com/magazine/correlation-or-causation-12012011-gfx.html)
 * [Hypothetical Causal Networks](../Notes/Day-37/ConstructingHypotheticalNetworks.html)
 
 <!-- * [The Power of Vitamin D](https://dl.dropbox.com/u/5098197/ISM/power-vitamin-D.pdf) -->
@@ -161,7 +162,9 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 **Assignment**: `r I(PN(c("17RQ",1701,1702,1705),assignment="Thirty-two"))`
 
-**Resources**: [Instructor's notes](../Notes/Day-38/Day-38-notes.html)
+**Resources**: 
+* [Instructor's notes](../Notes/Day-38/Day-38-notes.html)
+* More notes on analyzing [hypothetical causal networks](http://www.michaelnielsen.org/ddi/if-correlation-doesnt-imply-causation-then-what-does/)
 
 `r I(classDayContents( daynum=39 ))`
 **Topic**: Causation

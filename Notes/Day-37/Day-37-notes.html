@@ -185,10 +185,21 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Day 37 Notes: Dec. 2, 2013</h1>
 
-<h3>In the News</h3>
+<h2>Review: Traditional Tests</h2>
 
 <ul>
-<li><a href="http://www.nytimes.com/2012/11/27/us/judges-rulings-follow-partisan-lines.html?hp&amp;_r=0">Predicting Judges&#39; Rulings</a></li>
+<li>p test</li>
+<li>t test</li>
+<li>one-way anova</li>
+<li>simple regression</li>
+</ul>
+
+<p>These miss out on the ability to include covariates.  They do not give a measure of effect size.</p>
+
+<p>One that we have not covered:</p>
+
+<ul>
+<li>\( \chi^2 \) (chi-squared) tests.</li>
 </ul>
 
 <h3>Logistic Regression</h3>
@@ -271,7 +282,33 @@ Notice that if A is much less than B, and C is much less than D, the odds ratio 
 <pre><code>## [1] 1.132 3.583
 </code></pre>
 
+<h3>In the News</h3>
+
+<ul>
+<li><a href="http://www.nytimes.com/2012/11/27/us/judges-rulings-follow-partisan-lines.html?hp&amp;_r=0">Predicting Judges&#39; Rulings</a></li>
+</ul>
+
 <h2>Introduction to Causal Reasoning</h2>
+
+<p>One way to define a causal relationship between A and B is this: If you change A, then B will change.</p>
+
+<p>The accepted method to establish a causal relationship is to do an experiment: Change A and observe whether B changes correspondingly.  The key word here is &ldquo;change.&rdquo;  Simply observing that A varies and B varies with it does not establish causation; it might equally have been that B causes A or that A and B both have a common cause.  You need to impose the change directly on A.</p>
+
+<p>But, what to do when you can&#39;t do an experiment.</p>
+
+<p>Recidivism and Parole.</p>
+
+<p>Public health issues: not every smoker gets lung cancer, not every person with lung cancer was a smoker.</p>
+
+<h3>Austin Bradford Hill</h3>
+
+<p>A famous article, from 1965, about <a href="https://dl.dropboxusercontent.com/u/5098197/Epidemiology/Hill_1965.pdf">causation in public health</a>.  It lays out 9 criteria to support a claim of a causal relationship, e.g. strength, consistency, temporality, specificity, plausibility, experiment.  </p>
+
+<p>Hill, who followed Fisher as president of the Royal Statistical Society, dismisses <em>Tests of Significance</em>.</p>
+
+<blockquote>
+<p>No formal tests of significance can answer those questions [of causation].  Such tests can, and should, remind us of the effects that the play of chance can create, and they will instruct us in the likely magnitude of those effects.  Beyond that they contribute nothing to the &#39;proof&#39; of our hypothesis.</p>
+</blockquote>
 
 <h4>Myopia</h4>
 
@@ -279,7 +316,7 @@ Notice that if A is much less than B, and C is much less than D, the odds ratio 
 <li><a href="http://dl.dropbox.com/u/5098197/ISM/myopia.pdf">Myopia article from Nature</a>.  Note the extensive scientific jargon and the dismissing of the lack of causal evidence: &ldquo;Although it does not establish a causal link, the statistical strength of the association of night-time light exposure and child- hood myopia does suggest that the absence of a daily period of darkness during early childhood is a potential precipitating factor in the development of myopia.&rdquo;</li>
 </ul>
 
-<p>It turns out that the parent&#39;s myopia is the disposing factor.  Shortsighted parents leave the lights on at night and their kids are shortsighted for genetic reasons.  A CNN news report is <a href="http://www.cnn.com/HEALTH/9905/12/children.lights/index.htm">here</a>. And here is the <a href="http://www.nature.com/nature/journal/v404/n6774/full/404143a0.html">abstract of the rebuttal</a>.</p>
+<p>It turns out that the parent&#39;s myopia is the disposing factor.  Shortsighted parents leave the lights on at night and their kids are shortsighted for genetic reasons.  &lt;!&ndash; A CNN news report is <a href="http://www.cnn.com/HEALTH/9905/12/children.lights/index.htm">here</a>. &ndash;&gt; Here is a <a href="http://www.nature.com/nature/journal/v404/n6774/full/404143a0.html">rebuttal</a>.</p>
 
 </body>
 

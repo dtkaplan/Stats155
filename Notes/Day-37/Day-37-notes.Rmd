@@ -4,9 +4,21 @@
 require(mosaic, quietly=TRUE)
 opts_chunk$set(tidy=FALSE,dev="svg",out.width="80%")
 ```
+## Review: Traditional Tests
 
-### In the News
-* [Predicting Judges' Rulings](http://www.nytimes.com/2012/11/27/us/judges-rulings-follow-partisan-lines.html?hp&_r=0)
+* p test
+* t test
+* one-way anova
+* simple regression
+
+These miss out on the ability to include covariates.  They do not give a measure of effect size.
+
+One that we have not covered:
+
+* $\chi^2$ (chi-squared) tests.
+
+
+
 
 ### Logistic Regression
 
@@ -61,11 +73,33 @@ Calculate the confidence interval on the odds ratio, e.g.
 exp( .7 + c(-1,1)*1.96*.294)
 ```
 
+### In the News
+* [Predicting Judges' Rulings](http://www.nytimes.com/2012/11/27/us/judges-rulings-follow-partisan-lines.html?hp&_r=0)
+
 ## Introduction to Causal Reasoning
+
+One way to define a causal relationship between A and B is this: If you change A, then B will change.
+
+The accepted method to establish a causal relationship is to do an experiment: Change A and observe whether B changes correspondingly.  The key word here is "change."  Simply observing that A varies and B varies with it does not establish causation; it might equally have been that B causes A or that A and B both have a common cause.  You need to impose the change directly on A.
+
+But, what to do when you can't do an experiment.
+
+Recidivism and Parole.
+
+Public health issues: not every smoker gets lung cancer, not every person with lung cancer was a smoker.
+
+### Austin Bradford Hill
+
+A famous article, from 1965, about [causation in public health](https://dl.dropboxusercontent.com/u/5098197/Epidemiology/Hill_1965.pdf).  It lays out 9 criteria to support a claim of a causal relationship, e.g. strength, consistency, temporality, specificity, plausibility, experiment.  
+
+Hill, who followed Fisher as president of the Royal Statistical Society, dismisses *Tests of Significance*.
+
+> No formal tests of significance can answer those questions [of causation].  Such tests can, and should, remind us of the effects that the play of chance can create, and they will instruct us in the likely magnitude of those effects.  Beyond that they contribute nothing to the 'proof' of our hypothesis.
+
 
 #### Myopia
 
 * [Myopia article from Nature](http://dl.dropbox.com/u/5098197/ISM/myopia.pdf).  Note the extensive scientific jargon and the dismissing of the lack of causal evidence: "Although it does not establish a causal link, the statistical strength of the association of night-time light exposure and child- hood myopia does suggest that the absence of a daily period of darkness during early childhood is a potential precipitating factor in the development of myopia."
 
-It turns out that the parent's myopia is the disposing factor.  Shortsighted parents leave the lights on at night and their kids are shortsighted for genetic reasons.  A CNN news report is [here](http://www.cnn.com/HEALTH/9905/12/children.lights/index.htm). And here is the [abstract of the rebuttal](http://www.nature.com/nature/journal/v404/n6774/full/404143a0.html).
+It turns out that the parent's myopia is the disposing factor.  Shortsighted parents leave the lights on at night and their kids are shortsighted for genetic reasons.  <!-- A CNN news report is [here](http://www.cnn.com/HEALTH/9905/12/children.lights/index.htm). --> Here is a [rebuttal](http://www.nature.com/nature/journal/v404/n6774/full/404143a0.html).
 
