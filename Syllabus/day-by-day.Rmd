@@ -173,13 +173,14 @@ This is a good time to start to review.  As we explore these new contexts, do th
 
 **Assignment**: `r I(PN(c(1706,1707,1708,1710),assignment="Thirty-three"))`
 
+**Notes**: [Instructor's notes](../Notes/Day-39/Day-39-notes.html)
 
 `r I(classDayContents( daynum=40 ))`
 **Topic**: Experiment and Design
 
 **Reading**: SM Ch. 18
 
-**Notes**: [Instructor's notes](../Notes/Day-39/Day-39-notes.html)
+**Notes**: [Instructor's notes](../Notes/Day-40/Day-40-notes.html)
 <!-- `r I(todaysNotes("2012-12-05.html", "i"))` -->
 <!-- [Class notes](http://rpubs.com/dtkaplan/m155-2012-12-05-class) -->
 
