@@ -209,9 +209,6 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">s = fetchGoogle(&quot;https://docs.google.com/spreadsheet/pub?key=0Am13enSalO74dE1COTRrYWVHN3dNR09TZHNLTkJnbHc&amp;single=true&amp;gid=0&amp;output=csv&quot;)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;fetchGoogle&quot;
-</code></pre>
-
 <p>Plot out the density broken down by posture and a bwplot.</p>
 
 <p>Now, the model:</p>
@@ -219,7 +216,9 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">coef(summary(lm(HR1050 ~ Posture, data = s)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s&#39; not found
+<pre><code>##                 Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)       66.333      4.089  16.222 3.452e-12
+## Posturestanding    8.212      5.514   1.489 1.537e-01
 </code></pre>
 
 <h3>Improving the Experiment</h3>
@@ -239,27 +238,38 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">fetchData(&quot;hr.R&quot;)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;fetchData&quot;
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/hr.R
+</code></pre>
+
+<pre><code>## [1] TRUE
 </code></pre>
 
 <pre><code class="r">fetchData(&quot;simulate.r&quot;)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;fetchData&quot;
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/simulate.r
+</code></pre>
+
+<pre><code>## [1] TRUE
 </code></pre>
 
 <p>To run it, you specify the subject ID numbers and the posture of each patient, which must be one of &ldquo;sitting&rdquo;, &ldquo;standing&rdquo;, &ldquo;lying&rdquo;.  Here&#39;s an example of running it on 10 people, half of whom are standing and half sitting.  <strong>NOTE</strong> the expression <code>1:10</code> is creating the numbers 1, 2, 3, &hellip;, 10.  That is, <code>1:10</code> makes 10 different people for the experiment.  The levels of the posture variable are recycled.</p>
 
 <pre><code class="r">s1 = heart.rate(who = 1:10, posture = c(&quot;sitting&quot;, &quot;standing&quot;))
+s1
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;heart.rate&quot;
-</code></pre>
-
-<pre><code class="r">s1
-</code></pre>
-
-<pre><code>## Error: object &#39;s1&#39; not found
+<pre><code>##    who  posture hr sex weight
+## 1   S1  sitting 52   F  75.27
+## 2   S2 standing 54   M  79.02
+## 3   S3  sitting 53   M  63.18
+## 4   S4 standing 62   M  52.30
+## 5   S5  sitting 51   F  66.33
+## 6   S6 standing 66   M  84.19
+## 7   S7  sitting 70   F  69.76
+## 8   S8 standing 61   F  66.96
+## 9   S9  sitting 50   F  46.71
+## 10 S10 standing 64   F  50.95
 </code></pre>
 
 <p>Can we see the difference between the two different postures?</p>
@@ -267,7 +277,9 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">coef(summary(lm(hr ~ posture, data = s1)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s1&#39; not found
+<pre><code>##                 Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)         55.2      3.008  18.349 8.009e-08
+## posturestanding      6.2      4.254   1.457 1.831e-01
 </code></pre>
 
 <p>No significant difference.</p>
@@ -284,7 +296,30 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">summary(lm(hr ~ posture + who, data = s1))
 </code></pre>
 
-<pre><code>## Error: object &#39;s1&#39; not found
+<pre><code>## 
+## Call:
+## lm(formula = hr ~ posture + who, data = s1)
+## 
+## Residuals:
+## ALL 10 residuals are 0: no residual degrees of freedom!
+## 
+## Coefficients: (1 not defined because of singularities)
+##                 Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)           52         NA      NA       NA
+## posturestanding        9         NA      NA       NA
+## whoS10                 3         NA      NA       NA
+## whoS2                 -7         NA      NA       NA
+## whoS3                  1         NA      NA       NA
+## whoS4                  1         NA      NA       NA
+## whoS5                 -1         NA      NA       NA
+## whoS6                  5         NA      NA       NA
+## whoS7                 18         NA      NA       NA
+## whoS8                 NA         NA      NA       NA
+## whoS9                 -2         NA      NA       NA
+## 
+## Residual standard error: NaN on 0 degrees of freedom
+## Multiple R-squared:     1,   Adjusted R-squared:   NaN 
+## F-statistic:  NaN on 9 and 0 DF,  p-value: NA
 </code></pre>
 
 <p>Why did the p-values disappear?</p>
@@ -292,15 +327,20 @@ hljs.initHighlightingOnLoad();
 <p>Now a slight variation on the experiment:</p>
 
 <pre><code class="r">s2 = heart.rate(who = rep(1:5, each = 2), posture = c(&quot;sitting&quot;, &quot;standing&quot;))
+s2
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;heart.rate&quot;
-</code></pre>
-
-<pre><code class="r">s2
-</code></pre>
-
-<pre><code>## Error: object &#39;s2&#39; not found
+<pre><code>##    who  posture hr sex weight
+## 1   S1  sitting 51   F  75.27
+## 2   S1 standing 55   F  75.27
+## 3   S2  sitting 52   M  79.02
+## 4   S2 standing 54   M  79.02
+## 5   S3  sitting 53   M  63.18
+## 6   S3 standing 55   M  63.18
+## 7   S4  sitting 60   M  52.30
+## 8   S4 standing 62   M  52.30
+## 9   S5  sitting 52   F  66.33
+## 10  S5 standing 54   F  66.33
 </code></pre>
 
 <p>Can we see the difference between the two different postures in this new experiment?</p>
@@ -308,13 +348,21 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">coef(summary(lm(hr ~ posture, data = s2)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s2&#39; not found
+<pre><code>##                 Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)         53.6      1.575  34.036 6.067e-10
+## posturestanding      2.4      2.227   1.078 3.126e-01
 </code></pre>
 
 <pre><code class="r">coef(summary(lm(hr ~ posture + who, data = s2)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s2&#39; not found
+<pre><code>##                   Estimate Std. Error    t value  Pr(&gt;|t|)
+## (Intercept)      5.180e+01     0.4899  1.057e+02 4.797e-08
+## posturestanding  2.400e+00     0.4000  6.000e+00 3.883e-03
+## whoS2           -8.119e-15     0.6325 -1.284e-14 1.000e+00
+## whoS3            1.000e+00     0.6325  1.581e+00 1.890e-01
+## whoS4            8.000e+00     0.6325  1.265e+01 2.249e-04
+## whoS5           -9.936e-15     0.6325 -1.571e-14 1.000e+00
 </code></pre>
 
 <p>Why is the estimate from the second model much better than from the first?</p>
@@ -343,13 +391,13 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">r.squared(lm(as.numeric(posture) ~ who, data = s1))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;r.squared&quot;
+<pre><code>## [1] 1
 </code></pre>
 
 <pre><code class="r">r.squared(lm(as.numeric(posture) ~ who, data = s2))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;r.squared&quot;
+<pre><code>## [1] 3.747e-31
 </code></pre>
 
 <p>In the second experiment, we had each person participate twice.  Intuitively, you can think of this as each person serving as his or her own control.  Mathematically, it&#39;s a matter of using the <code>who</code> variable to eat up variance, and ensuring that there is little or no overlap between what&#39;s explained by the <code>who</code> variable and what&#39;s explained by the <code>posture</code> variable.</p>
@@ -397,21 +445,21 @@ hljs.initHighlightingOnLoad();
 <p>Let&#39;s do an experiment where every other candidate gets $10M to spend, while the others get nothing:</p>
 
 <pre><code class="r">s = run.sim(campaign.spending, 5000, spending = c(0, 10))
+coef(summary(lm(vote ~ spending, data = s)))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
-</code></pre>
-
-<pre><code class="r">coef(summary(lm(vote ~ spending, data = s)))
-</code></pre>
-
-<pre><code>## Error: object &#39;s&#39; not found
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   37.414    0.31824 117.564 0.000e+00
+## spending       0.315    0.04501   6.999 2.924e-12
 </code></pre>
 
 <pre><code class="r">coef(summary(lm(vote ~ spending + polls, data = s)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s&#39; not found
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   1.0291   0.216459   4.754 2.046e-06
+## spending      0.2240   0.015388  14.554 4.973e-47
+## polls         0.7323   0.003767 194.413 0.000e+00
 </code></pre>
 
 <p>The results don&#39;t depend on the covariates; within the margin of error, they are the same for the two models.</p>
@@ -419,21 +467,21 @@ hljs.initHighlightingOnLoad();
 <p>Notice that I used 5000 units.  One reason for this is that I didn&#39;t make the variation in spending very large.  Here&#39;s a bigger variation with only 1/10th as many experimental units:</p>
 
 <pre><code class="r">s = run.sim(campaign.spending, 500, spending = c(0, 100))
+coef(summary(lm(vote ~ spending, data = s)))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
-</code></pre>
-
-<pre><code class="r">coef(summary(lm(vote ~ spending, data = s)))
-</code></pre>
-
-<pre><code>## Error: object &#39;s&#39; not found
+<pre><code>##             Estimate Std. Error t value   Pr(&gt;|t|)
+## (Intercept)  36.0453    0.99446   36.25 9.203e-142
+## spending      0.2495    0.01406   17.74  6.307e-55
 </code></pre>
 
 <pre><code class="r">coef(summary(lm(vote ~ spending + polls, data = s)))
 </code></pre>
 
-<pre><code>## Error: object &#39;s&#39; not found
+<pre><code>##             Estimate Std. Error t value   Pr(&gt;|t|)
+## (Intercept)   1.2178   0.687078   1.772  7.693e-02
+## spending      0.2484   0.004975  49.932 8.418e-196
+## polls         0.7301   0.012373  59.011 1.185e-226
 </code></pre>
 
 <h3>In-Class Activity</h3>
@@ -445,33 +493,25 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">obs = run.sim(aspirin, 500)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
-</code></pre>
-
 <p>Construct a logistic equation model of stroke:</p>
 
 <pre><code class="r">mod = lm(stroke == &quot;Y&quot; ~ mgPerDay, data = obs)
+coef(summary(mod))
 </code></pre>
 
-<pre><code>## Error: object &#39;obs&#39; not found
-</code></pre>
-
-<pre><code class="r">coef(summary(mod))
-</code></pre>
-
-<pre><code>## Error: object &#39;mod&#39; not found
+<pre><code>##               Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  0.3060503  0.0353370  8.6609 6.554e-17
+## mgPerDay    -0.0002174  0.0006233 -0.3488 7.274e-01
 </code></pre>
 
 <pre><code class="r">mod2 = lm(stroke == &quot;Y&quot; ~ mgPerDay + sick, data = obs)
+coef(summary(mod2))
 </code></pre>
 
-<pre><code>## Error: object &#39;obs&#39; not found
-</code></pre>
-
-<pre><code class="r">coef(summary(mod2))
-</code></pre>
-
-<pre><code>## Error: object &#39;mod2&#39; not found
+<pre><code>##              Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  0.196663  0.0245781   8.002 8.728e-15
+## mgPerDay    -0.003238  0.0004443  -7.287 1.252e-12
+## sick         0.098743  0.0041377  23.864 1.925e-84
 </code></pre>
 
 <h4>The Experimental Study</h4>
@@ -483,33 +523,25 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">exper = run.sim(aspirin, 500, mgPerDay = c(0, 100))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
-</code></pre>
-
 <p>Now the analysis:</p>
 
 <pre><code class="r">emod = lm(stroke == &quot;Y&quot; ~ mgPerDay, data = exper)
+coef(summary(emod))
 </code></pre>
 
-<pre><code>## Error: object &#39;exper&#39; not found
-</code></pre>
-
-<pre><code class="r">coef(summary(emod))
-</code></pre>
-
-<pre><code>## Error: object &#39;emod&#39; not found
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  0.40400  0.0276437  14.615 1.653e-40
+## mgPerDay    -0.00236  0.0003909  -6.037 3.076e-09
 </code></pre>
 
 <pre><code class="r">emod2 = lm(stroke == &quot;Y&quot; ~ mgPerDay + sick, data = exper)
+coef(summary(emod2))
 </code></pre>
 
-<pre><code>## Error: object &#39;exper&#39; not found
-</code></pre>
-
-<pre><code class="r">coef(summary(emod2))
-</code></pre>
-
-<pre><code>## Error: object &#39;emod2&#39; not found
+<pre><code>##              Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  0.229622  0.0220955  10.392 5.040e-23
+## mgPerDay    -0.002835  0.0002892  -9.803 7.384e-21
+## sick         0.085480  0.0041774  20.462 5.890e-68
 </code></pre>
 
 <p>The two models give the same result.  The second model, depending on measuring and using the covariate <code>sick</code>, doesn&#39;t change the result, but it does eat up deviance (the logistic equivalent of variance)</p>
@@ -522,9 +554,6 @@ hljs.initHighlightingOnLoad();
 
 <pre><code class="r"># Get the poll data.  This involve
 prelim = run.sim(campaign.spending, 100)
-</code></pre>
-
-<pre><code>## Error: could not find function &quot;run.sim&quot;
 </code></pre>
 
 <h2>On to the Future in Statistics</h2>

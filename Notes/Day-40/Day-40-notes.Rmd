@@ -1,5 +1,9 @@
 # Day 40 Notes Dec. 9, 2013
 
+```{r include=FALSE}
+require(mosaic)
+```
+
 An experiment with heart rate
 -------------
 

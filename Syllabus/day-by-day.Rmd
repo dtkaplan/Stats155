@@ -178,6 +178,8 @@ This is a good time to start to review.  As we explore these new contexts, do th
 `r I(classDayContents( daynum=40 ))`
 **Topic**: Experiment and Design
 
+**In Class**: [Heart rate spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Am13enSalO74dE1COTRrYWVHN3dNR09TZHNLTkJnbHc&usp=sharing)
+
 **Reading**: SM Ch. 18
 
 **Notes**: [Instructor's notes](../Notes/Day-40/Day-40-notes.html)
