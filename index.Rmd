@@ -37,7 +37,7 @@ Click on a date to see the syllabus/readings/assignments for that day. "Q" means
 **Where's the MSCS Reading Room?** Olin-Rice 254, in the central corridor of Olin-Rice, the corridor that runs parallel to the classroom corridor and faculty office corridor.
 
 ### Resources
-* Term Project Links: Instructor's [Description of the Assignment](../Resources/term-project-2013.html) :  Project status, group composition, document links [here](https://docs.google.com/document/d/1pfZJMs0WLnZ9sPl7uzUi3AgSxWMFWOkwDvS4wNnlZ0U/edit?usp=sharing) : [Procedures for accessing and processing](http://rpubs.com/dtkaplan/m155-processing-survey-data) your survey data, so that you can do the statistical analysis.
+* Term Project Links: Instructor's [Description of the Assignment](Resources/term-project-2013.html) :  Project status, group composition, document links [here](https://docs.google.com/document/d/1pfZJMs0WLnZ9sPl7uzUi3AgSxWMFWOkwDvS4wNnlZ0U/edit?usp=sharing) : [Procedures for accessing and processing](http://rpubs.com/dtkaplan/m155-processing-survey-data) your survey data, so that you can do the statistical analysis. **Hand in your project** [site](https://docs.google.com/a/macalester.edu/forms/d/1lTnsxkagwo4SWDg7vsfCnsTPx9x0ShIIPmz7qH7Wk_I/viewform)
 
 * **[Assignment Server](http://glimmer.rstudio.com/mosaic/Stats155/)** Your account name is the same as your Mac email prefix (e.g. ```jsmith```.  Your initial password is the last 4 digits of your student ID.  Contact the instructor to change your password.
 * **Textbook**: *Statistical Modeling: A Fresh Approach* 2nd/edition.  
